@@ -1,0 +1,53 @@
+.label {
+  @apply text-[#4F4F4F] text-sm pl-4 pb-1 font-Montserrat md:text-base;
+}
+
+.label-error {
+  @apply text-[#FF0000];
+}
+
+.input,
+.textarea {
+  @apply bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-base;
+}
+
+.textarea {
+  @apply min-h-[120px];
+}
+
+.input-error,
+.textarea-error {
+  @apply border-2 border-[#FF0000] outline-[#FF0000];
+}
+
+.radio-container {
+  @apply flex justify-around w-full h-[50px] p-3 rounded-3xl mb-7 bg-[#FAFAFA] px-12  md:text-base;
+}
+
+.radio-button {
+  @apply flex items-center;
+}
+
+.radio {
+  @apply mr-2;
+}
+
+.select {
+  @apply p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black]  md:text-base;
+}
+
+.select-placeholder {
+  @apply text-[#C9C9C9];
+}
+
+.checkbox-container {
+  @apply w-full flex mb-4 mt-3;
+}
+
+.checkbox-container .label {
+  @apply flex-1 pl-0;
+}
+
+.checkbox {
+  @apply my-1 mr-4 w-[20px] h-[20px] block;
+}

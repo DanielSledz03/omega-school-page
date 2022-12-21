@@ -1,4 +1,4 @@
-import styles from './Textarea.module.css'
+import styles from '../FormComponents.module.css'
 
 interface IProps {
   label: string

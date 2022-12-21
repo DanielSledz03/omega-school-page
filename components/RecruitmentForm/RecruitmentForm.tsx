@@ -1,14 +1,19 @@
 import { Fragment } from 'react'
 import { useFormik } from 'formik'
-import { Input } from '../Input/Input'
+import { Input } from './components/Input/Input'
 import { StudentData } from '../../types/student-data.type'
 import * as Yup from 'yup'
-import { Textarea } from '../Textarea/Textarea'
-import Checkbox from '../Checkbox/Checkbox'
+import { Textarea } from './components/Textarea/Textarea'
+import RadioButtons from './components/RadioButtons/RadioButtons'
 import styles from './RecruitmentForm.module.css'
 import { GeneralData } from '../../types/general-data.type'
-import { Select } from '../Select/Select'
+import { Select } from './components/Select/Select'
 import { ParentsData } from '../../types/parents-data.type'
+import Checkbox from './components/Checkbox/Checkbox'
+import Button from '../Button/Button'
+import Image from 'next/image'
+import EllipsesLeft from '../../public/assets/EllipsesLeft.svg'
+import EllipsesRight from '../../public/assets/EllipsesRight.svg'
 
 const StudentInitialValues: StudentData = {
   fullName: '',
@@ -60,6 +65,7 @@ const RecruitmentForm = () => {
     setFieldValue,
     handleSubmit,
     setFieldError,
+    validateForm,
   } = useFormik({
     initialValues: {
       ...StudentInitialValues,
@@ -68,7 +74,22 @@ const RecruitmentForm = () => {
       ...ParentsInitialValues,
     },
 
+    validationSchema: Yup.object().shape({
+      fullName: Yup.string().min(1),
+      peselOrPassportNumber: Yup.string().min(1),
+      dateAndPlaceOfBirth: Yup.string().min(1),
+      address: Yup.string().min(1),
+      parentFullName: Yup.string().min(1),
+      parentAddress: Yup.string().min(1),
+      email: Yup.string().email(),
+      phoneNumber: Yup.string().min(1),
+      // rulesAccept: Yup.boolean().isTrue(),
+      // rodoAccept: Yup.boolean().isTrue(),
+    }),
+
     onSubmit: (values) => {
+      validateForm()
+
       let isValidate = true
       const obj: any = values
 
@@ -95,12 +116,23 @@ const RecruitmentForm = () => {
     },
   })
 
-  // console.log(values)
+  console.log(values)
 
   return (
     <Fragment>
-      <div className="flex flex-col border-b-[1px] border-b-[#F0F0F0]">
-        <h2 className="text-[#579CE2] font-bold text-center text-2xl py-10 ">Dane ogólne</h2>
+      <div className={styles['header2-container']}>
+        <div className={styles['ellipses-left']}>
+          <Image src={EllipsesLeft} alt="EllipsesLeft" />
+        </div>
+
+        <div className={styles['ellipses-right']}>
+          <Image src={EllipsesRight} alt="EllipsesRight" />
+        </div>
+
+        <h2 className={styles.header2}>Rekrutacja on-line</h2>
+      </div>
+      <div className={styles['section-container']}>
+        <h3 className={styles.header3}>Dane ogólne</h3>
         <Select
           placeholder="Wybierz klasę"
           label="Wybierz klasę"
@@ -136,170 +168,154 @@ const RecruitmentForm = () => {
           error={errors.schoolYear}
         />
       </div>
-      <h2 className="text-[#579CE2] font-bold text-center text-2xl	py-10">Dane ucznia</h2>
-      <Input
-        label="Imiona i nazwisko*"
-        name="fullName"
-        placeholder="Wpisz imiona i nazwisko ucznia"
-        handleChange={handleChange}
-        value={values.fullName}
-        handleBlur={handleBlur}
-        error={touched.fullName ? errors.fullName : ''}
-      />
-      <Input
-        label="PESEL (lub w przypadku jego braku - numer paszportu)*"
-        placeholder="Wpisz numer PESEL"
-        name="peselOrPassportNumber"
-        handleChange={handleChange}
-        value={values.peselOrPassportNumber}
-        handleBlur={handleBlur}
-        error={errors.peselOrPassportNumber}
-      />
-      <Input
-        label="Data i miejsce urodzenia*"
-        name="dateAndPlaceOfBirth"
-        placeholder="Wpisz datę i miejsce urodzenia ucznia"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.dateAndPlaceOfBirth}
-        error={errors.dateAndPlaceOfBirth}
-      />
-      <Input
-        label="Adres zamieszkania*"
-        name="address"
-        placeholder="Wpisz adres zamieszkania ucznia"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.address}
-        error={errors.address}
-      />
-      <Input
-        label="Adres zameldowania (jeśli jest inny niż zamieszkania)"
-        name="registeredAddress"
-        placeholder="Wpisz adres zameldowania ucznia"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.registeredAddress}
-        error={errors.registeredAddress}
-      />
-      <Input
-        label="Nazwa i adres szkoły obwodowej"
-        name="districtSchoolData"
-        placeholder="Wpisz nazwę i adres szkoły obwodowej ucznia"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.districtSchoolData}
-        error={errors.districtSchoolData}
-      />
 
-      <Textarea
-        label="Inne istotne informacje (np. o występowaniu specyficznych trudności o stanie zdrowia, przebytych chorobach itp.)"
-        name="otherRelevantInformation"
-        placeholder="Wpisz inne informacje o uczniu"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.otherRelevantInformation}
-        error={errors.otherRelevantInformation}
-      />
-
-      <Checkbox
-        label="Czy uczeń posiada opinię?"
-        name="medicalOpinion"
-        setFieldValue={setFieldValue}
-        error={errors.medicalOpinion}
-      />
-
-      <Checkbox
-        label="Czy uczeń posiada orzeczenie zdrowotne?"
-        name="healthCertificate"
-        setFieldValue={setFieldValue}
-        error={errors.healthCertificate}
-      />
-
-      <h2 className="text-[#579CE2] font-bold text-center text-2xl	py-10">
-        Dane rodziców / opiekunów prawnych
-      </h2>
-
-      <Input
-        label="Imiona i nazwisko"
-        name="parentFullName"
-        placeholder="Wpisz imiona i nazwisko rodzica / opiekuna prawnego"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.parentFullName}
-        error={errors.parentFullName}
-      />
-
-      <Input
-        label="Adres zamiszkania"
-        name="parentAddress"
-        placeholder="Wpisz adres zamieszkania rodzica / opiekuna prawnego"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.parentAddress}
-        error={errors.parentAddress}
-      />
-
-      <Input
-        label="Telefon kontaktowy"
-        name="phoneNumber"
-        placeholder="Wpisz numer telefonu rodzica / opiekuna prawnego"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.phoneNumber}
-        error={errors.phoneNumber}
-        type="tel"
-      />
-
-      <Input
-        label="Adres e-mail"
-        name="email"
-        placeholder="Wpisz adres e-mail rodzica / opiekuna prawnego"
-        handleChange={handleChange}
-        handleBlur={handleBlur}
-        value={values.email}
-        error={errors.email}
-        type="email"
-      />
-
-      <div className="flex items-start py-3 border-t-[1px] border-t-[#F0F0F0]">
-        <input
-          id="rules"
-          type="checkbox"
-          className="my-1 mr-4 w-[20px] h-[20px] block  "
-          name="rulesAccept"
-          onChange={() => setFieldValue('rulesAccept', !values.rulesAccept)}
-          onBlur={handleBlur}
-          checked={values.rulesAccept}
+      <div className={styles['section-container']}>
+        <h3 className={styles.header3}>Dane ucznia</h3>
+        <Input
+          label="Imiona i nazwisko*"
+          name="fullName"
+          placeholder="Wpisz imiona i nazwisko ucznia"
+          handleChange={handleChange}
+          value={values.fullName}
+          handleBlur={handleBlur}
+          error={touched.fullName ? errors.fullName : ''}
         />
-        <label htmlFor="rules" className="flex-1 text-xs font-Montserrat">
+        <Input
+          label="PESEL (lub w przypadku jego braku - numer paszportu)*"
+          placeholder="Wpisz numer PESEL"
+          name="peselOrPassportNumber"
+          handleChange={handleChange}
+          value={values.peselOrPassportNumber}
+          handleBlur={handleBlur}
+          error={errors.peselOrPassportNumber}
+        />
+        <Input
+          label="Data i miejsce urodzenia*"
+          name="dateAndPlaceOfBirth"
+          placeholder="Wpisz datę i miejsce urodzenia ucznia"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.dateAndPlaceOfBirth}
+          error={errors.dateAndPlaceOfBirth}
+        />
+        <Input
+          label="Adres zamieszkania*"
+          name="address"
+          placeholder="Wpisz adres zamieszkania ucznia"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.address}
+          error={errors.address}
+        />
+        <Input
+          label="Adres zameldowania (jeśli jest inny niż zamieszkania)"
+          name="registeredAddress"
+          placeholder="Wpisz adres zameldowania ucznia"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.registeredAddress}
+          error={errors.registeredAddress}
+        />
+        <Input
+          label="Nazwa i adres szkoły obwodowej"
+          name="districtSchoolData"
+          placeholder="Wpisz nazwę i adres szkoły obwodowej ucznia"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.districtSchoolData}
+          error={errors.districtSchoolData}
+        />
+
+        <Textarea
+          label="Inne istotne informacje (np. o występowaniu specyficznych trudności o stanie zdrowia, przebytych chorobach itp.)"
+          name="otherRelevantInformation"
+          placeholder="Wpisz inne informacje o uczniu"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.otherRelevantInformation}
+          error={errors.otherRelevantInformation}
+        />
+
+        <RadioButtons
+          label="Czy uczeń posiada opinię?"
+          name="medicalOpinion"
+          setFieldValue={setFieldValue}
+          error={errors.medicalOpinion}
+        />
+
+        <RadioButtons
+          label="Czy uczeń posiada orzeczenie zdrowotne?"
+          name="healthCertificate"
+          setFieldValue={setFieldValue}
+          error={errors.healthCertificate}
+        />
+      </div>
+      <div className={styles['section-container']}>
+        <h3 className={styles.header3}>Dane rodziców / opiekunów prawnych</h3>
+
+        <Input
+          label="Imiona i nazwisko"
+          name="parentFullName"
+          placeholder="Wpisz imiona i nazwisko rodzica / opiekuna prawnego"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.parentFullName}
+          error={errors.parentFullName}
+        />
+
+        <Input
+          label="Adres zamieszkania"
+          name="parentAddress"
+          placeholder="Wpisz adres zamieszkania rodzica / opiekuna prawnego"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.parentAddress}
+          error={errors.parentAddress}
+        />
+
+        <Input
+          label="Telefon kontaktowy"
+          name="phoneNumber"
+          placeholder="Wpisz numer telefonu rodzica / opiekuna prawnego"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.phoneNumber}
+          error={errors.phoneNumber}
+          type="tel"
+        />
+
+        <Input
+          label="Adres e-mail"
+          name="email"
+          placeholder="Wpisz adres e-mail rodzica / opiekuna prawnego"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.email}
+          error={errors.email}
+          type="email"
+        />
+      </div>
+
+      <div className={styles['section-container']}>
+        <Checkbox name="rulesAccept" handleChange={handleChange}>
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
           <a className="text-[#579CE2]">www.omegaszkola.pl/regulaminy</a>
-        </label>
-      </div>
+        </Checkbox>
 
-      <div className="flex items-start py-3 border-b-[1px] border-b-[#F0F0F0] mb-7">
-        <input
-          type="checkbox"
-          id="rodoAccept"
-          className="my-1 mr-4 w-[20px] h-[20px] block  "
-          name="rodoAccept"
-          onChange={() => setFieldValue('rodoAccept', !values.rodoAccept)}
-          checked={values.rodoAccept}
-        />
-        <label htmlFor="rodoAccept" className="flex-1 text-xs	font-Montserrat">
+        <Checkbox name="rodoAccept" handleChange={handleChange}>
           Wyrażam zgodę na przetwarzanie moich danych osobowych przez xxxxxxxxx z siedzibą we
           xxxxxxx, w celach postępowania rekrutacyjnego do Szkoła Podstawowa i Przedszkole OMEGA
-        </label>
+        </Checkbox>
       </div>
-
-      <button
-        className="w-full h-[50px] bg-[#FAC13C] rounded-full text-white font-bold"
-        onClick={() => handleSubmit()}
-      >
-        Wyślij formularz rekrutacyjny
-      </button>
+      <div className="mt-7">
+        <Button
+          label="Wyślij formularz rekrutacyjny"
+          onClick={() => handleSubmit()}
+          buttonColor="bg-[#FAC13C]"
+          textColor="text-[#ffffff]"
+        />
+      </div>
     </Fragment>
   )
 }

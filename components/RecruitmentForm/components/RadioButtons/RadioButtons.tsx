@@ -1,4 +1,4 @@
-import styles from './Checkbox.module.css'
+import styles from '../FormComponents.module.css'
 
 interface IProps {
   label: string
@@ -7,17 +7,17 @@ interface IProps {
   error?: string
 }
 
-const Checkbox = ({ error, label, setFieldValue, name }: IProps) => {
+const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
   return (
     <>
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
-      <div className="flex justify-around w-full h-[50px] p-3 rounded-3xl mb-7 bg-[#FAFAFA] px-12">
-        <div className="flex items-center">
+      <div className={styles['radio-container']}>
+        <div className={styles['radio-button']}>
           <input
             type="radio"
-            className="mr-2"
+            className={styles.radio}
             name={name}
             id={`${name}1`}
             onChange={() => setFieldValue(name, true)}
@@ -25,10 +25,10 @@ const Checkbox = ({ error, label, setFieldValue, name }: IProps) => {
           <label htmlFor={`${name}1`}>Tak</label>
         </div>
 
-        <div className="flex items-center">
+        <div className={styles['radio-button']}>
           <input
             type="radio"
-            className="mr-2"
+            className={styles.radio}
             name={name}
             id={`${name}2`}
             onChange={() => setFieldValue(name, false)}
@@ -41,4 +41,4 @@ const Checkbox = ({ error, label, setFieldValue, name }: IProps) => {
   )
 }
 
-export default Checkbox
+export default RadioButtons

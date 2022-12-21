@@ -1,7 +1,7 @@
 .navbar {
-  @apply fixed top-0 bg-[#071E4A] w-full h-[60px] flex items-center px-3 py-4 z-[100];
+  @apply fixed top-0 bg-[#071E4A] w-full h-[60px] flex items-center px-3 py-4 z-[100] md:h-[100px] md:px-6;
 }
 
 .logo-container {
-  @apply w-[60px];
+  @apply flex items-center justify-center w-[60px] md:h-full;
 }

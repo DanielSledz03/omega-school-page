@@ -1,5 +1,5 @@
 import { HTMLInputTypeAttribute } from 'react'
-import styles from './Input.module.css'
+import styles from '../FormComponents.module.css'
 
 interface IProps {
   label: string

@@ -1,11 +1,7 @@
-import Image from 'next/image'
 import { Fragment, useRef } from 'react'
-import Navbar from '../components/Navbar/Navbar'
 import RecruitmentForm from '../components/RecruitmentForm/RecruitmentForm'
+import Button from '../components/Button/Button'
 import styles from '../styles/Home.module.css'
-import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
-import EllipsesRight from '../public/assets/EllipsesRight.svg'
-import Footer from '../components/Footer/Footer'
 
 export default function Home() {
   const ref = useRef<HTMLDivElement>(null)
@@ -16,8 +12,7 @@ export default function Home() {
 
   return (
     <Fragment>
-      <Navbar />
-      <main className={styles.main}>
+      <div className={styles.container}>
         <div className={styles['texts-container']}>
           <div>
             <h1 className={styles['header1']}>Zapisz dziecko</h1>
@@ -27,29 +22,13 @@ export default function Home() {
             Wypełnij formularz on-line i zapisz swoje dziecko do naszej szkoły bez wychodzenia z
             domu.
           </p>
-          <button onClick={executeScroll} className={styles['button']}>
-            Wypełnij formularz
-          </button>
+          <Button label="Wypełnij formularz" onClick={executeScroll} />
         </div>
-      </main>
+      </div>
 
-      <div ref={ref} className="w-full flex flex-col py-10 px-5">
-        <div className="w-full flex justify-center relative">
-          <div className="absolute top-[10px] left-[10px]">
-            <Image src={EllipsesLeft} alt="EllipsesLeft" />
-          </div>
-
-          <div className="absolute top-[10px] right-[10px]">
-            <Image src={EllipsesRight} alt="EllipsesRight" />
-          </div>
-
-          <h2 className="text-[#579CE2] font-bold text-3xl w-[150px] text-center	">
-            Rekrutacja on-line
-          </h2>
-        </div>
+      <div ref={ref} className={styles['recruitment-form-container']}>
         <RecruitmentForm />
       </div>
-      <Footer />
     </Fragment>
   )
 }

@@ -1,4 +1,4 @@
-import styles from './Select.module.css'
+import styles from '../FormComponents.module.css'
 
 interface IProps {
   label: string
