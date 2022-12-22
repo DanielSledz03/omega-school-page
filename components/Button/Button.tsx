@@ -6,13 +6,14 @@ interface IButton {
   label: string
   buttonColor?: string
   textColor?: string
+  className?: string
 }
 
-const Button = ({ onClick, label, buttonColor, textColor }: IButton) => {
+const Button = ({ onClick, label, buttonColor, textColor, className }: IButton) => {
   return (
     <button
       onClick={onClick}
-      className={`${buttonColor ? buttonColor : 'bg-white'} ${
+      className={`${className ? className : ''} ${buttonColor ? buttonColor : 'bg-white'} ${
         textColor ? textColor : 'text-[#071E4A]'
       } ${styles['button']}`}
     >

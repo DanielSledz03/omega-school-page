@@ -1,7 +1,15 @@
 .navbar {
-  @apply fixed top-0 bg-[#071E4A] w-full h-[60px] flex items-center px-3 py-4 z-[100] md:h-[100px] md:px-6;
+  @apply fixed top-0 bg-[#071E4A] w-full h-[60px] flex items-center px-3 py-4 z-[100] md:h-[100px] md:px-6 xl:px-[80px] xl:bg-transparent xl:relative xl:h-[130px];
 }
 
 .logo-container {
-  @apply flex items-center justify-center w-[60px] md:h-full;
+  @apply flex items-center justify-center w-[60px] md:h-full xl:w-[100px];
+}
+
+.nav-a {
+  @apply block h-[45px] text-[22px] text-white font-bold py-2;
+}
+
+.nav-contact {
+  @apply block h-[45px] text-[22px] text-[#071E4A] font-bold bg-white px-12 py-2 rounded-full w-[160px];
 }

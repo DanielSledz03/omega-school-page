@@ -20,7 +20,7 @@ export const Textarea = ({
   name,
 }: IProps) => {
   return (
-    <>
+    <div className="xl:w-full">
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
@@ -32,6 +32,6 @@ export const Textarea = ({
         onBlur={handleBlur}
         value={value}
       />
-    </>
+    </div>
   )
 }

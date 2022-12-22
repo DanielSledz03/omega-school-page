@@ -1,21 +1,21 @@
 .container {
-  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-[url(/assets/Bg1.svg)] bg-no-repeat bg-cover bg-left-bottom bg-origin-content md:bg-top xl:bg-[url(/assets/Bg1-desktop.svg)];
+  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-[url(/assets/Bg1.svg)] bg-no-repeat bg-cover bg-left-bottom bg-origin-content md:bg-top xl:bg-[url(/assets/Bg1-desktop.svg)] xl:pt-0 xl:justify-start xl:items-start xl:h-[800px];
 }
 
 .texts-container {
-  @apply w-full pb-7 pl-7 pr-12 flex flex-col justify-around h-[290px] md:w-3/4 md:h-[360px] md:self-start;
+  @apply w-full pb-7 pl-7 pr-12 flex flex-col justify-around h-[290px] md:w-3/4 md:h-[360px] md:self-start xl:self-start xl:w-3/5 xl:px-[160px] xl:h-full xl:justify-center xl:mt-[-100px];
 }
 
 .header1 {
-  @apply text-3xl font-bold	text-white md:text-5xl;
+  @apply text-3xl font-bold	text-white md:text-5xl xl:text-[85px];
 }
 
 .header1-span {
-  @apply text-3xl font-bold text-[#FAC13C] md:text-5xl;
+  @apply text-3xl font-bold text-[#FAC13C] md:text-5xl xl:text-[85px] xl:block xl:mb-5;
 }
 
 .paragraph {
-  @apply text-white font-semibold md:text-xl;
+  @apply text-white font-[400] md:text-xl xl:text-2xl xl:block xl:w-4/6 xl:mb-7;
 }
 
 .texts-container {
@@ -23,8 +23,12 @@
   animation: pulse 0.7s;
 }
 
+.button {
+  @apply w-[340px];
+}
+
 .recruitment-form-container {
-  @apply w-full flex flex-col py-10 px-5;
+  @apply w-full flex flex-col py-10 px-5 xl:px-[80px];
 }
 
 @keyframes pulse {

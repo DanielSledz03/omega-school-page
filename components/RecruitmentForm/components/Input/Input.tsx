@@ -23,7 +23,7 @@ export const Input = ({
   type = 'text',
 }: IProps) => {
   return (
-    <>
+    <div className="flex flex-col w-full xl:w-1/2">
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
@@ -36,6 +36,6 @@ export const Input = ({
         onBlur={handleBlur}
         value={value}
       />
-    </>
+    </div>
   )
 }

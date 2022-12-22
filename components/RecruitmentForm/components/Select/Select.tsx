@@ -22,7 +22,7 @@ export const Select = ({
   placeholder,
 }: IProps) => {
   return (
-    <>
+    <div className="xl:w-1/2">
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
@@ -42,6 +42,6 @@ export const Select = ({
           <option key={item}>{item}</option>
         ))}
       </select>
-    </>
+    </div>
   )
 }

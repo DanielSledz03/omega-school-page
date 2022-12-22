@@ -9,7 +9,7 @@ interface IProps {
 
 const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
   return (
-    <>
+    <div className="xl:w-1/2">
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
@@ -37,7 +37,7 @@ const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
           <label htmlFor={`${name}2`}>Nie</label>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -4,11 +4,11 @@ import Logo from '../../public/assets/logo.svg'
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className="flex h-[100px] border-b-[1px] border-b-[#455677]">
-        <h4 className="block flex-1 mr-4">
+      <div className="flex items-center h-[100px] border-b-[1px] border-b-[#455677]">
+        <h4 className="block flex-1 mr-4 font-bold xl:text-[20px]">
           Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
         </h4>
-        <div className="w-3/12 h-fullflex items-start justify-center	">
+        <div className="w-3/12 h-full xl:w-[100px]	">
           <Image src={Logo} alt="logo" style={{ objectFit: 'contain', width: '100%' }} />
         </div>
       </div>

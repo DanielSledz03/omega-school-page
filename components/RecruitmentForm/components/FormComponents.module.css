@@ -1,5 +1,5 @@
 .label {
-  @apply text-[#4F4F4F] text-sm pl-4 pb-1 font-Montserrat md:text-base;
+  @apply text-[#4F4F4F] text-sm pl-4 pb-1 font-Montserrat md:text-base xl:block xl:w-full;
 }
 
 .label-error {
@@ -8,11 +8,11 @@
 
 .input,
 .textarea {
-  @apply bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-base;
+  @apply bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-base xl:block xl:w-full;
 }
 
 .textarea {
-  @apply min-h-[120px];
+  @apply min-h-[120px] xl:w-full xl:min-h-[150px];
 }
 
 .input-error,
@@ -33,7 +33,7 @@
 }
 
 .select {
-  @apply p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black]  md:text-base;
+  @apply p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black]  md:text-base xl:w-full xl:inline-block;
 }
 
 .select-placeholder {
