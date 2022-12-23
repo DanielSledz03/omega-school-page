@@ -226,16 +226,6 @@ const RecruitmentForm = () => {
           error={errors.districtSchoolData}
         />
 
-        <Textarea
-          label="Inne istotne informacje (np. o występowaniu specyficznych trudności o stanie zdrowia, przebytych chorobach itp.)"
-          name="otherRelevantInformation"
-          placeholder="Wpisz inne informacje o uczniu"
-          handleChange={handleChange}
-          handleBlur={handleBlur}
-          value={values.otherRelevantInformation}
-          error={errors.otherRelevantInformation}
-        />
-
         <RadioButtons
           label="Czy uczeń posiada opinię?"
           name="medicalOpinion"
@@ -248,6 +238,16 @@ const RecruitmentForm = () => {
           name="healthCertificate"
           setFieldValue={setFieldValue}
           error={errors.healthCertificate}
+        />
+
+        <Textarea
+          label="Inne istotne informacje (np. o występowaniu specyficznych trudności o stanie zdrowia, przebytych chorobach itp.)"
+          name="otherRelevantInformation"
+          placeholder="Wpisz inne informacje o uczniu"
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+          value={values.otherRelevantInformation}
+          error={errors.otherRelevantInformation}
         />
       </div>
       <div className={styles['section-container']}>
@@ -296,7 +296,7 @@ const RecruitmentForm = () => {
         />
       </div>
 
-      <div className={styles['section-container']}>
+      <div className={styles['agreements-section-container']}>
         <Checkbox name="rulesAccept" handleChange={handleChange}>
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
@@ -308,12 +308,13 @@ const RecruitmentForm = () => {
           xxxxxxx, w celach postępowania rekrutacyjnego do Szkoła Podstawowa i Przedszkole OMEGA
         </Checkbox>
       </div>
-      <div className="mt-7">
+      <div className="mt-7 py-4 xl:flex xl:justify-center xl:items-center">
         <Button
           label="Wyślij formularz rekrutacyjny"
           onClick={() => handleSubmit()}
           buttonColor="bg-[#FAC13C]"
           textColor="text-[#ffffff]"
+          className={styles['send-button']}
         />
       </div>
     </Fragment>

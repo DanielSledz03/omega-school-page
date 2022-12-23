@@ -22,7 +22,7 @@ export const Select = ({
   placeholder,
 }: IProps) => {
   return (
-    <div className="xl:w-1/2">
+    <div className={styles['select-container']}>
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>

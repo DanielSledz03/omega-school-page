@@ -4,17 +4,17 @@ import Logo from '../../public/assets/logo.svg'
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className="flex items-center h-[100px] border-b-[1px] border-b-[#455677]">
-        <h4 className="block flex-1 mr-4 font-bold xl:text-[20px]">
+      <div className={styles['footer-header-container']}>
+        <h4 className={styles['footer-header-text']}>
           Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
         </h4>
-        <div className="w-3/12 h-full xl:w-[100px]	">
-          <Image src={Logo} alt="logo" style={{ objectFit: 'contain', width: '100%' }} />
+        <div className={styles['footer-logo-container']}>
+          <Image src={Logo} alt="logo" className={styles['footer-logo']} />
         </div>
       </div>
 
-      <div className="flex flex-col my-12 ">
-        <p className="font-bold	">Kontakt</p>
+      <div className={styles['footer-content-box']}>
+        <p className="font-bold">Kontakt</p>
 
         <div className="mt-5">
           <p>40-862 Katowice</p>
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col my-12 ">
+      <div className={styles['footer-content-box']}>
         <p className="font-bold	">Finanse</p>
 
         <div className="mt-5">
@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col my-12 ">
+      <div className={styles['footer-content-box']}>
         <p className="font-bold	">Godziny pracy</p>
 
         <div className="mt-5">
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-col my-12 ">
+      <div className={styles['footer-content-box']}>
         <p className="font-bold	">Świetlica</p>
 
         <div className="mt-5">
@@ -94,12 +94,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-y-[1px] border-y-[#455677] flex flex-col justify-center items-center py-6">
+      <div className={styles['footer-school-name']}>
         <p>© 2022</p>
-        Społeczna Szkoła Podstawowa OMEGA
+        <p>Społeczna Szkoła Podstawowa OMEGA</p>
       </div>
 
-      <div className="flex flex-col justify-center items-center pt-6">
+      <div className={styles['footer-authors-box']}>
         <p>
           Projekt graficzny: <b>DrawnInStars</b>
         </p>

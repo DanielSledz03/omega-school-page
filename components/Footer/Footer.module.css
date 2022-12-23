@@ -1,3 +1,39 @@
 .footer {
-  @apply w-full bg-[#071E4A] py-7 px-5 text-white xl:px-[80px];
+  @apply w-full bg-[#071E4A] py-7 px-5 text-white xl:px-[80px] xl:flex xl:flex-wrap;
+}
+
+.footer-header-container {
+  @apply flex items-center h-[100px] border-b-[1px] border-b-[#455677] xl:w-full;
+}
+
+.footer-header-text {
+  @apply block flex-1 mr-4 font-bold xl:text-[20px];
+}
+
+.footer-logo-container {
+  @apply w-3/12 h-full xl:w-[100px];
+}
+
+.footer-logo {
+  @apply h-full object-contain md:w-full md:h-3/4 xl:w-full xl:h-auto;
+}
+
+.footer-content-box {
+  @apply flex flex-col my-12 xl:w-1/4;
+}
+
+.footer-school-name {
+  @apply border-y-[1px] border-y-[#455677] flex flex-col justify-center items-center py-6 xl:w-1/2 xl:border-b-[0px] xl:border-t-[1px] xl:border-t-[#455677] xl:flex-row xl:justify-start;
+}
+
+.footer-school-name p {
+  @apply xl:pr-2;
+}
+
+.footer-authors-box {
+  @apply flex flex-col justify-center items-center pt-6 xl:w-1/2 xl:flex-row xl:justify-end xl:border-t-[1px] xl:border-t-[#455677];
+}
+
+.footer-authors-box p {
+  @apply xl:pl-6;
 }

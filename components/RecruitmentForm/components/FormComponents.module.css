@@ -8,7 +8,11 @@
 
 .input,
 .textarea {
-  @apply bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-base xl:block xl:w-full;
+  @apply w-full bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-base;
+}
+
+.input-container {
+  @apply flex flex-col w-full;
 }
 
 .textarea {
@@ -33,7 +37,7 @@
 }
 
 .select {
-  @apply p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black]  md:text-base xl:w-full xl:inline-block;
+  @apply w-full p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black] md:text-base;
 }
 
 .select-placeholder {
@@ -50,4 +54,12 @@
 
 .checkbox {
   @apply my-1 mr-4 w-[20px] h-[20px] block;
+}
+
+@media only screen and (min-width: 1280px) {
+  .input-container,
+  .select-container,
+  .radio-buttons-box {
+    width: 45%;
+  }
 }

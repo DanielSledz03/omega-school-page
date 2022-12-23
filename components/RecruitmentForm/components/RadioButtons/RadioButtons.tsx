@@ -9,7 +9,7 @@ interface IProps {
 
 const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
   return (
-    <div className="xl:w-1/2">
+    <div className={styles['radio-buttons-box']}>
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
