@@ -7,15 +7,20 @@
 }
 
 .header1 {
-  @apply text-3xl font-bold	text-white md:text-5xl xl:text-[75px] 2xl:text-[85px];
+  @apply text-3xl font-black	text-white md:text-5xl xl:text-[75px] 2xl:text-[85px];
 }
 
 .header1-span {
-  @apply text-3xl font-bold text-[#FAC13C] md:text-5xl xl:text-[75px] 2xl:text-[85px] xl:block xl:mb-5;
+  @apply text-3xl font-black text-[#FAC13C] md:text-5xl xl:text-[75px] 2xl:text-[85px] xl:block xl:mb-5;
 }
 
 .paragraph {
   @apply text-white font-[400] md:text-xl xl:text-2xl xl:block xl:w-4/6 xl:mb-7;
+}
+
+.header1,
+.header1-span {
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .texts-container {
@@ -28,7 +33,7 @@
 }
 
 .recruitment-form-container {
-  @apply w-full flex flex-col py-10 px-5 xl:px-[80px];
+  @apply w-full flex flex-col py-10 px-5 xl:px-[160px];
 }
 
 @keyframes pulse {
