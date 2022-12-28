@@ -300,7 +300,10 @@ const RecruitmentForm = () => {
         <Checkbox name="rulesAccept" handleChange={handleChange}>
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
-          <a className="text-[#579CE2]">www.omegaszkola.pl/regulaminy</a>
+          <a className="text-[#579CE2]">
+            www.omegaszkola.pl/ <br />
+            regulaminy
+          </a>
         </Checkbox>
 
         <Checkbox name="rodoAccept" handleChange={handleChange}>

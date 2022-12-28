@@ -3,14 +3,14 @@ import type { AppProps } from 'next/app'
 
 import localFont from '@next/font/local'
 import Layout from './layout'
-const myFont = localFont({ src: '../public/fonts/NeuzeitGroteskRegular.otf' })
+const NeuzeitGrotesk = localFont({ src: '../public/fonts/NeuzeitGroteskRegular.otf' })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <main className={myFont.className}>
+      <div className={NeuzeitGrotesk.className}>
         <Component {...pageProps} />
-      </main>
+      </div>
     </Layout>
   )
 }

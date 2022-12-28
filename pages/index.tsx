@@ -8,13 +8,14 @@ export default function Home() {
   const ref = useRef<HTMLDivElement>(null)
   const executeScroll = () => {
     if (ref?.current?.offsetTop)
-      window.scroll({ top: ref?.current?.offsetTop - 60, left: 0, behavior: 'smooth' })
+      window.scroll({ top: ref?.current?.offsetTop, left: 0, behavior: 'smooth' })
   }
 
   return (
     <Fragment>
       <div className={styles.container}>
         <Navbar />
+
         <div className={styles['texts-container']}>
           <div>
             <h1 className={styles['header1']}>Zapisz dziecko</h1>

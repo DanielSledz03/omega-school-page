@@ -7,11 +7,11 @@
 }
 
 .header2 {
-  @apply text-[#579CE2] font-bold text-center text-3xl py-2 w-[150px] xl:text-5xl xl:w-auto;
+  @apply text-[#579CE2] font-bold text-center text-3xl py-2 w-[150px] md:text-4xl  md:w-auto  xl:text-5xl;
 }
 
 .header3 {
-  @apply text-[#579CE2] font-bold text-center text-2xl py-10 xl:text-left xl:text-4xl xl:block xl:w-full;
+  @apply text-[#579CE2] font-bold text-center text-2xl py-10 md:text-3xl xl:text-left xl:text-4xl xl:block xl:w-full;
 }
 
 .ellipses-left {
@@ -29,5 +29,19 @@
 @media only screen and (min-width: 1280px) {
   .send-button {
     width: 350px !important;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .ellipses-left {
+    @apply top-[10px] left-0;
+  }
+
+  .ellipses-right {
+    @apply top-[10px] right-0;
+  }
+
+  .send-button {
+    @apply text-[18px];
   }
 }

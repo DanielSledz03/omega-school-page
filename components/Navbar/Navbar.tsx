@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles['logo-container']}>
-        <Image style={{ width: '100%' }} src={Logo} alt="Logo" />
+        <Image className={styles.logo} src={Logo} alt="Logo" />
       </div>
 
       <div className="flex flex-1 hidden xl:flex ">

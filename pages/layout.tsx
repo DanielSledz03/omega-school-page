@@ -10,10 +10,10 @@ interface ILayout {
 export default function Layout({ children }: ILayout) {
   const { width } = useWindowDimensions()
   return (
-    <div className="max-w-[1920px] mx-auto">
+    <>
       {width && width < 1280 && <Navbar />}
-      <main>{children}</main>
+      <>{children}</>
       <Footer />
-    </div>
+    </>
   )
 }

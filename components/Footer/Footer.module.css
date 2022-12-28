@@ -3,11 +3,11 @@
 }
 
 .footer-header-container {
-  @apply flex items-center h-[100px] border-b-[1px] border-b-[#455677] xl:w-full;
+  @apply flex pb-5 items-center h-[100px] border-b-[1px] border-b-[#455677] xl:w-full;
 }
 
 .footer-header-text {
-  @apply block flex-1 mr-4 font-bold xl:text-[20px];
+  @apply block flex-1 mr-4 font-bold md:text-[18px] xl:text-[20px];
 }
 
 .footer-logo-container {
@@ -22,12 +22,16 @@
   @apply flex flex-col my-12 xl:w-1/4;
 }
 
+.footer-content-box p {
+  @apply md:text-[18px];
+}
+
 .footer-school-name {
   @apply border-y-[1px] border-y-[#455677] flex flex-col justify-center items-center py-6 xl:w-1/2 xl:border-b-[0px] xl:border-t-[1px] xl:border-t-[#455677] xl:flex-row xl:justify-start;
 }
 
 .footer-school-name p {
-  @apply xl:pr-2;
+  @apply md:text-[18px]  xl:pr-2;
 }
 
 .footer-authors-box {
@@ -35,5 +39,15 @@
 }
 
 .footer-authors-box p {
-  @apply xl:pl-6;
+  @apply md:text-[18px]  xl:pl-6;
+}
+
+@media only screen and (max-width: 280px) {
+  .footer-header-text {
+    @apply text-[12px];
+  }
+
+  .footer-school-name p {
+    @apply text-center;
+  }
 }
