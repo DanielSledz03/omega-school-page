@@ -3,19 +3,27 @@ import RecruitmentForm from '../components/RecruitmentForm/RecruitmentForm'
 import Button from '../components/Button/Button'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar/Navbar'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 export default function Home() {
   const ref = useRef<HTMLDivElement>(null)
+  const { width } = useWindowDimensions()
+
   const executeScroll = () => {
     if (ref?.current?.offsetTop)
-      window.scroll({ top: ref?.current?.offsetTop, left: 0, behavior: 'smooth' })
+      window.scroll({
+        top:
+          ref?.current?.offsetTop! -
+          (width && width > 1280 ? 0 : width && (width < 768 ? 60 : 100))!,
+        left: 0,
+        behavior: 'smooth',
+      })
   }
 
   return (
     <Fragment>
       <div className={styles.container}>
         <Navbar />
-
         <div className={styles['texts-container']}>
           <div>
             <h1 className={styles['header1']}>Zapisz dziecko</h1>
@@ -28,7 +36,6 @@ export default function Home() {
           <Button label="Wypełnij formularz" onClick={executeScroll} className={styles['button']} />
         </div>
       </div>
-
       <div ref={ref} className={styles['recruitment-form-container']}>
         <RecruitmentForm />
       </div>

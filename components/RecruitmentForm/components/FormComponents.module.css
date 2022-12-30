@@ -1,5 +1,5 @@
 .label {
-  @apply text-[#4F4F4F] text-sm pl-4 pb-1 font-Montserrat md:pb-2 md:text-xl xl:block xl:w-full;
+  @apply text-[#4F4F4F] text-sm pl-4 block pb-1 font-Montserrat md:pb-2 md:text-xl xl:block xl:w-full xl:text-base;
 }
 
 .label-error {
@@ -8,7 +8,7 @@
 
 .input,
 .textarea {
-  @apply w-full bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-xl;
+  @apply w-full bg-[#FAFAFA] text-sm p-3 h-[50px] rounded-3xl mb-7 font-Montserrat md:text-xl xl:text-base;
 }
 
 .input-container {
@@ -25,7 +25,7 @@
 }
 
 .radio-container {
-  @apply flex justify-around w-full h-[50px] p-3 rounded-3xl mb-7 bg-[#FAFAFA] px-12 md:text-xl;
+  @apply flex justify-around w-full h-[50px] p-3 rounded-3xl mb-7 bg-[#FAFAFA] px-12 md:text-xl xl:text-base;
 }
 
 .radio-button {
@@ -33,23 +33,23 @@
 }
 
 .radio {
-  @apply mr-2 w-[30px] h-[30px];
+  @apply mr-2 w-[25px] h-[25px];
 }
 
 .select {
-  @apply w-full p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black] md:text-xl;
+  @apply w-full block p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black] md:text-xl xl:text-base;
 }
 
 .select-placeholder {
-  @apply text-[#C9C9C9] md:text-xl;
+  @apply text-[#C9C9C9] md:text-xl xl:text-base;
 }
 
 .checkbox-container {
-  @apply w-full flex mb-4 mt-3;
+  @apply w-full flex mb-4 mt-3 items-center justify-center 2xl:w-3/5;
 }
 
 .checkbox-container .label {
-  @apply flex-1 pl-0;
+  @apply flex-1 pl-0 pb-0 xl:text-sm block;
 }
 
 .checkbox {

@@ -14,6 +14,7 @@ import Button from '../Button/Button'
 import Image from 'next/image'
 import EllipsesLeft from '../../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../../public/assets/EllipsesRight.svg'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 const StudentInitialValues: StudentData = {
   fullName: '',
@@ -56,6 +57,7 @@ const REQUIRED_FIELDS = [
 ]
 
 const RecruitmentForm = () => {
+  const { width } = useWindowDimensions()
   const {
     handleChange,
     values,
@@ -74,7 +76,7 @@ const RecruitmentForm = () => {
       ...ParentsInitialValues,
     },
 
-    validationSchema: Yup.object().shape({
+    validationSchema: Yup.object({
       fullName: Yup.string().min(1),
       peselOrPassportNumber: Yup.string().min(1),
       dateAndPlaceOfBirth: Yup.string().min(1),
@@ -89,34 +91,26 @@ const RecruitmentForm = () => {
 
     onSubmit: (values) => {
       validateForm()
+      // fetch('/api/contact', {
+      //   method: 'POST',
+      //   headers: {
+      //     Accept: 'application/json, text/plain, */*',
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(values),
+      // })
+      //   .then((res) => {
+      //     console.log('Response received')
 
-      let isValidate = true
-      const obj: any = values
-
-      Object.keys(values).forEach((item: any) => {
-        if (obj[item].length <= 0 && REQUIRED_FIELDS.includes(item)) {
-          setFieldError(item, 'error')
-          isValidate = false
-        }
-      })
-
-      if (values.schoolYear === GeneralDataInitialValues.schoolYear) {
-        setFieldError('schoolYear', 'error')
-        isValidate = false
-      }
-
-      if (values.class === GeneralDataInitialValues.class) {
-        setFieldError('class', 'error')
-        isValidate = false
-      }
-
-      if (isValidate) {
-        alert('Wysłano!')
-      }
+      //     if (res.status === 200) {
+      //       console.log('Response succeeded!')
+      //     }
+      //   })
+      // .catch((err) => console.log(err))
     },
   })
 
-  console.log(values)
+  console.log(errors)
 
   return (
     <Fragment>
@@ -301,7 +295,7 @@ const RecruitmentForm = () => {
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
           <a className="text-[#579CE2]">
-            www.omegaszkola.pl/ <br />
+            www.omegaszkola.pl/{width! < 568 && <br />}
             regulaminy
           </a>
         </Checkbox>

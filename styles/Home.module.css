@@ -3,7 +3,7 @@
 }
 
 .texts-container {
-  @apply w-full pb-7 pl-7 pr-12 flex flex-col justify-around h-[290px] md:w-3/4 md:h-[500px] md:self-start xl:self-start xl:w-3/5 xl:px-[120px]  xl:h-full xl:justify-center xl:mt-[-100px] 2xl:px-[160px];
+  @apply w-full pb-7 pl-7 pr-12 flex flex-col justify-around items-start h-[290px] md:w-3/4 md:h-[500px] md:self-start xl:self-start xl:w-3/5 xl:px-[120px]  xl:h-full xl:justify-center xl:mt-[-100px] 2xl:px-[160px];
 }
 
 .header1 {
@@ -26,10 +26,6 @@
 .texts-container {
   transition: 0.7s;
   animation: pulse 0.7s;
-}
-
-.button {
-  @apply w-full;
 }
 
 .recruitment-form-container {

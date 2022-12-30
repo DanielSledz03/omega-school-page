@@ -1,6 +1,7 @@
 import { MouseEventHandler } from 'react'
 import styles from './Button.module.css'
-
+import Arrow from '../../public/assets/rightArrow.svg'
+import Image from 'next/image'
 interface IButton {
   onClick: MouseEventHandler<HTMLButtonElement>
   label: string
@@ -18,6 +19,10 @@ const Button = ({ onClick, label, buttonColor, textColor, className }: IButton) 
       } ${styles['button']}`}
     >
       {label}
+
+      <div className={styles.arrow}>
+        <Image src={Arrow} alt="s" style={{ height: '100%', objectFit: 'contain' }} />
+      </div>
     </button>
   )
 }

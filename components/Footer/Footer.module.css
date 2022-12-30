@@ -7,7 +7,7 @@
 }
 
 .footer-header-text {
-  @apply block flex-1 mr-4 font-bold md:text-[18px] xl:text-[20px];
+  @apply block flex-1 mr-4 font-bold md:text-[24px] xl:text-[20px];
 }
 
 .footer-logo-container {
@@ -23,7 +23,7 @@
 }
 
 .footer-content-box p {
-  @apply md:text-[18px];
+  @apply md:text-[20px] xl:text-[18px] 2xl:text-[16px];
 }
 
 .footer-school-name {
@@ -31,7 +31,7 @@
 }
 
 .footer-school-name p {
-  @apply md:text-[18px]  xl:pr-2;
+  @apply md:text-[20px] xl:pr-2 2xl:text-[14px];
 }
 
 .footer-authors-box {
@@ -39,7 +39,7 @@
 }
 
 .footer-authors-box p {
-  @apply md:text-[18px]  xl:pl-6;
+  @apply md:text-[20px] xl:pl-6 2xl:text-[14px];
 }
 
 @media only screen and (max-width: 280px) {

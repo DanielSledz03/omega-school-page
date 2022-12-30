@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         bg1Mobile: "url('/assets/Bg1.svg)",
       },
+      screens: {
+        '3xl': '1920px',
+      },
 
       fontFamily: {
         NeuzeitGrotesk: ['NeuzeitGrotesk'],
