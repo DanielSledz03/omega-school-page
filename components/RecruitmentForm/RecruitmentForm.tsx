@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { useFormik } from 'formik'
 import { Input } from './components/Input/Input'
 import { StudentData } from '../../types/student-data.type'
@@ -36,8 +36,8 @@ const ParentsInitialValues: ParentsData = {
 }
 
 const GeneralDataInitialValues: GeneralData = {
-  schoolYear: 'Wybierz rok szkolny',
-  class: 'Wybierz klasę',
+  schoolYear: '',
+  class: '',
 }
 
 const RulesAndRODO = {
@@ -68,6 +68,8 @@ const RecruitmentForm = () => {
     handleSubmit,
     setFieldError,
     validateForm,
+    validateOnBlur,
+    validateOnChange,
   } = useFormik({
     initialValues: {
       ...StudentInitialValues,
@@ -77,16 +79,18 @@ const RecruitmentForm = () => {
     },
 
     validationSchema: Yup.object({
-      fullName: Yup.string().min(1),
-      peselOrPassportNumber: Yup.string().min(1),
-      dateAndPlaceOfBirth: Yup.string().min(1),
-      address: Yup.string().min(1),
-      parentFullName: Yup.string().min(1),
-      parentAddress: Yup.string().min(1),
-      email: Yup.string().email(),
-      phoneNumber: Yup.string().min(1),
-      // rulesAccept: Yup.boolean().isTrue(),
-      // rodoAccept: Yup.boolean().isTrue(),
+      schoolYear: Yup.string().required().notOneOf(['Wybierz rok szkolny']),
+      class: Yup.string().required().notOneOf(['Wybierz klasę']),
+      fullName: Yup.string().required(),
+      peselOrPassportNumber: Yup.string().required(),
+      dateAndPlaceOfBirth: Yup.string().required(),
+      address: Yup.string().required(),
+      parentFullName: Yup.string().required(),
+      parentAddress: Yup.string().required(),
+      email: Yup.string().email().required(),
+      phoneNumber: Yup.string().required(),
+      rulesAccept: Yup.boolean().isTrue(),
+      rodoAccept: Yup.boolean().isTrue(),
     }),
 
     onSubmit: (values) => {
@@ -101,7 +105,6 @@ const RecruitmentForm = () => {
       // })
       //   .then((res) => {
       //     console.log('Response received')
-
       //     if (res.status === 200) {
       //       console.log('Response succeeded!')
       //     }
@@ -110,7 +113,7 @@ const RecruitmentForm = () => {
     },
   })
 
-  console.log(errors)
+  console.log(values)
 
   return (
     <Fragment>
@@ -146,9 +149,9 @@ const RecruitmentForm = () => {
             'Liceum - klasa 4',
           ]}
           handleChange={handleChange}
-          handleBlur={handleBlur}
+          handleBlur={() => null}
           name="class"
-          error={errors.class}
+          error={touched.class ? errors.class : ''}
         />
 
         <Select
@@ -159,7 +162,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           name="schoolYear"
-          error={errors.schoolYear}
+          error={touched.schoolYear ? errors.schoolYear : ''}
         />
       </div>
 
@@ -181,7 +184,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           value={values.peselOrPassportNumber}
           handleBlur={handleBlur}
-          error={errors.peselOrPassportNumber}
+          error={touched.peselOrPassportNumber ? errors.peselOrPassportNumber : ''}
         />
         <Input
           label="Data i miejsce urodzenia*"
@@ -190,7 +193,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.dateAndPlaceOfBirth}
-          error={errors.dateAndPlaceOfBirth}
+          error={touched.dateAndPlaceOfBirth ? errors.dateAndPlaceOfBirth : ''}
         />
         <Input
           label="Adres zamieszkania*"
@@ -199,7 +202,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.address}
-          error={errors.address}
+          error={touched.address ? errors.address : ''}
         />
         <Input
           label="Adres zameldowania (jeśli jest inny niż zamieszkania)"
@@ -208,7 +211,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.registeredAddress}
-          error={errors.registeredAddress}
+          error={touched.registeredAddress ? errors.registeredAddress : ''}
         />
         <Input
           label="Nazwa i adres szkoły obwodowej"
@@ -217,21 +220,21 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.districtSchoolData}
-          error={errors.districtSchoolData}
+          error={touched.districtSchoolData ? errors.districtSchoolData : ''}
         />
 
         <RadioButtons
           label="Czy uczeń posiada opinię?"
           name="medicalOpinion"
           setFieldValue={setFieldValue}
-          error={errors.medicalOpinion}
+          error={touched.medicalOpinion ? errors.medicalOpinion : ''}
         />
 
         <RadioButtons
           label="Czy uczeń posiada orzeczenie zdrowotne?"
           name="healthCertificate"
           setFieldValue={setFieldValue}
-          error={errors.healthCertificate}
+          error={touched.healthCertificate ? errors.healthCertificate : ''}
         />
 
         <Textarea
@@ -241,7 +244,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.otherRelevantInformation}
-          error={errors.otherRelevantInformation}
+          error={touched.otherRelevantInformation ? errors.otherRelevantInformation : ''}
         />
       </div>
       <div className={styles['section-container']}>
@@ -254,7 +257,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.parentFullName}
-          error={errors.parentFullName}
+          error={touched.parentFullName ? errors.parentFullName : ''}
         />
 
         <Input
@@ -264,7 +267,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.parentAddress}
-          error={errors.parentAddress}
+          error={touched.parentAddress ? errors.parentAddress : ''}
         />
 
         <Input
@@ -274,7 +277,7 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.phoneNumber}
-          error={errors.phoneNumber}
+          error={touched.phoneNumber ? errors.phoneNumber : ''}
           type="tel"
         />
 
@@ -285,22 +288,32 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.email}
-          error={errors.email}
+          error={touched.email ? errors.email : ''}
           type="email"
         />
       </div>
 
       <div className={styles['agreements-section-container']}>
-        <Checkbox name="rulesAccept" handleChange={handleChange}>
+        <Checkbox
+          name="rulesAccept"
+          value={values.rulesAccept}
+          error={touched.rulesAccept ? errors.rulesAccept : ''}
+          setFieldValue={setFieldValue}
+        >
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
-          <a className="text-[#579CE2]">
+          <a className={`${errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'} `}>
             www.omegaszkola.pl/{width! < 568 && <br />}
             regulaminy
           </a>
         </Checkbox>
 
-        <Checkbox name="rodoAccept" handleChange={handleChange}>
+        <Checkbox
+          name="rodoAccept"
+          value={values.rodoAccept}
+          setFieldValue={setFieldValue}
+          error={touched.rodoAccept ? errors.rodoAccept : ''}
+        >
           Wyrażam zgodę na przetwarzanie moich danych osobowych przez xxxxxxxxx z siedzibą we
           xxxxxxx, w celach postępowania rekrutacyjnego do Szkoła Podstawowa i Przedszkole OMEGA
         </Checkbox>

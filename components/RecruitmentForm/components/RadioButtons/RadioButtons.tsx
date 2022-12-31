@@ -32,7 +32,6 @@ const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
             name={name}
             id={`${name}2`}
             onChange={() => setFieldValue(name, false)}
-            defaultChecked
           />
           <label htmlFor={`${name}2`}>Nie</label>
         </div>

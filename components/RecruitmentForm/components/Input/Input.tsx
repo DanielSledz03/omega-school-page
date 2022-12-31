@@ -25,7 +25,7 @@ export const Input = ({
   return (
     <div className={styles['input-container']}>
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
-        {label}
+        {label} {error && '- pole obowiązkowe'}
       </label>
       <input
         type={type}

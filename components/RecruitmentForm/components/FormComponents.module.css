@@ -40,20 +40,34 @@
   @apply w-full block p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black] md:text-xl xl:text-base;
 }
 
+.select-error {
+  border: 1px solid red;
+}
+
 .select-placeholder {
   @apply text-[#C9C9C9] md:text-xl xl:text-base;
 }
 
 .checkbox-container {
-  @apply w-full flex mb-4 mt-3 items-center justify-center 2xl:w-3/5;
+  @apply w-full flex mb-4 mt-3 justify-center 2xl:w-3/5;
 }
 
 .checkbox-container .label {
   @apply flex-1 pl-0 pb-0 xl:text-sm block;
 }
 
+.checkbox-checkmark {
+  @apply w-full h-full bg-[#579CE2] rounded-full;
+}
+
 .checkbox {
-  @apply my-1 mr-4 w-[20px] h-[20px] block;
+  @apply w-[25px] h-[25px] rounded-full p-1 mr-4;
+  border: 2px solid #968c8c63;
+  backdrop-filter: blur(4px);
+}
+
+.checkbox-error {
+  border: 2px solid red;
 }
 
 @media only screen and (min-width: 1280px) {
