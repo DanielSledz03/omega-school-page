@@ -22,7 +22,7 @@ const Checkbox = ({ error, children, value, name, setFieldValue }: IProps) => {
         htmlFor={name}
         className={`${error && error?.length > 0 ? styles['label-error'] : ''} ${styles.label}`}
       >
-        {children}
+        <p onClick={() => setFieldValue(name, !value)}>{children}</p>
       </label>
     </div>
   )

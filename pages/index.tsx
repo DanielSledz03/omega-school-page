@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar/Navbar'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 
+import ArrowBlue from '../public/assets/rightDarkBlueArrow.svg'
+
 export default function Home() {
   const ref = useRef<HTMLDivElement>(null)
   const { width } = useWindowDimensions()
@@ -33,7 +35,12 @@ export default function Home() {
             Wypełnij formularz on-line i zapisz swoje dziecko do naszej szkoły bez wychodzenia z
             domu.
           </p>
-          <Button label="Wypełnij formularz" onClick={executeScroll} className={styles['button']} />
+          <Button
+            label="Wypełnij formularz"
+            onClick={executeScroll}
+            className={styles['button']}
+            arrowSrc={ArrowBlue}
+          />
         </div>
       </div>
       <div ref={ref} className={styles['recruitment-form-container']}>
