@@ -250,8 +250,7 @@ export default async (req: any, res: any) => {
       }
       console.log('Message sent: %s', info.messageId)
       resole('Message send successfully')
+      res.status(200)
     })
   })
-
-  res.status(200)
 }
