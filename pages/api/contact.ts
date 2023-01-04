@@ -2,15 +2,14 @@
 export default async (req: any, res: any) => {
   require('dotenv').config({ path: `${__dirname}/../../.env` })
 
-  var nodemailer = require('nodemailer')
-  var transport = nodemailer.createTransport({
+  const nodemailer = require('nodemailer')
+  const transport = nodemailer.createTransport({
     port: 465,
     host: 'smtp.gmail.com',
     auth: {
       user: 'sledziuxjp@gmail.com',
       pass: 'ivvhegypkwmixavm',
     },
-    secure: true,
   })
 
   const values = req.body
@@ -28,7 +27,7 @@ export default async (req: any, res: any) => {
     })
   })
 
-  var mailToSchool = {
+  const mailToSchool = {
     from: values.email,
     to: 'danielsledz2003@gmail.com',
     subject: 'Formularz rekrutacyjny ' + values.class,
@@ -65,7 +64,7 @@ export default async (req: any, res: any) => {
     }</td> </tr> </table> </div>`,
   }
 
-  var mailToParent = {
+  const mailToParent = {
     from: 'Szkoła Omega',
     to: values.email,
     subject: 'Potwierdzenie wysłania formularza rekrutacyjnego ' + values.fullName,
@@ -216,22 +215,22 @@ export default async (req: any, res: any) => {
     attachments: [
       {
         filename: 'logo.png',
-        path: process.cwd() + '/public/email_template/logo.png',
+        path: '/public/email_template/logo.png',
         cid: 'logo@kreata.ee', //my mistake was putting "cid:logo@cid" here!
       },
       {
         filename: 'thanks.png',
-        path: process.cwd() + '/public/email_template/thanks.png',
+        path: '/public/email_template/thanks.png',
         cid: 'thanks@kreata.ee', //my mistake was putting "cid:logo@cid" here!
       },
       {
         filename: 'ytIcon.png',
-        path: process.cwd() + '/public/email_template/ytIcon.png',
+        path: '/public/email_template/ytIcon.png',
         cid: 'ytIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
       },
       {
         filename: 'fbIcon.png',
-        path: process.cwd() + '/public/email_template/fbIcon.png',
+        path: '/public/email_template/fbIcon.png',
         cid: 'fbIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
       },
     ],
