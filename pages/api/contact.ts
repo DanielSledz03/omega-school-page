@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-export default function (req: any, res: any) {
+export default async (req: any, res: any) => {
   require('dotenv').config({ path: `${__dirname}/../../.env` })
 
   var nodemailer = require('nodemailer')
@@ -14,7 +14,18 @@ export default function (req: any, res: any) {
 
   const values = req.body
 
-  console.log(values.class)
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transport.verify(function (error: any, success: any) {
+      if (error) {
+        console.log(error)
+        reject(error)
+      } else {
+        console.log('Server is ready to take our messages')
+        resolve(success)
+      }
+    })
+  })
 
   var mailToSchool = {
     from: values.email,
@@ -230,11 +241,15 @@ export default function (req: any, res: any) {
   //   }
   //   console.log('Message sent: %s', info.messageId)
   // })
-  transport.sendMail(mailToParent, (error: any, info: any) => {
-    if (error) {
-      return console.log(error)
-    }
-    console.log('Message sent: %s', info.messageId)
+
+  await new Promise((resole, reject) => {
+    transport.sendMail(mailToParent, (error: any, info: any) => {
+      if (error) {
+        return console.log(error)
+      }
+      console.log('Message sent: %s', info.messageId)
+    })
   })
+
   res.status(200)
 }
