@@ -3,7 +3,7 @@
 }
 
 .header2-container {
-  @apply w-full flex justify-center relative xl:w-1/2 xl:self-center xl:my-10 2xl:w-2/5 3xl:w-2/6;
+  @apply w-full flex justify-center relative xl:w-1/2 xl:self-center xl:my-10 2xl:w-2/5 3xl:w-2/5;
 }
 
 .header2 {

@@ -31,7 +31,7 @@
 }
 
 .footer-school-name p {
-  @apply md:text-[20px] xl:pr-2 2xl:text-[14px];
+  @apply md:text-[20px] xl:pr-2 xl:text-[14px];
 }
 
 .footer-authors-box {
@@ -39,7 +39,7 @@
 }
 
 .footer-authors-box p {
-  @apply md:text-[20px] xl:pl-6 2xl:text-[14px];
+  @apply md:text-[20px] xl:pl-6 xl:text-[14px];
 }
 
 @media only screen and (max-width: 280px) {

@@ -58,137 +58,178 @@ export default function (req: any, res: any) {
     to: values.email,
     subject: 'Potwierdzenie wysłania formularza rekrutacyjnego ' + values.fullName,
     html: ` 
-    <div
-    style="
-      display: block;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: Arial;
-    "
-  >
-    <table style="width: 100%">
-      <tr
-        style="
-          width: 100%;
-          height: 120px;
-          background-color: #071e4a;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-around;
-          padding-top: 10px;
-        "
-      >
-        <th style="height: 50%; object-fit: contain">
-          <img
-            src="https://omega-school.vercel.app/_next/static/media/logo.210d059f.svg"
-            style="height: 100%"
-          />
-        </th>
-        <th>
-          <p style="color: white; font-weight: 700">
-            Społeczna Szkoła Podstawowa - OMEGA w Katowicach
-          </p>
-        </th>
-      </tr>
-    </table>
-    <table style="width: 100%">
-      <tr
-        style="
-          display: flex;
-          flex-direction: column;
-          background: #071e4a;
-          width: 100%;
-          padding: 10px;
-          margin-left: auto;
-          margin-right: auto;
-        "
-      >
-        <td style="width: 100%; display: flex">
-          <p style="color: white; font-weight: 700; font-size: 14px; width: 50%">
-            Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
-          </p>
-          <div style="width: 50%; display: flex; justify-content: end; align-items: center">
-            <a style="margin: 0 10px"
-              ><img
-                src="https://omega-school.vercel.app/_next/static/media/YoutubeIcon.3bbdca57.svg"
-            /></a>
-            <a
-              ><img
-                src="https://omega-school.vercel.app/_next/static/media/FacebookIcon.e220430f.svg"
-            /></a>
-          </div>
+    <!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title></title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style>
+      table,
+      td,
+      div,
+      h1,
+      p {
+        font-family: Arial, sans-serif;
+      }
+      table,
+      td {
+        border: 0 solid #000000 !important;
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <table
+      role="presentation"
+      style="
+        width: 600px;
+        border-collapse: collapse;
+        border: 0;
+        border-spacing: 0;
+        background: #ffffff;
+        margin-left: auto;
+        margin-right: auto;
+      "
+    >
+      <tr>
+        <td style="padding: 20px 0 20px 0; background: #071e4a" align="center">
+          <img src="cid:logo@kreata.ee" alt="" width="115" style="height: auto; display: block" />
+
+          <h2 style="color: white; font-weight: 800; font-size: 16px">
+            Społeczna Szkoła Podstawowa Omega w Katowicach
+          </h2>
         </td>
-        <td
-          style="
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            margin-top: 20px;
-            color: white;
-          "
-        >
-          <span style="font-weight: 700">Kontakt</span>
-          <p style="font-weight: 400; font-size: 14px">
+      </tr>
+      <tr>
+        <td style="padding: 20px 20px" align="center">
+          <img src="cid:thanks@kreata.ee" alt="" width="540" style="height: auto; display: block" />
+          <p
+            style="display: block; color: #071e4a; width: 490px; text-align: left; padding: 15px 0"
+          >
+            <span style="font-weight: 800"
+              >Z przyjemnością informujemy, że Twoje zgłoszenie trafiło do naszej skrzynki.</span
+            >
+            W najbliższym czasie skontaktuje się z Tobą pracownik naszej szkoły, aby omówić
+            szczegóły rekrutacji.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 20px; background: #071e4a" align="left">
+          <table
+            role="presentation"
+            style="
+              width: 100%;
+              border-collapse: collapse;
+              border: 0;
+              border-spacing: 0;
+              height: 50px;
+              margin-bottom: 25px;
+            "
+          >
+            <tr>
+              <td style="width: 50%; padding: 0; vertical-align: top">
+                <h4 style="display: block; width: 280px; color: white ;">
+                  Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
+                </h4>
+              </td>
+              <td
+                style="
+                  width: 50%;
+                  padding: 0;
+                  vertical-align: center;
+                  horizontal-align: center;
+                  text-align: end;
+                "
+              >
+                <a
+                  href="https://www.youtube.com/channel/UCQn_lSAlyQnH3CpkMIiLy-g"
+                  style="display: inline-block; margin-right: 10px"
+                >
+                  <img
+                    src="cid:ytIcon@kreata.ee"
+                    alt=""
+                    width="30"
+                    style="height: auto; display: block"
+                  />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/zespolszkolomega"
+                  style="display: inline-block; margin-right: 10px"
+                >
+                  <img
+                    src="cid:fbIcon@kreata.ee"
+                    alt=""
+                    width="30"
+                    style="height: auto; display: block"
+                  />
+                </a>
+              </td>
+            </tr>
+          </table>
+          <p style="display: block; color: white; font-weight: 800">Kontakt</p>
+
+          <p style="display: block; color: white">
             40-862 Katowice<br />
             ul.Gliwicka 276
           </p>
-          <div>
-            <p style="font-weight: 400; font-size: 14px">
-              tel. <b>32 254 51 24</b><br />
-              tel. kom. <b>+48 535 890 098</b><br />
-              mail: <b>sekretariat@omegaszkola.pl</b>
-            </p>
-          </div>
+
+          <p style="display: block; color: white">
+            tel. <b>32 254 51 24</b><br />
+            tel. kom. <b>+48 535 890 098</b><br />
+            mail: <b>sekretariat@omegaszkola.pl</b>
+          </p>
         </td>
       </tr>
-
-      <tr style="display: flex; flex-direction: column; align-items: center">
-        <div
-          style="
-            width: 540px;
-            height: 262px;
-            border-radius: 25px;
-            background-size: cover;
-            background-image: url(bg2.svg);
-            margin-top: 20px;
-            margin-bottom: 20px;
-          "
-        ></div>
-        <p
-          style="
-            display: block;
-            width: 475px;
-            font-weight: 400;
-            font-size: 16px;
-            color: #071e4a;
-            margin-bottom: 30px;
-          "
-        >
-          <span style="font-weight: 700"
-            >Z przyjemnością informujemy, że Twoje zgłoszenie trafiło do naszej skrzynki.</span
-          >
-          W najbliższym czasie skontaktuje się z Tobą pracownik naszej szkoły, aby omówić
-          szczegóły rekrutacji.
-        </p>
-      </tr>
     </table>
-  </div>`,
+  </body>
+</html>
+
+    `,
     attachments: [
       {
         filename: 'logo.png',
         path: process.cwd() + '/public/email_template/logo.png',
         cid: 'logo@kreata.ee', //my mistake was putting "cid:logo@cid" here!
       },
+      {
+        filename: 'thanks.png',
+        path: process.cwd() + '/public/email_template/thanks.png',
+        cid: 'thanks@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+      },
+      {
+        filename: 'ytIcon.png',
+        path: process.cwd() + '/public/email_template/ytIcon.png',
+        cid: 'ytIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+      },
+      {
+        filename: 'fbIcon.png',
+        path: process.cwd() + '/public/email_template/fbIcon.png',
+        cid: 'fbIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+      },
     ],
   }
-  transport.sendMail(mailToSchool, (error: any, info: any) => {
-    if (error) {
-      return console.log(error)
-    }
-    console.log('Message sent: %s', info.messageId)
-  })
+  // transport.sendMail(mailToSchool, (error: any, info: any) => {
+  //   if (error) {
+  //     return console.log(error)
+  //   }
+  //   console.log('Message sent: %s', info.messageId)
+  // })
   transport.sendMail(mailToParent, (error: any, info: any) => {
     if (error) {
       return console.log(error)

@@ -95,21 +95,21 @@ const RecruitmentForm = () => {
 
     onSubmit: (values) => {
       validateForm()
-      // fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: {
-      //     Accept: 'application/json, text/plain, */*',
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(values),
-      // })
-      //   .then((res) => {
-      //     console.log('Response received')
-      //     if (res.status === 200) {
-      //       console.log('Response succeeded!')
-      //     }
-      //   })
-      // .catch((err) => console.log(err))
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+        .then((res) => {
+          console.log('Response received')
+          if (res.status === 200) {
+            console.log('Response succeeded!')
+          }
+        })
+        .catch((err) => console.log(err))
     },
   })
 
@@ -149,7 +149,7 @@ const RecruitmentForm = () => {
             'Liceum - klasa 4',
           ]}
           handleChange={handleChange}
-          handleBlur={() => null}
+          handleBlur={handleBlur}
           name="class"
           error={touched.class ? errors.class : ''}
         />

@@ -16,15 +16,36 @@ const Navbar = () => {
         <div className="flex justify-around w-8/12">
           <Link className={styles['nav-a']} href="">
             O naszej szkole
+            <div className={styles['nav-under-contruction-box']}>
+              <div className={styles['nav-under-contruction-arrow']} />
+              <div className={styles['nav-under-contruction-text-container']}>
+                <p>Podstrona w budowie!</p>
+                <p>Zapraszamy wkrótce.</p>
+              </div>
+            </div>
           </Link>
-          <Link className={styles['nav-a']} href="">
+          <Link className={`${styles['nav-a-selected']} ${styles['nav-a']}`} href="">
             Rekrutacja
           </Link>
           <Link className={styles['nav-a']} href="">
             Galeria
+            <div className={styles['nav-under-contruction-box']}>
+              <div className={styles['nav-under-contruction-arrow']} />
+              <div className={styles['nav-under-contruction-text-container']}>
+                <p>Podstrona w budowie!</p>
+                <p>Zapraszamy wkrótce.</p>
+              </div>
+            </div>
           </Link>
           <Link className={`${styles['nav-contact']}`} href="">
             Kontakt
+            <div className={styles['nav-under-contruction-box']}>
+              <div className={styles['nav-under-contruction-arrow']} />
+              <div className={styles['nav-under-contruction-text-container']}>
+                <p>Podstrona w budowie!</p>
+                <p>Zapraszamy wkrótce.</p>
+              </div>
+            </div>
           </Link>
         </div>
         <div className="flex-1 flex justify-center">

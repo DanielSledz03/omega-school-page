@@ -29,7 +29,7 @@
 }
 
 .recruitment-form-container {
-  @apply w-full flex flex-col py-10 px-5 xl:px-[160px];
+  @apply w-full flex flex-col py-10 px-5 xl:w-3/4	 xl:mx-auto;
 }
 
 @media only screen and (max-width: 280px) {

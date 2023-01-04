@@ -11,9 +11,37 @@
 }
 
 .nav-a {
-  @apply block h-[45px] text-[22px] text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300;
+  @apply block h-[45px] text-[22px] text-center text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300;
+}
+
+.nav-a-selected {
+  @apply text-[#FAC13C] hover:cursor-default;
 }
 
 .nav-contact {
-  @apply block h-[45px] text-[22px] text-[#071E4A] font-bold bg-white px-12 py-2 rounded-full w-[160px];
+  @apply block h-[45px] text-[22px] text-[#071E4A] font-bold bg-white  py-2 rounded-full w-[160px] text-center;
+}
+
+.nav-a:hover .nav-under-contruction-box {
+  @apply block opacity-100;
+}
+
+.nav-contact:hover .nav-under-contruction-box {
+  @apply block opacity-100 left-[5px];
+}
+
+.nav-contact .nav-under-contruction-box {
+  @apply w-[160px] mt-5;
+}
+
+.nav-under-contruction-box {
+  @apply opacity-0 w-[140px] h-[50px] relative bottom-0  bg-white text-[13px] text-[#071E4A] rounded-[15px] mt-5 duration-300;
+}
+
+.nav-under-contruction-arrow {
+  @apply absolute z-[-1] bg-[white] w-[20px] h-[20px] top-[-10px] left-[60px] rotate-45;
+}
+
+.nav-under-contruction-text-container {
+  @apply w-full h-full z-[55] flex justify-center items-center flex-col;
 }
