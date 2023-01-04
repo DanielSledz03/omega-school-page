@@ -7,8 +7,8 @@ export default async (req: any, res: any) => {
     port: 465,
     host: 'smtp.gmail.com',
     auth: {
-      user: process.env.SENDER,
-      pass: process.env.PASSWORD,
+      user: 'sledziuxjp@gmail.com',
+      pass: 'ivvhegypkwmixavm',
     },
   })
 
@@ -245,9 +245,11 @@ export default async (req: any, res: any) => {
   await new Promise((resole, reject) => {
     transport.sendMail(mailToParent, (error: any, info: any) => {
       if (error) {
+        reject('Error sendMail')
         return console.log(error)
       }
       console.log('Message sent: %s', info.messageId)
+      resole('Message send successfully')
     })
   })
 
