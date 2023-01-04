@@ -9,8 +9,8 @@ export default async (req: any, res: any) => {
     port: 465,
     host: 'smtp.gmail.com',
     auth: {
-      user: 'sledziuxjp@gmail.com',
-      pass: 'ivvhegypkwmixavm',
+      user: 'danielsledz2003@gmail.com',
+      pass: 'hoeltvlllhyikizy',
     },
   })
 
