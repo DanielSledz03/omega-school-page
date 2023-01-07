@@ -1,7 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default async (req: any, res: any) => {
   const path = require('path')
-
   require('dotenv').config({ path: path.join(process.cwd() + `/../../.env`) })
 
   const nodemailer = require('nodemailer')
@@ -237,12 +236,18 @@ export default async (req: any, res: any) => {
       },
     ],
   }
-  // transport.sendMail(mailToSchool, (error: any, info: any) => {
-  //   if (error) {
-  //     return console.log(error)
-  //   }
-  //   console.log('Message sent: %s', info.messageId)
-  // })
+
+  await new Promise((resole, reject) => {
+    transport.sendMail(mailToSchool, (error: any, info: any) => {
+      if (error) {
+        reject('Error sendMail')
+
+        return console.log(error)
+      }
+      console.log('Message sent: %s', info.messageId)
+      resole('Success')
+    })
+  })
 
   await new Promise((resole, reject) => {
     transport.sendMail(mailToParent, (error: any, info: any) => {
