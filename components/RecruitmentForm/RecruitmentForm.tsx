@@ -91,6 +91,8 @@ const RecruitmentForm = () => {
       phoneNumber: Yup.string().required(),
       rulesAccept: Yup.boolean().isTrue(),
       rodoAccept: Yup.boolean().isTrue(),
+      healthCertificate: Yup.boolean().isTrue(),
+      medicalOpinion: Yup.boolean().isTrue(),
     }),
 
     onSubmit: (values) => {
@@ -143,10 +145,6 @@ const RecruitmentForm = () => {
             'Podstawówka - klasa 6',
             'Podstawówka - klasa 7',
             'Podstawówka - klasa 8',
-            'Liceum - klasa 1',
-            'Liceum - klasa 2',
-            'Liceum - klasa 3',
-            'Liceum - klasa 4',
           ]}
           handleChange={handleChange}
           handleBlur={handleBlur}
@@ -158,7 +156,7 @@ const RecruitmentForm = () => {
           placeholder="Wybierz rok szkolny"
           label="Wybierz rok szkolny"
           selectedValue={values.schoolYear}
-          valueList={['2022/2023', '2023/2024', '2024/2025']}
+          valueList={['2022/2023', '2023/2024', '2024/2025', '2025/2026']}
           handleChange={handleChange}
           handleBlur={handleBlur}
           name="schoolYear"
@@ -224,14 +222,14 @@ const RecruitmentForm = () => {
         />
 
         <RadioButtons
-          label="Czy uczeń posiada opinię?"
+          label="Czy uczeń posiada opinię?*"
           name="medicalOpinion"
           setFieldValue={setFieldValue}
           error={touched.medicalOpinion ? errors.medicalOpinion : ''}
         />
 
         <RadioButtons
-          label="Czy uczeń posiada orzeczenie zdrowotne?"
+          label="Czy uczeń posiada orzeczenie zdrowotne?*"
           name="healthCertificate"
           setFieldValue={setFieldValue}
           error={touched.healthCertificate ? errors.healthCertificate : ''}
@@ -303,12 +301,14 @@ const RecruitmentForm = () => {
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
           <a
+            href="regulamin.pdf"
+            target="_blank"
             className={`${
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
             } `}
           >
             www.omegaszkola.pl/{width! < 568 && <br />}
-            regulaminy
+            regulamin
           </a>
         </Checkbox>
 
@@ -318,8 +318,9 @@ const RecruitmentForm = () => {
           setFieldValue={setFieldValue}
           error={touched.rodoAccept ? errors.rodoAccept : ''}
         >
-          Wyrażam zgodę na przetwarzanie moich danych osobowych przez xxxxxxxxx z siedzibą we
-          xxxxxxx, w celach postępowania rekrutacyjnego do Szkoła Podstawowa i Przedszkole OMEGA
+          Wyrażam zgodę na przetwarzanie moich danych osobowych przez Społeczne Towarzystwo
+          Edukacyjne z siedzibą we Katowicach ul. Gliwicka 276, w celach postępowania rekrutacyjnego
+          do Szkoła Podstawowa OMEGA
         </Checkbox>
       </div>
       <div className="mt-7 py-4 xl:flex xl:justify-center xl:items-center">

@@ -13,11 +13,15 @@ const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
         {label}
       </label>
-      <div className={styles['radio-container']}>
+      <div
+        className={`${error && error.length > 0 && styles['radio-error']} ${
+          styles['radio-container']
+        }`}
+      >
         <div className={styles['radio-button']}>
           <input
             type="radio"
-            className={styles.radio}
+            className={` ${styles.radio}`}
             name={name}
             id={`${name}1`}
             onChange={() => setFieldValue(name, true)}

@@ -5,11 +5,14 @@ export default async (req: any, res: any) => {
 
   const nodemailer = require('nodemailer')
   const transport = nodemailer.createTransport({
-    port: 465,
-    host: 'smtp.gmail.com',
+    port: 587,
+    host: 'smtp.office365.com',
     auth: {
-      user: 'danielsledz2003@gmail.com',
-      pass: 'hoeltvlllhyikizy',
+      user: 'template_data',
+      pass: 'template_data',
+    },
+    tls: {
+      ciphers: 'SSLv3',
     },
   })
 
@@ -29,7 +32,7 @@ export default async (req: any, res: any) => {
   })
 
   const mailToSchool = {
-    from: values.email,
+    from: 'template_data',
     to: 'danielsledz2003@gmail.com',
     subject: 'Formularz rekrutacyjny ' + values.class,
     html: `<div style="width: 800px; margin-left: auto; margin-right: auto"> <h2>Dane ogólne:</h2> <table style="font-family: arial, sans-serif;border-collapse: collapse;width: 100%;"> <tr> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Klasa</td> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">${
@@ -66,7 +69,7 @@ export default async (req: any, res: any) => {
   }
 
   const mailToParent = {
-    from: 'Szkoła Omega',
+    from: 'template_data',
     to: values.email,
     subject: 'Potwierdzenie wysłania formularza rekrutacyjnego ' + values.fullName,
     html: ` 

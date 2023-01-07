@@ -36,12 +36,16 @@
   @apply mr-2 w-[25px] h-[25px];
 }
 
+.radio-error {
+  border: 2px solid red;
+}
+
 .select {
   @apply w-full block border-[1px] border-[#E4E4E4] p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black] md:text-xl xl:text-base;
 }
 
 .select-error {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 .select-placeholder {
