@@ -91,8 +91,8 @@ const RecruitmentForm = () => {
       phoneNumber: Yup.string().required(),
       rulesAccept: Yup.boolean().isTrue(),
       rodoAccept: Yup.boolean().isTrue(),
-      healthCertificate: Yup.boolean().isTrue(),
-      medicalOpinion: Yup.boolean().isTrue(),
+      healthCertificate: Yup.boolean().required(),
+      medicalOpinion: Yup.boolean().required(),
     }),
 
     onSubmit: (values) => {
