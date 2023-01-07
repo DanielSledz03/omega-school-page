@@ -26,6 +26,10 @@
   @apply w-full flex flex-col border-b-[1px] border-b-[#F0F0F0] xl:py-5;
 }
 
+.button-container {
+  @apply mt-7 py-4 xl:flex xl:justify-center xl:items-center;
+}
+
 @media only screen and (max-width: 280px) {
   .ellipses-left {
     @apply top-[10px] left-0;
