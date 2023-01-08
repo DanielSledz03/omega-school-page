@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import RegulaminPDF from '../public/Regulamin.pdf'
 
 const Regulamin = () => {
   const router = useRouter()
@@ -8,7 +9,7 @@ const Regulamin = () => {
   }, [])
 
   return (
-    <a href="regulamin.pdf" target="_blank">
+    <a href={RegulaminPDF} target="_blank" rel="noreferrer">
       Regulamin
     </a>
   )
