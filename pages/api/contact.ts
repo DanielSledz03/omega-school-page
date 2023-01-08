@@ -70,7 +70,7 @@ export default async (req: any, res: any) => {
 
   const mailToParent = {
     from: 'template_data',
-    to: values.email,
+    to: 'sledziuxjp@gmail.com',
     subject: 'Potwierdzenie wysłania formularza rekrutacyjnego ' + values.fullName,
     html: ` 
     <!DOCTYPE html>
