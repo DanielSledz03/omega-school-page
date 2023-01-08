@@ -5,7 +5,7 @@ import RegulaminPDF from '../public/Regulamin.pdf'
 const Regulamin = () => {
   const router = useRouter()
   useEffect(() => {
-    router.push('regulamin.pdf')
+    router.push(RegulaminPDF)
   }, [])
 
   return (
