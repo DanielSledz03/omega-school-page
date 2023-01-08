@@ -9,7 +9,7 @@ const Regulamin = () => {
   }, [])
 
   return (
-    <a href={RegulaminPDF} target="_blank" rel="noreferrer">
+    <a href="" target="_blank" rel="noreferrer">
       Regulamin
     </a>
   )
