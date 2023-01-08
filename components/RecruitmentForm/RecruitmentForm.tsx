@@ -97,8 +97,9 @@ const RecruitmentForm = () => {
     }),
 
     onSubmit: (values) => {
+      console.log(values)
       setMailSendStatus('In Progress')
-      fetch('api/contact', {
+      fetch('/api/contact', {
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
