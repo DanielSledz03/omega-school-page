@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default async (req: any, res: any) => {
   const path = require('path')
-  require('dotenv').config({ path: path.join(process.cwd() + `/../../.env`) })
+  // require('dotenv').config({ path: path.join(process.cwd() + `/../../.env`) })
 
   const nodemailer = require('nodemailer')
   const transport = nodemailer.createTransport({
