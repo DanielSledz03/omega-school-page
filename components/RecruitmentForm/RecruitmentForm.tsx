@@ -143,7 +143,7 @@ const RecruitmentForm = () => {
           label="Wybierz klasę"
           selectedValue={values.class}
           valueList={[
-            'Podstawówka - klasa 1',
+            'Podstawówska - klasa 1',
             'Podstawówka - klasa 2',
             'Podstawówka - klasa 3',
             'Podstawówka - klasa 4',
