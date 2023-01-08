@@ -252,15 +252,15 @@ export default async (req: any, res: any) => {
     })
   })
 
-  await new Promise((resole, reject) => {
-    transport.sendMail(mailToParent, (error: any, info: any) => {
-      if (error) {
-        reject('Error sendMail')
-        return console.log(error)
-      }
-      console.log('Message sent: %s', info.messageId)
-      resole('Message send successfully')
-      res.status(200)
-    })
-  })
+  // await new Promise((resole, reject) => {
+  //   transport.sendMail(mailToParent, (error: any, info: any) => {
+  //     if (error) {
+  //       reject('Error sendMail')
+  //       return console.log(error)
+  //     }
+  //     console.log('Message sent: %s', info.messageId)
+  //     resole('Message send successfully')
+  //     res.status(200)
+  //   })
+  // })
 }
