@@ -15,7 +15,6 @@ import Image from 'next/image'
 import EllipsesLeft from '../../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../../public/assets/EllipsesRight.svg'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
-import RegulaminPDF from '../../public/Regulamin.pdf'
 
 const StudentInitialValues: StudentData = {
   fullName: '',
