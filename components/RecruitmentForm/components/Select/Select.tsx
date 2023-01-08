@@ -32,7 +32,7 @@ export const Select = ({
   return (
     <Fragment>
       {isExpanded && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.3)]"></div>
+        <div className="fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.3)] z-[890]"></div>
       )}
       <div ref={selectBGRef} className={styles['select-container']}>
         <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
@@ -40,12 +40,12 @@ export const Select = ({
         </label>
 
         <div
-          className={`${isExpanded ? 'bg-white' : 'bg-[#FAFAFA]'} ${
+          className={`${isExpanded ? 'bg-white z-[900]' : 'bg-[#FAFAFA]'} ${
             error && error.length > 0 && styles['select-error']
-          } w-full flex absolute flex-col   block border-[1px] border-[#E4E4E4] mb-7 rounded-3xl  text-[black] md:text-xl xl:text-base hover:cursor-pointer`}
+          } w-full flex absolute flex-col block border-[1px] border-[#E4E4E4] mb-7 rounded-3xl  text-[black] md:text-xl xl:text-base `}
           onClick={() => setIsExpanded((prev) => !prev)}
         >
-          <div className="w-full h-[50px] flex items-center justify-between p-3 ">
+          <div className="w-full h-[50px] flex items-center justify-between p-3 hover:cursor-pointer">
             <p
               className={`${
                 !isExpanded && selectedValue === '' ? 'text-[rgb(159,166,178)]' : ''
