@@ -147,28 +147,28 @@ export default async (req: any, res: any) => {
     </html>
 
     `,
-    attachments: [
-      {
-        filename: 'logo.png',
-        path: path.join(process.cwd() + '/public/email_template/logo.png'),
-        cid: 'logo@kreata.ee', //my mistake was putting "cid:logo@cid" here!
-      },
-      {
-        filename: 'thanks.png',
-        path: path.join(process.cwd() + '/public/email_template/thanks.png'),
-        cid: 'thanks@kreata.ee', //my mistake was putting "cid:logo@cid" here!
-      },
-      {
-        filename: 'ytIcon.png',
-        path: path.join(process.cwd() + '/public/email_template/ytIcon.png'),
-        cid: 'ytIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
-      },
-      {
-        filename: 'fbIcon.png',
-        path: path.join(process.cwd() + '/public/email_template/fbIcon.png'),
-        cid: 'fbIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filename: 'logo.png',
+    //     path: path.join(process.cwd() + '/public/email_template/logo.png'),
+    //     cid: 'logo@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+    //   },
+    //   {
+    //     filename: 'thanks.png',
+    //     path: path.join(process.cwd() + '/public/email_template/thanks.png'),
+    //     cid: 'thanks@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+    //   },
+    //   {
+    //     filename: 'ytIcon.png',
+    //     path: path.join(process.cwd() + '/public/email_template/ytIcon.png'),
+    //     cid: 'ytIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+    //   },
+    //   {
+    //     filename: 'fbIcon.png',
+    //     path: path.join(process.cwd() + '/public/email_template/fbIcon.png'),
+    //     cid: 'fbIcon@kreata.ee', //my mistake was putting "cid:logo@cid" here!
+    //   },
+    // ],
   }
 
   await new Promise((resole, reject) => {
