@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import { Input } from './components/Input/Input'
 import { StudentData } from '../../types/student-data.type'
@@ -57,6 +57,7 @@ const REQUIRED_FIELDS = [
 ]
 
 const RecruitmentForm = () => {
+  const [mailSendStatus, setMailSendStatus] = useState('')
   const { width } = useWindowDimensions()
   const {
     handleChange,
@@ -96,8 +97,8 @@ const RecruitmentForm = () => {
     }),
 
     onSubmit: (values) => {
-      validateForm()
-      fetch('/api/contact', {
+      setMailSendStatus('In Progress')
+      fetch('https://okmega-mailer.danielsledz03.repl.co/send-mail', {
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
@@ -108,10 +109,15 @@ const RecruitmentForm = () => {
         .then((res) => {
           console.log('Response received')
           if (res.status === 200) {
-            console.log('Response succeeded!')
+            console.log('Response succeeded!', res)
+            setMailSendStatus('Success')
           }
         })
-        .catch((err) => console.log(err))
+        .catch((err) => {
+          setMailSendStatus('Error')
+
+          console.log(err)
+        })
     },
   })
 
@@ -322,13 +328,39 @@ const RecruitmentForm = () => {
         </Checkbox>
       </div>
       <div className={styles['button-container']}>
-        <Button
-          label="Wyślij formularz rekrutacyjny"
-          onClick={() => handleSubmit()}
-          buttonColor="bg-[#FAC13C]"
-          textColor="text-[#ffffff]"
-          className={styles['send-button']}
-        />
+        {mailSendStatus === '' ? (
+          <Button
+            label="Wyślij formularz rekrutacyjny"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[#FAC13C]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        ) : mailSendStatus === 'Success' ? (
+          <Button
+            label="Poprawnie wypełniono formularz"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[#green]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        ) : mailSendStatus === 'In Progress' ? (
+          <Button
+            label="Trwa wysyłanie..."
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[red]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        ) : (
+          <Button
+            label="Błąd podczas wysyłania"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[red]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )}
       </div>
     </Fragment>
   )
