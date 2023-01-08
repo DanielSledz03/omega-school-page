@@ -1,5 +1,5 @@
 .container {
-  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-[url(/assets/Bg1.svg)] bg-no-repeat bg-cover bg-left-bottom bg-origin-content md:bg-top xl:bg-[url(/assets/Bg1-desktop.svg)] xl:pt-0 xl:justify-start xl:items-start xl:h-[800px];
+  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-[url(/assets/Bg1.svg)] bg-no-repeat bg-cover bg-left-bottom bg-origin-content md:bg-top xl:bg-[url(/assets/Bg1-desktop.svg)] xl:pt-0 xl:justify-start xl:items-start xl:h-[800px] max-w-[1920px] xl:mx-auto;
 }
 
 .texts-container {
@@ -29,7 +29,7 @@
 }
 
 .recruitment-form-container {
-  @apply w-full flex flex-col py-10 px-5 xl:w-3/4	 xl:mx-auto;
+  @apply w-full flex flex-col py-10 px-5 xl:w-3/4	 xl:mx-auto max-w-[1920px];
 }
 
 @media only screen and (max-width: 280px) {

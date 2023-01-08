@@ -146,9 +146,8 @@ const RecruitmentForm = () => {
             'Podstawówka - klasa 7',
             'Podstawówka - klasa 8',
           ]}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
           name="class"
+          setFieldValue={(name, value) => setFieldValue(name, value)}
           error={touched.class ? errors.class : ''}
         />
 
@@ -157,9 +156,8 @@ const RecruitmentForm = () => {
           label="Wybierz rok szkolny"
           selectedValue={values.schoolYear}
           valueList={['2022/2023', '2023/2024', '2024/2025', '2025/2026']}
-          handleChange={handleChange}
-          handleBlur={handleBlur}
           name="schoolYear"
+          setFieldValue={(name, value) => setFieldValue(name, value)}
           error={touched.schoolYear ? errors.schoolYear : ''}
         />
       </div>

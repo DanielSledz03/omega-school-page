@@ -1,5 +1,5 @@
 .footer {
-  @apply w-full bg-[#071E4A] py-7 px-5 text-white xl:px-[80px] xl:flex xl:flex-wrap;
+  @apply w-full bg-[#071E4A] py-7 px-5 text-white xl:px-[80px] xl:flex xl:flex-wrap xl:max-w-[1920px] xl:mx-auto;
 }
 
 .footer-header-container {

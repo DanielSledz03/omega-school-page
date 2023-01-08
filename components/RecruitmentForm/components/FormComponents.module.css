@@ -40,8 +40,12 @@
   border: 2px solid red;
 }
 
+.select-container {
+  @apply relative pb-[80px];
+}
+
 .select {
-  @apply w-full block border-[1px] border-[#E4E4E4] p-3 mb-7 pr-[50px] h-[50px] rounded-3xl bg-[#FAFAFA] border-r-[16px] border-r-transparent text-[black] md:text-xl xl:text-base;
+  @apply w-full block border-[1px] border-[#E4E4E4] p-3 mb-7  h-[50px] rounded-3xl bg-[#FAFAFA] text-[black] md:text-xl xl:text-base;
 }
 
 .select-error {
@@ -80,11 +84,6 @@
   .radio-buttons-box {
     width: 49%;
   }
-}
-
-.select option {
-  height: 50px;
-  padding: 10px;
 }
 
 @media only screen and (min-width: 280px) {
