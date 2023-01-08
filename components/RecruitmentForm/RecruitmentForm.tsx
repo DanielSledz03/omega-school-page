@@ -98,7 +98,7 @@ const RecruitmentForm = () => {
 
     onSubmit: (values) => {
       setMailSendStatus('In Progress')
-      fetch('https://okmega-mailer.danielsledz03.repl.co/send-mail', {
+      fetch('api/contact', {
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
