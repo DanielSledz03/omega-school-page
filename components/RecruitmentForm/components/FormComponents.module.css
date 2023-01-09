@@ -45,7 +45,7 @@
 }
 
 .select {
-  @apply w-full block border-[1px] border-[#E4E4E4] p-3 mb-7  h-[50px] rounded-3xl bg-[#FAFAFA] text-[black] md:text-xl xl:text-base;
+  @apply w-full block border-[1px] border-[#E4E4E4] p-3 mb-7  h-[50px] rounded-3xl bg-[#FAFAFA] text-[black] md:text-xl xl:text-base overflow-hidden;
 }
 
 .select-error {

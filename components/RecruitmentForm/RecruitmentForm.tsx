@@ -59,6 +59,8 @@ const REQUIRED_FIELDS = [
 const RecruitmentForm = () => {
   const [mailSendStatus, setMailSendStatus] = useState('')
   const { width } = useWindowDimensions()
+  // alert(width)
+
   const {
     handleChange,
     values,
@@ -67,10 +69,7 @@ const RecruitmentForm = () => {
     touched,
     setFieldValue,
     handleSubmit,
-    setFieldError,
-    validateForm,
-    validateOnBlur,
-    validateOnChange,
+    isValid,
   } = useFormik({
     initialValues: {
       ...StudentInitialValues,
@@ -122,7 +121,75 @@ const RecruitmentForm = () => {
     },
   })
 
-  console.log(values)
+  const SendButton = () => {
+    switch (mailSendStatus) {
+      case '':
+        return (
+          <Button
+            label="Wyślij formularz rekrutacyjny"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[#FAC13C]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )
+
+      case 'Success':
+        return (
+          <Button
+            label="Poprawnie wypełniono formularz"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[#green]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )
+
+      case 'In Progress':
+        return (
+          <Button
+            label="Trwa wysyłanie..."
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[red]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )
+
+      case 'No Valid':
+        return (
+          <Button
+            label="Wypełnij formularz!"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[red]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )
+
+      case 'Error':
+        return (
+          <Button
+            label="Błąd podczas wysyłania"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[red]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )
+
+      default:
+        return (
+          <Button
+            label="Poprawnie wypełniono formularz"
+            onClick={() => handleSubmit()}
+            buttonColor="bg-[#green]"
+            textColor="text-[#ffffff]"
+            className={styles['send-button']}
+          />
+        )
+    }
+  }
 
   return (
     <Fragment>
@@ -144,7 +211,7 @@ const RecruitmentForm = () => {
           label="Wybierz klasę"
           selectedValue={values.class}
           valueList={[
-            'Podstawówska - klasa 1',
+            'Podstawówka - klasa 1',
             'Podstawówka - klasa 2',
             'Podstawówka - klasa 3',
             'Podstawówka - klasa 4',
@@ -329,39 +396,7 @@ const RecruitmentForm = () => {
         </Checkbox>
       </div>
       <div className={styles['button-container']}>
-        {mailSendStatus === '' ? (
-          <Button
-            label="Wyślij formularz rekrutacyjny"
-            onClick={() => handleSubmit()}
-            buttonColor="bg-[#FAC13C]"
-            textColor="text-[#ffffff]"
-            className={styles['send-button']}
-          />
-        ) : mailSendStatus === 'Success' ? (
-          <Button
-            label="Poprawnie wypełniono formularz"
-            onClick={() => handleSubmit()}
-            buttonColor="bg-[#green]"
-            textColor="text-[#ffffff]"
-            className={styles['send-button']}
-          />
-        ) : mailSendStatus === 'In Progress' ? (
-          <Button
-            label="Trwa wysyłanie..."
-            onClick={() => handleSubmit()}
-            buttonColor="bg-[red]"
-            textColor="text-[#ffffff]"
-            className={styles['send-button']}
-          />
-        ) : (
-          <Button
-            label="Błąd podczas wysyłania"
-            onClick={() => handleSubmit()}
-            buttonColor="bg-[red]"
-            textColor="text-[#ffffff]"
-            className={styles['send-button']}
-          />
-        )}
+        <SendButton />
       </div>
     </Fragment>
   )

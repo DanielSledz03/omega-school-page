@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex flex-1 hidden xl:flex ">
-        <div className="flex justify-around w-8/12">
+        <div className="flex justify-around w-8/12 xl:w-2/3 xl:ml-[50px] 2xl:w-1/2 2xl:px-3">
           <Link className={styles['nav-a']} href="">
             O naszej szkole
             <div className={styles['nav-under-contruction-box']}>
@@ -26,6 +26,13 @@ const Navbar = () => {
           </Link>
           <Link className={`${styles['nav-a-selected']} ${styles['nav-a']}`} href="">
             Rekrutacja
+            <div
+              className={`opacity-0 relative bottom-0 p-4 bg-white text-[13px] text-[#071E4A] rounded-[15px] mt-5 duration-300;`}
+            >
+              <div
+                className={`absolute z-[-1] bg-[white] w-[20px] h-[20px] top-[-10px] rotate-45`}
+              />
+            </div>
           </Link>
           <Link className={styles['nav-a']} href="">
             Galeria
@@ -48,7 +55,7 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-        <div className="flex-1 flex justify-center">
+        <div className="flex justify-center xl:w-1/2  2xl:w-1/3 2xl:pl-[160px]">
           <Link
             target="_blank"
             rel="noopener noreferrer"

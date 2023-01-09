@@ -3,7 +3,7 @@
 }
 
 .header2-container {
-  @apply w-full flex justify-center relative xl:w-1/2 xl:self-center xl:my-10 2xl:w-2/5 3xl:w-2/5;
+  @apply w-full flex justify-center relative xl:w-1/2 xl:self-center xl:my-10 2xl:w-3/5 3xl:w-2/5;
 }
 
 .header2 {
@@ -27,7 +27,7 @@
 }
 
 .button-container {
-  @apply mt-7 py-4 xl:flex xl:justify-center xl:items-center;
+  @apply mt-7 py-4 md:w-3/5 md:mx-auto xl:w-auto xl:flex xl:justify-center xl:items-center;
 }
 
 @media only screen and (max-width: 280px) {
