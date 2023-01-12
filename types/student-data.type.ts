@@ -5,7 +5,7 @@ export interface StudentData {
   address: string
   registeredAddress?: string
   districtSchoolData?: string
-  healthCertificate: boolean
-  medicalOpinion: boolean
+  healthCertificate: boolean | undefined
+  medicalOpinion: boolean | undefined
   otherRelevantInformation?: string
 }

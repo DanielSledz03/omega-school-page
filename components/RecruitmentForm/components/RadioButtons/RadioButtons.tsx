@@ -11,7 +11,7 @@ const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
   return (
     <div className={styles['radio-buttons-box']}>
       <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
-        {label}
+        {label} {error && '- pole obowiązkowe'}
       </label>
       <div
         className={`${error && error.length > 0 && styles['radio-error']} ${

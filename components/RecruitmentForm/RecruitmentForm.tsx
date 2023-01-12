@@ -23,8 +23,8 @@ const StudentInitialValues: StudentData = {
   address: '',
   registeredAddress: '',
   districtSchoolData: '',
-  healthCertificate: false,
-  medicalOpinion: false,
+  healthCertificate: undefined,
+  medicalOpinion: undefined,
   otherRelevantInformation: '',
 }
 
@@ -44,17 +44,6 @@ const RulesAndRODO = {
   rulesAccept: false,
   rodoAccept: false,
 }
-
-const REQUIRED_FIELDS = [
-  'fullName',
-  'peselOrPassportNumber',
-  'dateAndPlaceOfBirth',
-  'address',
-  'parentFullName',
-  'parentAddress',
-  'email',
-  'phoneNumber',
-]
 
 const RecruitmentForm = () => {
   const [mailSendStatus, setMailSendStatus] = useState('')
@@ -89,13 +78,13 @@ const RecruitmentForm = () => {
       parentAddress: Yup.string().required(),
       email: Yup.string().email().required(),
       phoneNumber: Yup.string().required(),
-      rulesAccept: Yup.boolean().isTrue(),
-      rodoAccept: Yup.boolean().isTrue(),
+      rulesAccept: Yup.boolean().isTrue().required(),
+      rodoAccept: Yup.boolean().isTrue().required(),
       healthCertificate: Yup.boolean().required(),
       medicalOpinion: Yup.boolean().required(),
     }),
 
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(values)
       setMailSendStatus('In Progress')
       fetch('/api/contact', {
@@ -110,16 +99,25 @@ const RecruitmentForm = () => {
           console.log('Response received')
           if (res.status === 200) {
             console.log('Response succeeded!', res)
+            resetForm()
             setMailSendStatus('Success')
           }
         })
         .catch((err) => {
           setMailSendStatus('Error')
-
           console.log(err)
         })
     },
   })
+
+  useEffect(() => {
+    console.log(mailSendStatus === 'No Valid' && Object.keys(errors).length === 0)
+    if (mailSendStatus === 'No Valid' && Object.keys(errors).length === 0) {
+      if (isValid) {
+        setMailSendStatus('')
+      }
+    }
+  }, [values, errors, isValid, mailSendStatus])
 
   const SendButton = () => {
     switch (mailSendStatus) {
@@ -127,7 +125,12 @@ const RecruitmentForm = () => {
         return (
           <Button
             label="Wyślij formularz rekrutacyjny"
-            onClick={() => handleSubmit()}
+            onClick={() => {
+              handleSubmit()
+              if (!isValid) {
+                setMailSendStatus('No Valid')
+              }
+            }}
             buttonColor="bg-[#FAC13C]"
             textColor="text-[#ffffff]"
             className={styles['send-button']}
@@ -137,9 +140,9 @@ const RecruitmentForm = () => {
       case 'Success':
         return (
           <Button
-            label="Poprawnie wypełniono formularz"
+            label="Wiadomość została wysłana"
             onClick={() => handleSubmit()}
-            buttonColor="bg-[#green]"
+            buttonColor="bg-[#00C213]"
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
@@ -150,7 +153,7 @@ const RecruitmentForm = () => {
           <Button
             label="Trwa wysyłanie..."
             onClick={() => handleSubmit()}
-            buttonColor="bg-[red]"
+            buttonColor="bg-[#FAC13C]"
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
@@ -159,7 +162,7 @@ const RecruitmentForm = () => {
       case 'No Valid':
         return (
           <Button
-            label="Wypełnij formularz!"
+            label="Wypełnij wymagane pola!"
             onClick={() => handleSubmit()}
             buttonColor="bg-[red]"
             textColor="text-[#ffffff]"
