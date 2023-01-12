@@ -392,7 +392,7 @@ const RecruitmentForm = () => {
         >
           Wyrażam zgodę na przetwarzanie moich danych osobowych przez Społeczne Towarzystwo
           Edukacyjne z siedzibą w Katowicach ul. Gliwicka 276, w celach postępowania rekrutacyjnego
-          do Społeczna Szkoła Podstawowa OMEGA
+          do Społecznej Szkoły Podstawowej OMEGA
         </Checkbox>
       </div>
       <div className={styles['button-container']}>

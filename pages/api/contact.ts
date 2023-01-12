@@ -33,7 +33,7 @@ export default async (req: any, res: any) => {
 
   const mailToSchool = {
     from: 'template_data',
-    to: 'danielsledz2003@gmail.com',
+    to: 'sekretariat@omegaszkola.pl',
     subject: 'Formularz rekrutacyjny ' + values.class,
     html: `<div style="width: 800px; margin-left: auto; margin-right: auto"> <h2>Dane ogólne:</h2> <table style="font-family: arial, sans-serif;border-collapse: collapse;width: 100%;"> <tr> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Klasa</td> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">${
       values.class

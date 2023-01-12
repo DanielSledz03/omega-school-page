@@ -32,7 +32,7 @@ export default function Home() {
             <span className={styles['header1-span']}> do naszej szkoły</span>
           </div>
           <p className={styles['paragraph']}>
-            Wypełnij formularz on-line i zapisz swoje dziecko do naszej szkoły bez wychodzenia z
+            Wypełnij formularz on-line i zapisz swoje dziecko do naszej szkoły, bez wychodzenia z
             domu.
           </p>
           <Button
