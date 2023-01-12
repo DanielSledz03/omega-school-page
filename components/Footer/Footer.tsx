@@ -74,22 +74,20 @@ const Footer = () => {
 
         <div className="mt-5">
           <b>Godziny pracy</b>
-          <p>poniedziałek - piątek: 07:30 – 17:30</p>
+          <p>poniedziałek - piątek: 07:15 – 17:30</p>
         </div>
 
         <div className="mt-5">
           <b>Kontakt</b>
+
           <p>
-            klasy 0 i 2 tel. <b>+48 570 907 110</b>
+            klasy 1 tel. <b>+48 570 907 110</b>
           </p>
           <p>
-            klasy 1 tel. <b>+48 730 926 556</b>
+            klasy 2-3 tel. <b>+48 533 890 098</b>
           </p>
           <p>
-            klasy 3 tel. <b>+48 533 890 098</b>
-          </p>
-          <p>
-            klasy 4-8 tel. <b>+48 889 345 265</b>
+            klasy 4-8 tel. <b>+48 730 926 556</b>
           </p>
         </div>
       </div>
