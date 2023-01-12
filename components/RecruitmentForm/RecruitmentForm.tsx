@@ -374,7 +374,8 @@ const RecruitmentForm = () => {
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
           <Link
-            href="/vercel.svg"
+            type="application/pdf"
+            href="regulamin.pdf"
             target="_blank"
             className={`${
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
