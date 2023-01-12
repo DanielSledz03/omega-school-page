@@ -374,10 +374,10 @@ const RecruitmentForm = () => {
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
           <Link
-            href="/regulamin.pdf"
+            href="/Regulamin.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            locale={false}
+            download={true}
             className={`${
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
             } `}
