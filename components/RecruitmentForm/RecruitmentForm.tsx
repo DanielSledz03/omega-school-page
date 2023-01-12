@@ -377,7 +377,6 @@ const RecruitmentForm = () => {
             href="/Regulamin.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download={true}
             className={`${
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
             } `}
