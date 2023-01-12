@@ -85,7 +85,6 @@ const RecruitmentForm = () => {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      console.log(values)
       setMailSendStatus('In Progress')
       fetch('/api/contact', {
         method: 'POST',
@@ -98,20 +97,18 @@ const RecruitmentForm = () => {
         .then((res) => {
           console.log('Response received')
           if (res.status === 200) {
-            console.log('Response succeeded!', res)
             resetForm()
             setMailSendStatus('Success')
           }
         })
         .catch((err) => {
           setMailSendStatus('Error')
-          console.log(err)
+          console.error(err)
         })
     },
   })
 
   useEffect(() => {
-    console.log(mailSendStatus === 'No Valid' && Object.keys(errors).length === 0)
     if (mailSendStatus === 'No Valid' && Object.keys(errors).length === 0) {
       if (isValid) {
         setMailSendStatus('')

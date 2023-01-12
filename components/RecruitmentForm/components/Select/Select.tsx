@@ -28,7 +28,6 @@ export const Select = ({
   useOutsideClick(selectBGRef, () => {
     setIsExpanded(false)
   })
-  console.log(!isExpanded && selectedValue === '')
   return (
     <Fragment>
       {isExpanded && (

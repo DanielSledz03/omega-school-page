@@ -22,7 +22,7 @@ export default async (req: any, res: any) => {
     // verify connection configuration
     transport.verify(function (error: any, success: any) {
       if (error) {
-        console.log(error)
+        console.error(error)
         reject(error)
       } else {
         console.log('Server is ready to take our messages')
