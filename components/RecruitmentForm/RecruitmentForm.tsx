@@ -373,18 +373,17 @@ const RecruitmentForm = () => {
         >
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
-          <Link
-            type="application/pdf"
+          <a
             href="/regulamin.pdf"
-            download="/regulamin.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             className={`${
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
             } `}
           >
             www.omegaszkola.pl/{width! < 568 && <br />}
             regulamin
-          </Link>
+          </a>
         </Checkbox>
 
         <Checkbox
