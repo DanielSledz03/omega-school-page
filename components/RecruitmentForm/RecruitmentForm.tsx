@@ -375,7 +375,8 @@ const RecruitmentForm = () => {
           osobowych dostępną pod adresem{' '}
           <Link
             type="application/pdf"
-            href="regulamin.pdf"
+            href="/regulamin.pdf"
+            download="/regulamin.pdf"
             target="_blank"
             className={`${
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
