@@ -15,6 +15,7 @@ import Image from 'next/image'
 import EllipsesLeft from '../../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../../public/assets/EllipsesRight.svg'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
+import Link from 'next/link'
 
 const StudentInitialValues: StudentData = {
   fullName: '',
@@ -372,7 +373,7 @@ const RecruitmentForm = () => {
         >
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
-          <a
+          <Link
             href="/regulamin.pdf"
             target="_blank"
             className={`${
@@ -381,7 +382,7 @@ const RecruitmentForm = () => {
           >
             www.omegaszkola.pl/{width! < 568 && <br />}
             regulamin
-          </a>
+          </Link>
         </Checkbox>
 
         <Checkbox
