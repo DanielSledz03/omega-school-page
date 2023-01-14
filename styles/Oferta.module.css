@@ -1,0 +1,51 @@
+.page-header-text {
+  @apply h-[330px] xs:h-[290px]  md:h-[500px] xl:h-full;
+}
+
+.gray-circle-container {
+  @apply w-full bg-[url(/assets/offer/GrayCircle.svg)] bg-center bg-cover bg-no-repeat py-[80px] px-3 xs:px-7;
+}
+
+.gray-circle-paragraph {
+  @apply text-center text-[#071E4A] text-[16px] xs:text-[16px];
+}
+
+.gray-circle-header {
+  @apply text-center text-[#579CE2] text-[40px] font-[700] flex flex-col leading-[55px] block my-1;
+}
+
+.gray-circle-header span {
+  @apply text-[65px] mt-2 mb-3 xs:text-[85px];
+}
+
+.circle-icons-container {
+  @apply w-full flex flex-wrap justify-around px-3 relative top-[-70px];
+}
+
+.circle-icon {
+  @apply flex flex-col items-center justify-center w-[120px] h-[120px] my-2 rounded-full xs:w-[140px] xs:h-[140px] xms:w-[160px] xms:w-[155px] xms:h-[155px];
+}
+
+.circle-icon-image-container {
+  @apply px-7 pt-2 h-2/3 xs:w-5/6;
+}
+
+.circle-icon-text {
+  @apply block h-[35px] text-[white] text-[12px] font-[700] xs:h-[40px] xs:text-[13px] xms:text-[14px];
+}
+
+.section-container {
+  @apply py-5 px-3 xs:px-7;
+}
+
+.section-header {
+  @apply text-[#579CE2] text-[33px] font-[700] leading-[39px] mb-5 xs:text-[40px];
+}
+
+.section-item {
+  @apply block w-full px-3 py-1 my-2 bg-[#F3F3F3] rounded-[10px] text-[#071E4A] text-[16px] font-[700];
+}
+
+.section-images-container {
+  @apply flex flex-col py-5 px-3 relative w-full pb-12 mb-5;
+}

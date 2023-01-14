@@ -1,9 +1,9 @@
 .navbar {
-  @apply fixed top-0 bg-[#071E4A] w-full h-[60px] flex items-center px-3 py-4 z-[100] md:py-0 md:h-[100px] md:px-8 xl:px-[0] xl:mx-[100px]  xl:bg-transparent xl:relative xl:h-[130px] 2xl:mx-[200px];
+  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] md:py-0 md:h-[100px] md:px-8 xl:px-[0] xl:mx-[100px]  xl:bg-transparent xl:relative xl:h-[130px] 2xl:mx-[200px];
 }
 
 .logo-container {
-  @apply flex items-center justify-center w-[60px] md:w-[90px] md:h-full xl:w-[100px];
+  @apply flex z-[99] items-center justify-center w-[60px] md:w-[90px] md:h-full xl:w-[100px];
 }
 
 .logo {
@@ -11,7 +11,7 @@
 }
 
 .nav-a {
-  @apply block h-[45px] text-[22px] text-center text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300 xl:w-[160px];
+  @apply block h-[45px] text-[22px] text-center text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300 block w-min;
 }
 
 .nav-a-selected {
@@ -19,7 +19,7 @@
 }
 
 .nav-contact {
-  @apply block h-[45px] text-[22px] text-[#071E4A] font-bold bg-white  py-2 rounded-full w-[160px] text-center;
+  @apply block h-[45px] text-[22px] text-[#071E4A] font-bold bg-white py-2 rounded-full w-[160px] text-center mr-12;
 }
 
 .nav-a:hover .nav-under-contruction-box {
