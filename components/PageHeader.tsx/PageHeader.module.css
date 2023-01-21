@@ -1,5 +1,5 @@
 .container {
-  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-no-repeat bg-cover bg-left-bottom bg-origin-content md:bg-top md:h-[1000px] xl:h-screen xl:pt-0 xl:justify-start xl:items-start xl:h-[800px] max-w-[1920px] xl:mx-auto overflow-x-hidden;
+  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-no-repeat bg-cover bg-left-bottom md:bg-top md:h-[1000px] xl:h-screen xl:pt-0 xl:justify-start xl:items-start xl:h-[800px] max-w-[1920px] xl:mx-auto overflow-x-hidden;
 }
 
 .texts-container {
@@ -13,7 +13,6 @@
 .header1-span {
   @apply text-3xl font-black text-[#FAC13C] md:text-6xl xl:text-[75px] 2xl:text-[85px] xl:block xl:mb-5;
 }
-
 .paragraph {
   @apply text-white font-[400] md:text-3xl xl:text-2xl xl:block xl:w-3/6 xl:mb-7;
 }

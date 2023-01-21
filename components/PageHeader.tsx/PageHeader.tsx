@@ -11,6 +11,7 @@ interface IProps {
   buttonTitle: string
   bgUrl: string
   bgXlUrl: string
+  bgStyle?: React.CSSProperties
   textContainerStyles?: any
 }
 
@@ -23,9 +24,10 @@ export const PageHeader = ({
   bgUrl,
   bgXlUrl,
   textContainerStyles,
+  bgStyle = {},
 }: IProps) => {
   return (
-    <div className={`${bgUrl} ${bgXlUrl} ${styles.container}`}>
+    <div style={bgStyle} className={`${bgUrl}  ${bgXlUrl}  ${styles.container} `}>
       <Navbar />
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>

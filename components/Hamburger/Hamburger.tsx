@@ -9,7 +9,7 @@ export default function Hamburger({
 
   return (
     <button
-      className="flex flex-col w-[37px] z-[102] justify-center items-center group"
+      className="flex flex-col w-[37px] z-[102] justify-center items-center group xl:hidden"
       onClick={toggleHamburger}
     >
       <div
