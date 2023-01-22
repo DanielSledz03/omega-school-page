@@ -1,0 +1,31 @@
+.mobile-nav {
+  @apply absolute top-0 left-0 w-full h-screen bg-[#071E4A] duration-300 flex flex-col items-center justify-between pb-[120px] pt-[80px];
+}
+
+.mobile-nav-visible {
+  @apply left-full;
+}
+
+.mobile-nav-header {
+  @apply px-4 font-[700] text-[25px] text-[#FAC13C] flex items-center justify-center h-[30px] w-full text-center;
+}
+
+.list {
+  @apply flex flex-col w-full;
+}
+
+.list-item {
+  @apply w-full flex items-center justify-center border-y-[1px] border-[#112F69] py-2;
+}
+
+.list-item-anchor {
+  @apply text-white text-[25px] w-full block text-center;
+}
+
+.contact-button {
+  @apply bg-white text-[#071E4A] w-[160px] text-center px-12 py-2 font-[700] text-[22px] rounded-full;
+}
+
+.social-media-container {
+  @apply w-full flex items-center justify-center mt-[30px];
+}

@@ -4,46 +4,64 @@ import Image from 'next/image'
 import Link from 'next/link'
 import YoutubeIcon from '../../public/assets/YoutubeIcon.svg'
 import FacebookIcon from '../../public/assets/FacebookIcon.svg'
+import { useRouter } from 'next/router'
+import Hamburger from '../Hamburger/Hamburger'
+import { useState } from 'react'
+import { MobileNav } from '../MobileNav/MobileNav'
+
+const ALink = ({
+  title,
+  isBuilding,
+  href,
+}: {
+  title: string
+  isBuilding?: boolean
+  href: string
+}) => {
+  const router = useRouter()
+  return (
+    <Link
+      className={`${router.pathname === href ? styles['nav-a-selected'] : ''} ${styles['nav-a']}`}
+      href={href}
+    >
+      {title}
+      {isBuilding && (
+        <div className={styles['nav-under-contruction-box']}>
+          <div className={styles['nav-under-contruction-arrow']} />
+          <div className={styles['nav-under-contruction-text-container']}>
+            <p>Podstrona w budowie!</p>
+            <p>Zapraszamy wkrótce.</p>
+          </div>
+        </div>
+      )}
+    </Link>
+  )
+}
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const router = useRouter()
+  const toggleHamburger = () => {
+    setIsMenuOpen((prev) => !prev)
+  }
+
   return (
     <nav className={styles.navbar}>
-      <div className={styles['logo-container']}>
+      <div onClick={() => router.replace('/')} className={styles['logo-container']}>
         <Image className={styles.logo} src={Logo} alt="Logo" />
       </div>
 
-      <div className="flex flex-1 hidden xl:flex ">
-        <div className="flex justify-around w-8/12 xl:w-2/3 xl:ml-[50px] 2xl:w-1/2 2xl:px-3">
-          <Link className={styles['nav-a']} href="">
-            O naszej szkole
-            <div className={styles['nav-under-contruction-box']}>
-              <div className={styles['nav-under-contruction-arrow']} />
-              <div className={styles['nav-under-contruction-text-container']}>
-                <p>Podstrona w budowie!</p>
-                <p>Zapraszamy wkrótce.</p>
-              </div>
-            </div>
-          </Link>
-          <Link className={`${styles['nav-a-selected']} ${styles['nav-a']}`} href="">
-            Rekrutacja
-            <div
-              className={`opacity-0 relative bottom-0 p-4 bg-white text-[13px] text-[#071E4A] rounded-[15px] mt-5 duration-300;`}
-            >
-              <div
-                className={`absolute z-[-1] bg-[white] w-[20px] h-[20px] top-[-10px] rotate-45`}
-              />
-            </div>
-          </Link>
-          <Link className={styles['nav-a']} href="">
-            Galeria
-            <div className={styles['nav-under-contruction-box']}>
-              <div className={styles['nav-under-contruction-arrow']} />
-              <div className={styles['nav-under-contruction-text-container']}>
-                <p>Podstrona w budowie!</p>
-                <p>Zapraszamy wkrótce.</p>
-              </div>
-            </div>
-          </Link>
+      <Hamburger toggleHamburger={toggleHamburger} isOpen={isMenuOpen} />
+
+      <MobileNav isMenuOpen={isMenuOpen} />
+      <div className="flex w-screen hidden xl:flex ">
+        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-1/3 ">
+          {/* <ALink title="O&nbsp;naszej&nbsp;szkole" href="/o-nas" isBuilding /> */}
+          <ALink title="Aktualności" href="/aktualnosci" />
+          <ALink title="Oferta" href="/oferta" />
+          <ALink title="Rekrutacja" href="/rekrutacja" />
+        </div>
+        <div className="flex justify-center items-center xl:w-1/3 3xl:w-2/3 3xl:ml-10">
           <Link className={`${styles['nav-contact']}`} href="">
             Kontakt
             <div className={styles['nav-under-contruction-box']}>
@@ -54,8 +72,6 @@ const Navbar = () => {
               </div>
             </div>
           </Link>
-        </div>
-        <div className="flex justify-center xl:w-1/2  2xl:w-1/3 2xl:pl-[160px]">
           <Link
             target="_blank"
             rel="noopener noreferrer"

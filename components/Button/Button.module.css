@@ -1,5 +1,5 @@
 .button {
-  @apply flex justify-center items-center rounded-[30px] font-bold text-[20px] w-full md:text-2xl md:px-8 py-4 lg:justify-between lg:w-auto  xl:h-[60px] 2xl:text-[22px];
+  @apply flex justify-center items-center rounded-[30px] font-bold text-[20px] w-full md:text-2xl md:px-8 py-4 lg:justify-between lg:w-auto xl:h-[60px] 2xl:text-[22px];
 }
 
 .arrow {
