@@ -119,7 +119,7 @@ const Icon = ({ name, icon, color }: { name: string; icon: any; color: string })
       <div className={styles['circle-icon-image-container']}>
         <Image
           src={icon}
-          alt="ICON"
+          alt={name}
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
       </div>
@@ -166,7 +166,11 @@ const Offer = () => {
               <Icon key={icon.name} color={icon.color} name={icon.name} icon={icon.url} />
             ))
           ) : (
-            <Image className="w-full h-name" src={IconsDestkop} alt="IconsDestkop" />
+            <Image
+              className="w-full h-name"
+              src={IconsDestkop}
+              alt="Rozwijamy, Pozajemy, Zdobywamy, Odkrywamy, Eksperementujemy, Poszukujemy, Doskonalimy, Badamy"
+            />
           )}
         </div>
       </div>
