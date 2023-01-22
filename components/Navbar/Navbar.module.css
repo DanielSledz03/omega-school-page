@@ -3,7 +3,7 @@
 }
 
 .logo-container {
-  @apply flex z-[99] items-center justify-center w-[60px] md:w-[90px] md:h-full xl:w-[100px];
+  @apply flex z-[99] items-center justify-center w-[60px] md:w-[90px] md:h-full xl:w-[100px] hover:cursor-pointer;
 }
 
 .logo {
@@ -19,7 +19,7 @@
 }
 
 .nav-contact {
-  @apply block h-[45px] text-[22px] text-[#071E4A] font-bold bg-white py-2 rounded-full w-[160px] text-center mr-12;
+  @apply block relative h-[45px] text-[22px] text-[#071E4A] font-bold bg-white py-2 rounded-full w-[160px] text-center mr-12;
 }
 
 .nav-a:hover .nav-under-contruction-box {
@@ -35,7 +35,7 @@
 }
 
 .nav-under-contruction-box {
-  @apply opacity-0  relative bottom-0 p-4 bg-white text-[13px] text-[#071E4A] rounded-[15px] mt-5 duration-300;
+  @apply opacity-0 absolute bottom-[-50px] p-4 bg-white text-[13px] text-[#071E4A] rounded-[15px] mt-5 duration-300;
 }
 
 .nav-under-contruction-arrow {

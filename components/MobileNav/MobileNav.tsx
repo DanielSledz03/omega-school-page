@@ -72,7 +72,7 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
       <div className={` w-full h-full bg-[#071E4A] flex flex-col items-center justify-around  `}>
         <h3 className={styles['mobile-nav-header']}>Menu</h3>
         <ul className={styles.list}>
-          <li className={styles['list-item']}>
+          {/* <li className={styles['list-item']}>
             <Link
               className={styles['list-item-anchor']}
               href=""
@@ -80,19 +80,19 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
             >
               O naszej szkole
             </Link>
-          </li>
+          </li> */}
           <li className={styles['list-item']}>
             <Link className={styles['list-item-anchor']} href="">
               Aktualności
             </Link>
           </li>
           <li className={styles['list-item']}>
-            <Link className={styles['list-item-anchor']} href="">
+            <Link className={styles['list-item-anchor']} href="/oferta">
               Oferta
             </Link>
           </li>
           <li className={styles['list-item']}>
-            <Link className={styles['list-item-anchor']} href="">
+            <Link className={styles['list-item-anchor']} href="/rekrutacja">
               Rekrutacja
             </Link>
           </li>

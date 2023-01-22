@@ -138,13 +138,6 @@ const Offer = () => {
         bgXlUrl="xl:bg-[url(/assets/headers/bgOfferDesktop.svg)]"
         title="Dlaczego warto"
         titleSpan="nas wybrać?"
-        bgStyle={
-          width < 1480 && width > 1280
-            ? { backgroundPosition: '-600px' }
-            : width > 1480 && width < 1750
-            ? { backgroundPosition: '-400px' }
-            : { backgroundPosition: '-250px' }
-        }
         paragraph="Jeżeli zastanawiasz się jakie miejsce będzie
         najlepsze dla Twojego dziecka, chętnie przekonamy
         Cię, że to właśnie OMEGA"

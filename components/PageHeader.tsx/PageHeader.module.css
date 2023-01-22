@@ -3,7 +3,7 @@
 }
 
 .texts-container {
-  @apply w-full pb-7 pl-7 pr-12 flex flex-col justify-around items-start h-[290px] md:w-3/4 md:mx-8 md:h-[500px] md:self-start xl:self-start xl:w-4/5 xl:mx-[120px] xl:h-full xl:justify-center xl:mt-[-100px] xl:mx-[110px] 2xl:px-[100px] 3xl:px-[200px];
+  @apply w-full pb-7 pl-7 pr-12 flex flex-col justify-around items-start h-[290px] md:w-3/4 md:mx-8 md:h-[500px] md:self-start xl:self-start xl:w-4/5  xl:h-full xl:justify-center xl:mt-[-100px] xl:mx-[110px] 2xl:px-[100px] 3xl:px-[200px];
 }
 
 .header1 {

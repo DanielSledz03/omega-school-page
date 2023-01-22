@@ -2,6 +2,7 @@ import Navbar from '../Navbar/Navbar'
 import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg'
 import Button from '../Button/Button'
 import styles from './PageHeader.module.css'
+import Link from 'next/link'
 
 interface IProps {
   title: string
@@ -12,7 +13,9 @@ interface IProps {
   bgUrl: string
   bgXlUrl: string
   bgStyle?: React.CSSProperties
+  bgClassStyle?: any
   textContainerStyles?: any
+  checkKindergarten?: boolean
 }
 
 export const PageHeader = ({
@@ -25,9 +28,11 @@ export const PageHeader = ({
   bgXlUrl,
   textContainerStyles,
   bgStyle = {},
+  bgClassStyle,
+  checkKindergarten = false,
 }: IProps) => {
   return (
-    <div style={bgStyle} className={`${bgUrl}  ${bgXlUrl}  ${styles.container} `}>
+    <div style={bgStyle} className={`${bgClassStyle} ${bgUrl}  ${bgXlUrl}  ${styles.container} `}>
       <Navbar />
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>
@@ -41,6 +46,16 @@ export const PageHeader = ({
           className={styles['button']}
           arrowSrc={ArrowBlue}
         />
+
+        {checkKindergarten && (
+          <Link
+            href="https://omegaprzedszkole.pl/"
+            target="_blank"
+            className="font-[700] text-white underline mt-3 md:text-[30px] hover:text-[#FAC13C] duration-300"
+          >
+            Sprawdź nasze przedszkole!
+          </Link>
+        )}
       </div>
     </div>
   )

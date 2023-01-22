@@ -40,14 +40,14 @@ const ALink = ({
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
+  const router = useRouter()
   const toggleHamburger = () => {
     setIsMenuOpen((prev) => !prev)
   }
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles['logo-container']}>
+      <div onClick={() => router.replace('/')} className={styles['logo-container']}>
         <Image className={styles.logo} src={Logo} alt="Logo" />
       </div>
 
@@ -55,14 +55,13 @@ const Navbar = () => {
 
       <MobileNav isMenuOpen={isMenuOpen} />
       <div className="flex w-screen hidden xl:flex ">
-        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-1/2 ">
-          <ALink title="O&nbsp;naszej&nbsp;szkole" href="/o-nas" isBuilding />
-          <ALink title="Aktualności" isBuilding href="/aktualnosci" />
-          <ALink title="Oferta" isBuilding href="/oferta" />
-          <ALink title="Rekrutacja" isBuilding href="/rekrutacja" />
-          {/* <ALink title="Galeria" isBuilding href="/galeria" /> */}
+        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-1/3 ">
+          {/* <ALink title="O&nbsp;naszej&nbsp;szkole" href="/o-nas" isBuilding /> */}
+          <ALink title="Aktualności" href="/aktualnosci" />
+          <ALink title="Oferta" href="/oferta" />
+          <ALink title="Rekrutacja" href="/rekrutacja" />
         </div>
-        <div className="flex justify-center items-center xl:w-1/3 3xl:w-1/3 3xl:ml-10">
+        <div className="flex justify-center items-center xl:w-1/3 3xl:w-2/3 3xl:ml-10">
           <Link className={`${styles['nav-contact']}`} href="">
             Kontakt
             <div className={styles['nav-under-contruction-box']}>
