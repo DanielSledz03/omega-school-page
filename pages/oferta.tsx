@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Fragment } from 'react'
+import { Fragment, useRef } from 'react'
 import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
 import styles from '../styles/Oferta.module.css'
 import Button from '../components/Button/Button'
@@ -131,6 +131,18 @@ const Icon = ({ name, icon, color }: { name: string; icon: any; color: string })
 const Offer = () => {
   const router = useRouter()
   const { width } = useWindowDimensions()
+  const ref = useRef<HTMLDivElement>(null)
+
+  const executeScroll = () => {
+    if (ref?.current?.offsetTop)
+      window.scroll({
+        top:
+          ref?.current?.offsetTop! -
+          (width && width > 1280 ? 0 : width && (width < 768 ? 60 : 100))!,
+        left: 0,
+        behavior: 'smooth',
+      })
+  }
   return (
     <Fragment>
       <PageHeader
@@ -143,9 +155,12 @@ const Offer = () => {
         Cię, że to właśnie OMEGA"
         buttonTitle="Sprawdź dlaczego"
         textContainerStyles={styles['page-header-text']}
-        onClick={() => null}
+        onClick={executeScroll}
       />
-      <div className="pt-5xl:w-full xl:flex xl:px-[110px] xl:py-12 2xl:px-[200px] max-w-[1920px] mx-auto">
+      <div
+        ref={ref}
+        className="pt-5xl:w-full xl:flex xl:px-[110px] xl:py-12 2xl:px-[200px] max-w-[1920px] mx-auto"
+      >
         <div className={styles['gray-circle-container']}>
           <p className={styles['gray-circle-paragraph']}>
             Zawsze dostosowana do <br className="hidden xs:block" /> potrzeb i uzdolnień naszych

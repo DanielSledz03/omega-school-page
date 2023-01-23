@@ -1,5 +1,5 @@
 .navbar {
-  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] md:py-0 md:h-[100px] md:px-8 xl:px-[0] xl:mx-[100px]  xl:bg-transparent xl:relative xl:h-[130px] xl:overflow-y-hidden xl:overflow-x-hidden 2xl:mx-[200px];
+  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] md:py-0 md:h-[100px] md:px-8 xl:px-[0] xl:mx-[100px]  xl:bg-transparent xl:sticky xl:px-[100px] xl:h-[130px] xl:overflow-y-hidden xl:overflow-x-hidden 2xl:mx-[200px] max-w-[1920px];
 }
 
 .logo-container {

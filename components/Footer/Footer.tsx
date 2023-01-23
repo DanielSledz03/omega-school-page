@@ -1,9 +1,13 @@
 import Image from 'next/image'
 import styles from './Footer.module.css'
 import Logo from '../../public/assets/logo.svg'
+import { useRouter } from 'next/router'
 const Footer = () => {
+  const router = useRouter()
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={`${router.pathname === '/' ? 'mb-[80px] 2xl:mb-[100px]' : ''} ${styles.footer}`}
+    >
       <div className={styles['footer-header-container']}>
         <h4 className={styles['footer-header-text']}>
           Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
@@ -93,7 +97,7 @@ const Footer = () => {
       </div>
 
       <div className={styles['footer-school-name']}>
-        <p>© 2022</p>
+        <p>© 2023</p>
         <p>Społeczna Szkoła Podstawowa OMEGA</p>
       </div>
 

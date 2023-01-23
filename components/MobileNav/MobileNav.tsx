@@ -1,16 +1,23 @@
-import { useState, Fragment } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import YoutubeIcon from '../../public/assets/YoutubeIcon.svg'
 import FacebookIcon from '../../public/assets/FacebookIcon.svg'
 import styles from './MobileNav.module.css'
 import BackButtonIcon from '../../public/assets/BackButtonIcon.svg'
+import { useRouter } from 'next/router'
 
 export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
   const [isHomeListVisible, setIsHomeListVisible] = useState(false)
+  const router = useRouter()
+
+  const handleToggle = () => {
+    setIsHomeListVisible((prev) => !prev)
+  }
+
   return (
     <div className={`${!isMenuOpen ? styles['mobile-nav-visible'] : ''} ${styles['mobile-nav']}`}>
-      <div
+      {/* <div
         className={`${
           isHomeListVisible ? 'left-0' : 'left-full'
         } w-full h-full absolute bg-[#071E4A] duration-300 flex flex-col items-center justify-around  `}
@@ -67,7 +74,7 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className={` w-full h-full bg-[#071E4A] flex flex-col items-center justify-around  `}>
         <h3 className={styles['mobile-nav-header']}>Menu</h3>
@@ -82,25 +89,30 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
             </Link>
           </li> */}
           <li className={styles['list-item']}>
-            <Link className={styles['list-item-anchor']} href="">
+            <Link onClick={handleToggle} className={styles['list-item-anchor']} href="/">
+              Strona Główna
+            </Link>
+          </li>
+          <li className={styles['list-item']}>
+            <Link onClick={handleToggle} className={styles['list-item-anchor']} href="/aktualnosci">
               Aktualności
             </Link>
           </li>
           <li className={styles['list-item']}>
-            <Link className={styles['list-item-anchor']} href="/oferta">
+            <Link onClick={handleToggle} className={styles['list-item-anchor']} href="/oferta">
               Oferta
             </Link>
           </li>
           <li className={styles['list-item']}>
-            <Link className={styles['list-item-anchor']} href="/rekrutacja">
+            <Link onClick={handleToggle} className={styles['list-item-anchor']} href="/rekrutacja">
               Rekrutacja
             </Link>
           </li>
         </ul>
         <div>
-          <Link className={styles['contact-button']} href="">
+          {/* <Link className={styles['contact-button']} href="">
             Kontakt
-          </Link>
+          </Link> */}
 
           <div className={styles['social-media-container']}>
             <Link

@@ -1,5 +1,5 @@
 .container {
-  @apply w-full  bg-[#FAFAFA] rounded-[30px] my-2 p-4 flex flex-col xs:my-3 xl:flex-row xl:my-6;
+  @apply w-full bg-[#FAFAFA] rounded-[30px] my-2 p-4 flex flex-col xs:my-3 xl:flex-row xl:my-6 max-w-[1920px];
 }
 
 .image-container {
@@ -27,5 +27,5 @@
 }
 
 .button-read {
-  @apply hidden h-[45px] text-[16px] self-end xl:flex xl:absolute xl:right-0 xl:bottom-[0px];
+  @apply h-[45px] text-[16px] mt-5 w-3/5 xl:self-end xl:my-0 xl:w-auto xl:flex xl:absolute xl:right-0 xl:bottom-[0px];
 }

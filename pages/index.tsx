@@ -9,12 +9,26 @@ import AboutUsMobile from '../public/assets/homepage/aboutUsMobile.svg'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import { createClient, EntryCollection } from 'contentful'
+import Link from 'next/link'
 
 export default function Home({ posts }: { posts: any }) {
   const router = useRouter()
 
   return (
     <Fragment>
+      <div className="hidden xl:flex fixed bottom-0 w-full h-[80px] bg-white z-[90] flex items-center justify-center 2xl:h-[100px]">
+        <p className="text-center text-[#579CE2] text-[20px] underline font-[700]">
+          Rekrutacja na rok 2023 trwa, zapisz swoje dziecko już dziś!
+        </p>
+
+        <Button
+          label="Wypełnij formularz"
+          buttonColor="bg-[#579CE2]"
+          textColor="text-[white]"
+          className={styles['button-modal-recrutation']}
+          onClick={() => router.push('/rekrutacja')}
+        />
+      </div>
       <PageHeader
         bgUrl="bg-[url(/assets/headers/bgHomeMobile.svg)]"
         bgXlUrl="xl:bg-[url(/assets/headers/bgHomeDesktop.svg)]"
@@ -42,16 +56,18 @@ export default function Home({ posts }: { posts: any }) {
         {posts?.map((post: any) => {
           return (
             <ArticlePreviewBox
+              id={post.sys.id}
               key={post.sys.id}
               title={post.fields.title}
               content={post.fields.content.content[0].content[0].value}
               createdAt={post.sys.createdAt}
+              imageSrc={'https:' + post.fields.gallery[0].fields.file.url}
             />
           )
         })}
         <Button
           label="Zobacz wszystkie aktualności"
-          onClick={() => null}
+          onClick={() => router.push('/aktualnosci')}
           textColor="text-white"
           className={styles['button-all-posts']}
           buttonColor="bg-[#FAC13C]"

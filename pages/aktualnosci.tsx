@@ -1,13 +1,27 @@
 import { createClient } from 'contentful'
 import Image from 'next/image'
-import { Fragment } from 'react'
+import { Fragment, useRef } from 'react'
 import { ArticlePreviewBox } from '../components/ArticlePreviewBox/ArticlePreviewBox'
 import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import styles from '../styles/HomePage.module.css'
 
 const Aktualnosci = ({ posts }: { posts: any }) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const { width } = useWindowDimensions()
+
+  const executeScroll = () => {
+    if (ref?.current?.offsetTop)
+      window.scroll({
+        top:
+          ref?.current?.offsetTop! -
+          (width && width > 1280 ? 0 : width && (width < 768 ? 60 : 100))!,
+        left: 0,
+        behavior: 'smooth',
+      })
+  }
   return (
     <Fragment>
       <PageHeader
@@ -18,9 +32,10 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
         paragraph="Przeczytaj wszystkie z naszych aktualności,
         aby być na bieżąco!"
         buttonTitle="Nasze aktualności"
-        onClick={() => null}
+        onClick={() => executeScroll()}
+        bgClassStyle={styles['news-bg']}
       />
-      <div className={styles['content-box']}>
+      <div ref={ref} className={styles['content-box']}>
         <div className={styles['header2-container']}>
           <div className={styles['ellipses-left']}>
             <Image src={EllipsesLeft} alt="EllipsesLeft" />
@@ -36,9 +51,11 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
           return (
             <ArticlePreviewBox
               key={post.sys.id}
+              id={post.sys.id}
               title={post.fields.title}
               content={post.fields.content.content[0].content[0].value}
               createdAt={post.sys.createdAt}
+              imageSrc={'https:' + post.fields.gallery[0].fields.file.url}
             />
           )
         })}

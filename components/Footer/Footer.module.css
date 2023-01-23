@@ -27,7 +27,7 @@
 }
 
 .footer-school-name {
-  @apply border-y-[1px] border-y-[#455677] flex flex-col justify-center items-center py-6 xl:w-1/2 xl:border-b-[0px] xl:border-t-[1px] xl:border-t-[#455677] xl:flex-row xl:justify-start;
+  @apply border-y-[1px] border-y-[#455677] flex flex-col justify-center items-center py-6 xl:w-1/2 xl:pb-0 xl:border-b-[0px] xl:border-t-[1px] xl:border-t-[#455677] xl:flex-row xl:justify-start;
 }
 
 .footer-school-name p {

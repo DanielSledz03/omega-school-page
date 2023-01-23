@@ -38,7 +38,7 @@ const ALink = ({
   )
 }
 
-const Navbar = () => {
+const Navbar = ({ className }: any) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
   const toggleHamburger = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${className} ${styles.navbar}`}>
       <div onClick={() => router.replace('/')} className={styles['logo-container']}>
         <Image className={styles.logo} src={Logo} alt="Logo" />
       </div>
@@ -55,14 +55,14 @@ const Navbar = () => {
 
       <MobileNav isMenuOpen={isMenuOpen} />
       <div className="flex w-screen hidden xl:flex ">
-        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-1/3 ">
+        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-1/2 ">
           {/* <ALink title="O&nbsp;naszej&nbsp;szkole" href="/o-nas" isBuilding /> */}
           <ALink title="Aktualności" href="/aktualnosci" />
           <ALink title="Oferta" href="/oferta" />
           <ALink title="Rekrutacja" href="/rekrutacja" />
         </div>
         <div className="flex justify-center items-center xl:w-1/3 3xl:w-2/3 3xl:ml-10">
-          <Link className={`${styles['nav-contact']}`} href="">
+          {/* <Link className={`${styles['nav-contact']}`} href="">
             Kontakt
             <div className={styles['nav-under-contruction-box']}>
               <div className={styles['nav-under-contruction-arrow']} />
@@ -71,7 +71,7 @@ const Navbar = () => {
                 <p>Zapraszamy wkrótce.</p>
               </div>
             </div>
-          </Link>
+          </Link> */}
           <Link
             target="_blank"
             rel="noopener noreferrer"
