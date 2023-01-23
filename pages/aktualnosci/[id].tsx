@@ -49,13 +49,13 @@ export const getStaticProps = async ({ params }: { params: any }) => {
   }
 
   return {
-    props: { post: items[0] },
+    props: { post: items[0], createdAtString: items[0].sys.createdAt },
     revalidate: 1,
   }
 }
 
-const ArtykulyDetail = ({ post }: any) => {
-  const createdAt = new Date(post.sys.createdAt)
+const ArtykulyDetail = ({ post, createdAtString }: any) => {
+  const createdAt = new Date(createdAtString)
 
   const router = useRouter()
   if (!post) return <div />
@@ -78,7 +78,7 @@ const ArtykulyDetail = ({ post }: any) => {
         </div>
         <div>
           <Image
-            key={post.fields.gallery[0].sys.id}
+            key={post.fields.gallery[0].fields.file.url}
             alt="fotka"
             width={300}
             height={140}
@@ -95,7 +95,7 @@ const ArtykulyDetail = ({ post }: any) => {
         <div className="my-10 xl:flex xl:w-full xl:flex-wrap">
           {post.fields.gallery.map((image: any) => (
             <Image
-              key={image.sys.id}
+              key={image.fields.file.url}
               alt="fotka"
               width={300}
               height={500}
