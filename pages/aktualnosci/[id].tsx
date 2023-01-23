@@ -6,9 +6,59 @@ import { Fragment } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from '../../styles/HomePage.module.css'
 
+export const getStaticPaths = async () => {
+  const client = createClient({
+    space: 'l02hooqf2mkf',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
+  })
+  const res = await client.getEntries({
+    content_type: 'post',
+  })
+
+  const paths = res.items.map((item) => {
+    return {
+      params: { id: item.sys.id },
+    }
+  })
+
+  return {
+    paths,
+    fallback: true,
+  }
+}
+
+export const getStaticProps = async ({ params }: { params: any }) => {
+  const client = createClient({
+    space: 'l02hooqf2mkf',
+    environment: 'master', // defaults to 'master' if not set
+    accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
+  })
+  const { items } = await client.getEntries({
+    content_type: 'post',
+    'sys.id': params.id,
+  })
+
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { post: items[0] },
+    revalidate: 1,
+  }
+}
+
 const ArtykulyDetail = ({ post }: any) => {
   const createdAt = new Date(post.sys.createdAt)
+
   const router = useRouter()
+  if (!post) return <div />
   return (
     <div className="w-full max-w-[1920px] 3xl:mx-auto">
       <Navbar className={styles['navbar']} />
@@ -60,38 +110,3 @@ const ArtykulyDetail = ({ post }: any) => {
 }
 
 export default ArtykulyDetail
-
-const client = createClient({
-  space: 'l02hooqf2mkf',
-  environment: 'master', // defaults to 'master' if not set
-  accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
-})
-
-export const getStaticPaths = async () => {
-  const res = await client.getEntries({
-    content_type: 'post',
-  })
-
-  const paths = res.items.map((item) => {
-    return {
-      params: { id: item.sys.id },
-    }
-  })
-
-  return {
-    paths,
-    fallback: true,
-  }
-}
-
-export const getStaticProps = async ({ params }: { params: any }) => {
-  const { items } = await client.getEntries({
-    content_type: 'post',
-    'sys.id': params.id,
-  })
-
-  return {
-    props: { post: items[0] },
-    revalidate: 1,
-  }
-}
