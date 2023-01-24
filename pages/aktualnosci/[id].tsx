@@ -2,9 +2,10 @@ import { createClient } from 'contentful'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Arrow from '../../public/assets/rightArrow.svg'
-import { Fragment } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from '../../styles/HomePage.module.css'
+import useOutsideClick from '../../hooks/useOutsideClick'
 
 export const getStaticPaths = async () => {
   const client = createClient({
@@ -56,56 +57,86 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 
 const ArtykulyDetail = ({ post, createdAtString }: any) => {
   const createdAt = new Date(createdAtString)
-
+  const [clickedImageID, setClickedImageID] = useState<any>()
+  const [isModalVisible, setisModalVisible] = useState(false)
   const router = useRouter()
-  if (!post) return <div />
-  return (
-    <div className="w-full max-w-[1920px] 3xl:mx-auto">
-      <Navbar className={styles['navbar']} />
-      <div className="mt-[60px] py-3 px-3 md:mt-[100px] md:px-8 xl:px-[110px] 2xl:px-[200px] xl:mt-0 ">
-        <div className="flex justify-between items-center pb-2 md:py-5">
-          <div
-            onClick={() => router.back()}
-            className="w-[40px] h-[40px] bg-[#579CE2] rounded-full flex justify-center items-center p-2 md:w-[50px] md:h-[50px] xl:w-auto xl:px-4 hover:cursor-pointer "
-          >
-            <Image src={Arrow} alt="Strzłka" className="w-full h-full object-contain rotate-180" />
-            <p className="hidden xl:block text-white mx-6">Wróć</p>
-          </div>
+  const ref = useRef()
+  useOutsideClick(ref, () => {
+    setisModalVisible(false)
+  })
 
-          <p className="text-[#6D6D6D] text-[14px] md:text-[16px]">
-            Dodano: {createdAt.toLocaleDateString()}
-          </p>
-        </div>
-        <div>
+  if (!post) return <div />
+
+  return (
+    <Fragment>
+      {/* {isModalVisible && (
+        <div className="fixed top-0 bottom-0 left-0 right-0 bg-[black] z-[1000] overflow-hidden flex justify-center items-center">
           <Image
-            key={post.fields.mainImage.fields.file.url}
+            key={post.fields.gallery[clickedImageID].fields.file.url}
             alt="fotka"
-            width={1300}
-            height={1140}
-            src={'https:' + post.fields.mainImage.fields.file.url}
-            className="my-2 w-full h-[140px] object-cover rounded-[10px] md:h-[200px] xl:h-[300px]"
+            ref={ref}
+            width={19200}
+            height={1200}
+            src={'https:' + post.fields.gallery[clickedImageID].fields.file.url}
+            className="my-2 w-1/2 object-contain "
           />
         </div>
-        <h1 className="text-[#071E4A] font-bold text-[30px] leading-[35px] mt-5 mb-7 md:text-[50px] md:leading-[55px] md:mb-10 xl:text-[85px] xl:leading-[84px] xl:my-10">
-          {post.fields.title}
-        </h1>
-        <p className="block w-full bg-[#FAFAFA] px-3 py-4 rounded-[25px] text-[#071E4A] leading-[24px] md:text-[20px] md:leading-[30px] xl:px-6 xl:py-8">
-          {post.fields.content}
-        </p>
-        <div className="my-10 xl:flex xl:w-full xl:flex-wrap">
-          {post.fields.gallery.map((image: any) => (
+      )} */}
+      <div className="w-full max-w-[1920px] 3xl:mx-auto overflow-x-hidden">
+        <Navbar className={styles['navbar']} />
+        <div className="mt-[60px] py-3 px-3 md:mt-[100px] md:px-8 xl:px-[200px] 2xl:px-[250px] xl:mt-0 ">
+          <div className="flex justify-between items-center pb-2 md:py-5">
+            <div
+              onClick={() => router.back()}
+              className="w-[40px] h-[40px] bg-[#579CE2] rounded-full flex justify-center items-center p-2 md:w-[50px] md:h-[50px] xl:w-auto xl:px-4 hover:cursor-pointer "
+            >
+              <Image
+                src={Arrow}
+                alt="Strzłka"
+                className="w-full h-full object-contain rotate-180"
+              />
+              <p className="hidden xl:block text-white mx-6">Wróć</p>
+            </div>
+
+            <p className="text-[#6D6D6D] text-[14px] md:text-[16px]">
+              Dodano: {createdAt.toLocaleDateString()}
+            </p>
+          </div>
+          <div>
             <Image
-              key={image.fields.file.url}
+              key={post.fields.mainImage.fields.file.url}
               alt="fotka"
               width={1300}
-              height={1500}
-              src={'https:' + image.fields.file.url}
-              className="my-2 w-full h-[215px] object-cover rounded-[10px] md:mb-8 md:h-[300px] xl:w-1/3 xl:mb-4 xl:px-4"
+              height={1140}
+              src={'https:' + post.fields.mainImage.fields.file.url}
+              className="my-2 w-full h-[140px] object-cover rounded-[10px] md:h-[200px] xl:h-[300px]"
             />
-          ))}
+          </div>
+          <h1 className="text-[#071E4A] font-bold text-[30px] leading-[35px] mt-5 mb-7 md:text-[50px] md:leading-[55px] md:mb-10 xl:text-[85px] xl:leading-[84px] xl:my-10">
+            {post.fields.title}
+          </h1>
+          <p className="block w-full bg-[#FAFAFA] px-3 py-4 rounded-[25px] text-[#071E4A] leading-[24px] md:text-[20px] md:leading-[30px] xl:px-12 xl:py-8">
+            {post.fields.content}
+          </p>
+          <div className="my-10 xl:flex xl:w-full xl:flex-wrap hover:cursor-pointer">
+            {post.fields.gallery?.map((image: any, index: number) => (
+              <Image
+                key={image.fields.file.url}
+                alt="fotka"
+                onClick={() => {
+                  setClickedImageID(index)
+                  setisModalVisible(true)
+                }}
+                width={1300}
+                height={1500}
+                src={'https:' + image.fields.file.url}
+                className="my-2 w-full h-[215px] object-cover rounded-[10px] md:mb-8 md:h-[300px] xl:w-1/3 xl:mb-4 xl:px-4 "
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
 

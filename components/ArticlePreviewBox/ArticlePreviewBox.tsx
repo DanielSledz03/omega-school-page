@@ -15,8 +15,7 @@ interface IProps {
 
 export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: IProps) => {
   const router = useRouter()
-
-  console.log(imageSrc)
+  const createdAtString = new Date(createdAt)
 
   return (
     <div className={styles['container']}>
@@ -32,7 +31,7 @@ export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: I
       </div>
       <div className={styles['content-box']}>
         <h5 className={styles.title}>{title}</h5>
-        <p className={styles.content}>{content.slice(0, 200)}</p>
+        <p className={styles.content}>{content}</p>
         <Button
           label="Czytaj całość"
           onClick={() => router.push('/aktualnosci/' + id)}
@@ -40,7 +39,7 @@ export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: I
           textColor="text-white"
           className={styles['button-read']}
         />
-        <p className={styles['created-at']}>Dodano: 02.02.2023</p>
+        <p className={styles['created-at']}> Dodano: {createdAtString.toLocaleDateString()}</p>
       </div>
     </div>
   )

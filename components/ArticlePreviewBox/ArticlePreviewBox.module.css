@@ -19,7 +19,7 @@
 }
 
 .content {
-  @apply block w-full text-[#6D6D6D] leading-[19.2px] md:text-[20px] md:leading-[24px] xl:mb-[60px];
+  @apply block w-full text-[#6D6D6D] leading-[19.2px] md:text-[20px] md:leading-[26px] xl:mb-[60px] xl:w-10/12;
 }
 
 .created-at {
