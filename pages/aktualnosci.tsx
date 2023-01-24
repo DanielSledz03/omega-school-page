@@ -48,14 +48,15 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
           </h2>
         </div>
         {posts?.map((post: any) => {
+          console.log(post.fields.mainImage.fields.file.url)
           return (
             <ArticlePreviewBox
               key={post.sys.id}
               id={post.sys.id}
               title={post.fields.title}
-              content={post.fields.content.content[0].content[0].value}
+              content={post.fields.content}
               createdAt={post.sys.createdAt}
-              imageSrc={'https:' + post.fields.gallery[0].fields.file.url}
+              imageSrc={'https:' + post.fields.mainImage.fields.file.url}
             />
           )
         })}
@@ -68,9 +69,9 @@ export default Aktualnosci
 
 export async function getStaticProps() {
   const client = createClient({
-    space: 'l02hooqf2mkf',
+    space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
-    accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
+    accessToken: 'template_data',
   })
 
   const res = await client.getEntries({ content_type: 'post' })

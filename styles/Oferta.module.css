@@ -43,7 +43,7 @@
 }
 
 .section-item {
-  @apply block w-full px-3 py-1 my-2 bg-[#F3F3F3] rounded-[10px] text-[#071E4A] text-[16px] font-[700] md:text-[22px] md:px-5 md:py-2 xl:text-[20px] xl:py-1 xl:px-4;
+  @apply block w-full px-3 py-1 my-2 bg-[#F3F3F3] rounded-[10px] text-[#071E4A] text-[16px] font-[700] md:text-[22px] md:px-5 md:py-2 xl:text-[20px] xl:py-2 xl:px-4;
 }
 
 .section-images-container {

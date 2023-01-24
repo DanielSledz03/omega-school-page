@@ -56,12 +56,12 @@ export default function Home({ posts }: { posts: any }) {
         {posts?.map((post: any) => {
           return (
             <ArticlePreviewBox
-              id={post.sys.id}
               key={post.sys.id}
+              id={post.sys.id}
               title={post.fields.title}
-              content={post.fields.content.content[0].content[0].value}
+              content={post.fields.content}
               createdAt={post.sys.createdAt}
-              imageSrc={'https:' + post.fields.gallery[0].fields.file.url}
+              imageSrc={'https:' + post.fields.mainImage.fields.file.url}
             />
           )
         })}
@@ -92,17 +92,17 @@ export default function Home({ posts }: { posts: any }) {
                 prawdziwi Nauczyciele z klasą...
               </span>
             </p>
-            <Button
+            {/* <Button
               label="Dowiedz się o nas więcej"
               onClick={() => null}
               textColor="text-white "
               className={styles['button-about-us']}
               buttonColor="bg-[#579CE2]"
-            />
+            /> */}
           </div>
         </div>
 
-        <div className={styles['gallery-container']}>
+        {/* <div className={styles['gallery-container']}>
           <div className={styles['header2-container']}>
             <div className={styles['ellipses-left']}>
               <Image src={EllipsesLeft} alt="EllipsesLeft" />
@@ -117,7 +117,7 @@ export default function Home({ posts }: { posts: any }) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sed mattis
             congue. Etiam eu ultricies enim. Curabitur vel nisl purus.{' '}
           </p>
-          {/* 
+          
           <div className="w-[414px] flex overflow-x-scroll">
             <div className={styles['gallery-image']}>
               <Image className="w-full" src={galleryImg1} alt="Zdjęcie z galerii nr 1" />
@@ -131,8 +131,8 @@ export default function Home({ posts }: { posts: any }) {
             <div className={styles['gallery-image']}>
               <Image className="w-full" src={galleryImg4} alt="Zdjęcie z galerii nr 1" />
             </div>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
     </Fragment>
   )
@@ -140,9 +140,9 @@ export default function Home({ posts }: { posts: any }) {
 
 export async function getStaticProps() {
   const client = createClient({
-    space: 'l02hooqf2mkf',
+    space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
-    accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
+    accessToken: 'template_data',
   })
 
   const res = await client.getEntries({ content_type: 'post' })

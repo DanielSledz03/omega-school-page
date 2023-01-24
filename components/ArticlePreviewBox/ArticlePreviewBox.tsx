@@ -16,6 +16,8 @@ interface IProps {
 export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: IProps) => {
   const router = useRouter()
 
+  console.log(imageSrc)
+
   return (
     <div className={styles['container']}>
       <div className={styles['image-container']}>
@@ -23,8 +25,8 @@ export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: I
           quality={100}
           className={styles.image}
           src={imageSrc}
-          width={100}
-          height={200}
+          width={1000}
+          height={2000}
           alt="PostImage"
         />
       </div>

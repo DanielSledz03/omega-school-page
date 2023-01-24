@@ -8,9 +8,9 @@ import styles from '../../styles/HomePage.module.css'
 
 export const getStaticPaths = async () => {
   const client = createClient({
-    space: 'l02hooqf2mkf',
+    space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
-    accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
+    accessToken: 'template_data',
   })
   const res = await client.getEntries({
     content_type: 'post',
@@ -30,9 +30,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: { params: any }) => {
   const client = createClient({
-    space: 'l02hooqf2mkf',
+    space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
-    accessToken: 'Vu9W2xQfTFEvCKQm0hdH6Ne-MYTM5Xu4A8-hefjpOpw',
+    accessToken: 'template_data',
   })
   const { items } = await client.getEntries({
     content_type: 'post',
@@ -78,11 +78,11 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
         </div>
         <div>
           <Image
-            key={post.fields.gallery[0].fields.file.url}
+            key={post.fields.mainImage.fields.file.url}
             alt="fotka"
-            width={300}
-            height={140}
-            src={'https:' + post.fields.gallery[0].fields.file.url}
+            width={1300}
+            height={1140}
+            src={'https:' + post.fields.mainImage.fields.file.url}
             className="my-2 w-full h-[140px] object-cover rounded-[10px] md:h-[200px] xl:h-[300px]"
           />
         </div>
@@ -90,15 +90,15 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
           {post.fields.title}
         </h1>
         <p className="block w-full bg-[#FAFAFA] px-3 py-4 rounded-[25px] text-[#071E4A] leading-[24px] md:text-[20px] md:leading-[30px] xl:px-6 xl:py-8">
-          {post.fields.content.content[0].content[0].value}
+          {post.fields.content}
         </p>
         <div className="my-10 xl:flex xl:w-full xl:flex-wrap">
           {post.fields.gallery.map((image: any) => (
             <Image
               key={image.fields.file.url}
               alt="fotka"
-              width={300}
-              height={500}
+              width={1300}
+              height={1500}
               src={'https:' + image.fields.file.url}
               className="my-2 w-full h-[215px] object-cover rounded-[10px] md:mb-8 md:h-[300px] xl:w-1/3 xl:mb-4 xl:px-4"
             />

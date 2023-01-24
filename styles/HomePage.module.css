@@ -31,7 +31,7 @@
 }
 
 .about-us-container {
-  @apply px-3 mt-12 xl:flex xl:my-12  max-w-[1920px];
+  @apply px-3 mt-12 xl:flex xl:my-12 2xl:mb-[120px] 2xl:mt-10 max-w-[1920px];
 }
 
 .about-us-image {
@@ -39,7 +39,7 @@
 }
 
 .about-us-text-container {
-  @apply xl:w-2/3 xl:pl-12 xl:flex xl:flex-col xl:justify-center;
+  @apply xl:w-2/3 xl:pl-12 xl:flex xl:flex-col xl:justify-center 2xl:pl-[100px];
 }
 
 .about-us-header-text {
@@ -47,7 +47,7 @@
 }
 
 .about-us-paragraph {
-  @apply text-[#071E4A] xl:text-[20px] xl:leading-[24px] xl:w-11/12;
+  @apply text-[#071E4A] xl:text-[20px] xl:leading-[24px] xl:w-full;
 }
 
 .about-us-paragraph span {

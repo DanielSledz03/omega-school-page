@@ -51,7 +51,7 @@ export const PageHeader = ({
           <Link
             href="https://omegaprzedszkole.pl/"
             target="_blank"
-            className="font-[700] text-white underline mt-3 md:text-[30px] hover:text-[#FAC13C] duration-300 xl:mt-8"
+            className="font-[700] text-white underline mt-3 md:text-[25px] hover:text-[#FAC13C] duration-300 xl:mt-8"
           >
             Sprawdź nasze przedszkole!
           </Link>
