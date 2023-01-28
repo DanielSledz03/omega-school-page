@@ -13,6 +13,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
   const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5)
   const ref = useRef<HTMLDivElement>(null)
   const { width } = useWindowDimensions()
+  console.log(posts)
 
   const executeScroll = () => {
     if (ref?.current?.offsetTop)
@@ -49,19 +50,35 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
             Zobacz, <br className="md:hidden" /> co się u nas dzieje
           </h2>
         </div>
-        {posts?.map((post: any, index: number) => {
-          if (howManyArticlesLoaded < index) return null
-          return (
-            <ArticlePreviewBox
-              key={post.sys.id}
-              id={post.sys.id}
-              title={post.fields.title}
-              content={post.fields.content}
-              createdAt={post.sys.createdAt}
-              imageSrc={'https:' + post.fields.mainImage.fields.file.url}
-            />
-          )
-        })}
+        {posts
+          .filter((post: any) => post.fields.pinned === true)
+          .map((post: any) => {
+            return (
+              <ArticlePreviewBox
+                key={post.sys.id}
+                id={post.sys.id}
+                title={post.fields.title}
+                content={post.fields.content}
+                createdAt={post.sys.createdAt}
+                imageSrc={'https:' + post.fields.mainImage.fields.file.url}
+              />
+            )
+          })}
+        {posts
+          ?.filter((post: any) => post.fields.pinned === false)
+          .map((post: any, index: number) => {
+            if (howManyArticlesLoaded < index) return null
+            return (
+              <ArticlePreviewBox
+                key={post.sys.id}
+                id={post.sys.id}
+                title={post.fields.title}
+                content={post.fields.content}
+                createdAt={post.sys.createdAt}
+                imageSrc={'https:' + post.fields.mainImage.fields.file.url}
+              />
+            )
+          })}
       </div>
       {howManyArticlesLoaded < posts.length && (
         <div className="w-full flex justify-center my-7 max-w-[1920px]">

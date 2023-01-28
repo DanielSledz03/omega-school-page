@@ -58,11 +58,23 @@ export default function Home({ posts }: { posts: any }) {
           </h2>
         </div>
         {posts
-          ?.sort(function (x: any, y: any) {
-            return x.fields.pinned === y.fields.pinned ? 0 : x ? -1 : 1
-          })
+          .filter((post: any) => post.fields.pinned === true)
+          .map((post: any) => {
+            return (
+              <ArticlePreviewBox
+                key={post.sys.id}
+                id={post.sys.id}
+                title={post.fields.title}
+                content={post.fields.content}
+                createdAt={post.sys.createdAt}
+                imageSrc={'https:' + post.fields.mainImage.fields.file.url}
+              />
+            )
+          })}
+        {posts
+          ?.filter((post: any) => post.fields.pinned === false)
           .map((post: any, index: number) => {
-            if (index > 2) return null
+            if (1 < index) return null
             return (
               <ArticlePreviewBox
                 key={post.sys.id}
