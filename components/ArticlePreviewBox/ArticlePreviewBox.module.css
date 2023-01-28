@@ -7,7 +7,7 @@
 }
 
 .image {
-  @apply w-full xl:h-full xl:object-cover rounded-[10px];
+  @apply w-full h-[140px] xl:h-full object-cover rounded-[10px];
 }
 
 .content-box {

@@ -13,11 +13,7 @@ import Link from 'next/link'
 
 export default function Home({ posts }: { posts: any }) {
   const router = useRouter()
-  console.log(
-    posts.filter((post: any) => {
-      console.log(post.fields.pinned)
-    }),
-  )
+
   return (
     <Fragment>
       <div className="hidden xl:flex fixed bottom-0 w-full h-[80px] bg-white z-[90] flex items-center justify-center 2xl:h-[100px]">
@@ -62,6 +58,7 @@ export default function Home({ posts }: { posts: any }) {
           .map((post: any) => {
             return (
               <ArticlePreviewBox
+                shortDescription={post.fields.shortDescription}
                 key={post.sys.id}
                 id={post.sys.id}
                 title={post.fields.title}
@@ -77,6 +74,7 @@ export default function Home({ posts }: { posts: any }) {
             if (1 < index) return null
             return (
               <ArticlePreviewBox
+                shortDescription={post.fields.shortDescription}
                 key={post.sys.id}
                 id={post.sys.id}
                 title={post.fields.title}

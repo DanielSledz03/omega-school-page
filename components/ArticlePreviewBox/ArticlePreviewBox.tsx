@@ -11,9 +11,17 @@ interface IProps {
   content: string
   createdAt: string
   imageSrc: string
+  shortDescription: string
 }
 
-export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: IProps) => {
+export const ArticlePreviewBox = ({
+  title,
+  content,
+  createdAt,
+  id,
+  imageSrc,
+  shortDescription,
+}: IProps) => {
   const router = useRouter()
   const createdAtString = new Date(createdAt)
 
@@ -31,7 +39,7 @@ export const ArticlePreviewBox = ({ title, content, createdAt, id, imageSrc }: I
       </div>
       <div className={styles['content-box']}>
         <h5 className={styles.title}>{title}</h5>
-        <p className={styles.content}>{content}</p>
+        <p className={styles.content}>{shortDescription}</p>
         <Button
           label="Czytaj całość"
           onClick={() => router.push('/aktualnosci/' + id)}

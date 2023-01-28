@@ -55,6 +55,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
           .map((post: any) => {
             return (
               <ArticlePreviewBox
+                shortDescription={post.fields.shortDescription}
                 key={post.sys.id}
                 id={post.sys.id}
                 title={post.fields.title}
@@ -70,6 +71,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
             if (howManyArticlesLoaded < index) return null
             return (
               <ArticlePreviewBox
+                shortDescription={post.fields.shortDescription}
                 key={post.sys.id}
                 id={post.sys.id}
                 title={post.fields.title}

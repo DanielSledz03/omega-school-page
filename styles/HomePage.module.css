@@ -1,5 +1,5 @@
 .bg-style {
-  @apply bg-[-70px] xs:bg-[-50px] xms:bg-[-40px] xm:bg-[-80px] md:bg-right-top xl:bg-center;
+  @apply bg-[-70px] xs:bg-[-50px] xms:bg-[0px] xm:bg-[-80px] md:bg-right-top xl:bg-center;
 }
 
 .text-container {
