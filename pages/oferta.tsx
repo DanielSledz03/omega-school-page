@@ -73,6 +73,8 @@ const awards = [
   'Opieka pedagoga, psychologa, logopedy, rehabilitacja',
   'Biała szkoła (wyjazdy narciarskie)',
   'Zielona szkoła (zawsze nad morzem)',
+  'Współpraca z instytucją kultury "Miasto Ogrodów" w Katowicach',
+  'Współpraca z Wydziałem Edukacji Artystycznej Akademii Muzycznej w Katowicach',
 ]
 
 const extraCurricularActivities = [
@@ -88,6 +90,8 @@ const extraCurricularActivities = [
   'Robotyka',
   'Tańce',
   'Szkoła tańca',
+  'Chór "Omega Voce"',
+  'Zespół wokalno-intrumentalny "Pierwsza klasa"',
 ]
 
 const activityClubs = [
