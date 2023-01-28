@@ -64,15 +64,16 @@ const icons = [
 const awards = [
   'Serdeczna atmosfera',
   'Wysoki poziom bezpieczeństwa: monitoring, domofon, ochrona',
-  'Język angielski i native speaker od 1 klasy',
-  'Drugi język obcy od 3 klasy: hiszpański lub niemiecki',
+  'Język angielski i native speaker od klasy 1',
+  'Drugi język obcy od klasy 3: hiszpański lub niemiecki',
   'Edukacja teatralna',
   'Basen',
   'Judo',
-  'Sala integracji sensorycznej',
-  'Opieka pedagoga, psychologa, logopedy, rehabilitacja',
-  'Biała szkoła (wyjazdy narciarskie)',
-  'Zielona szkoła (zawsze nad morzem)',
+  'Sala Integracji Sensorycznej',
+  'Opieka pedagoga, psychologa, logopedy, rehabilitanta',
+  'Biała szkoła - wyjazdy narciarskie',
+  'Zielona szkoła - zawsze nad morzem!',
+  'Wycieczki dydaktyczne - nauczanie przez działanie',
   'Współpraca z instytucją kultury "Miasto Ogrodów" w Katowicach',
   'Współpraca z Wydziałem Edukacji Artystycznej Akademii Muzycznej w Katowicach',
 ]
@@ -84,33 +85,31 @@ const extraCurricularActivities = [
   'Mathriders',
   'Pianino',
   'Igłomania',
-  'Gry planszowe',
+  'Robotyka',
+  'Szkoła tańca',
   'Wakacyjne obozy sportowe',
   'Wyjazdy weekendowe',
-  'Robotyka',
-  'Tańce',
-  'Szkoła tańca',
-  'Chór "Omega Voce"',
-  'Zespół wokalno-intrumentalny "Pierwsza klasa"',
 ]
 
 const activityClubs = [
   'Język angielski, hiszpański, niemiecki',
   'Matematyczne',
   'Fizyczne',
-  'Informatyczne',
   'Chemiczne',
   'Biologiczne',
+  'Informatyczne',
   'Polonistyczne',
   'Historyczne',
-  'Geograficzne kółko turystyczne',
+  'Plastyczne',
   'Muzyczne',
+  'Chór "Omega Voce"',
+  'Geograficzne kółko turystyczne',
   'SKS piłka nożna',
-  'Gimnastyka artystyczna, korekcyjna,rehabilitacja ruchowa',
-  'Taniec',
+  'Gimnastyka artystyczna',
+  'Gimnastyka korekcyjna, rehabilitacja ruchowa /ze wskazaniem lekarskim/',
   'Cyberfan',
   'Akademia młodego grafika',
-  'Artoterapia',
+  'Arteterapia',
   'Englishfan',
   'Salonik polonistyczny',
   'Klub mistrzów gier planszowych',
@@ -209,10 +208,10 @@ const Offer = () => {
 
       <div className={` flex-row-reverse  ${styles['section-container']}`}>
         <div className="xl:w-1/2">
-          <h3 className={styles['section-header']}>Oferta zajęc pozalekcyjnych</h3>
-          {extraCurricularActivities.map((activity, index) => (
+          <h3 className={styles['section-header']}>Oferta zajęć pozalekcyjnych w czesnym</h3>
+          {activityClubs.map((activityClub, index) => (
             <p key={index} className={styles['section-item']}>
-              {activity}
+              {activityClub}
             </p>
           ))}
         </div>
@@ -223,10 +222,13 @@ const Offer = () => {
 
       <div className={styles['section-container']}>
         <div className="xl:w-1/2">
-          <h3 className={styles['section-header']}>Kółka przedmiotowe</h3>
-          {activityClubs.map((activityClub, index) => (
+          <h3 className={styles['section-header']}>
+            Oferta zajęć pozalekcyjnych dodatkowo płatnych
+          </h3>
+
+          {extraCurricularActivities.map((activity, index) => (
             <p key={index} className={styles['section-item']}>
-              {activityClub}
+              {activity}
             </p>
           ))}
         </div>

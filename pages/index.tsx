@@ -13,7 +13,11 @@ import Link from 'next/link'
 
 export default function Home({ posts }: { posts: any }) {
   const router = useRouter()
-
+  console.log(
+    posts.filter((post: any) => {
+      console.log(post.fields.pinned)
+    }),
+  )
   return (
     <Fragment>
       <div className="hidden xl:flex fixed bottom-0 w-full h-[80px] bg-white z-[90] flex items-center justify-center 2xl:h-[100px]">
@@ -53,18 +57,23 @@ export default function Home({ posts }: { posts: any }) {
             Zobacz, <br className="md:hidden" /> co się u nas dzieje
           </h2>
         </div>
-        {posts?.map((post: any) => {
-          return (
-            <ArticlePreviewBox
-              key={post.sys.id}
-              id={post.sys.id}
-              title={post.fields.title}
-              content={post.fields.content}
-              createdAt={post.sys.createdAt}
-              imageSrc={'https:' + post.fields.mainImage.fields.file.url}
-            />
-          )
-        })}
+        {posts
+          ?.sort(function (x: any, y: any) {
+            return x.fields.pinned === y.fields.pinned ? 0 : x ? -1 : 1
+          })
+          .map((post: any, index: number) => {
+            if (index > 2) return null
+            return (
+              <ArticlePreviewBox
+                key={post.sys.id}
+                id={post.sys.id}
+                title={post.fields.title}
+                content={post.fields.content}
+                createdAt={post.sys.createdAt}
+                imageSrc={'https:' + post.fields.mainImage.fields.file.url}
+              />
+            )
+          })}
         <Button
           label="Zobacz wszystkie aktualności"
           onClick={() => router.push('/aktualnosci')}

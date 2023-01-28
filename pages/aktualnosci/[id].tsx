@@ -6,6 +6,9 @@ import { Fragment, useRef, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from '../../styles/HomePage.module.css'
 import useOutsideClick from '../../hooks/useOutsideClick'
+import CloseIcon from '../../public/assets/news/closeIcon.svg'
+import RightArrow from '../../public/assets/news/rightArrow.svg'
+import LeftArrow from '../../public/assets/news/leftArrow.svg'
 
 export const getStaticPaths = async () => {
   const client = createClient({
@@ -60,7 +63,7 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
   const [clickedImageID, setClickedImageID] = useState<any>()
   const [isModalVisible, setisModalVisible] = useState(false)
   const router = useRouter()
-  const ref = useRef()
+  const ref = useRef<any>()
   useOutsideClick(ref, () => {
     setisModalVisible(false)
   })
@@ -70,16 +73,30 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
   return (
     <Fragment>
       {/* {isModalVisible && (
-        <div className="fixed top-0 bottom-0 left-0 right-0 bg-[black] z-[1000] overflow-hidden flex justify-center items-center">
-          <Image
-            key={post.fields.gallery[clickedImageID].fields.file.url}
-            alt="fotka"
-            ref={ref}
-            width={19200}
-            height={1200}
-            src={'https:' + post.fields.gallery[clickedImageID].fields.file.url}
-            className="my-2 w-1/2 object-contain "
-          />
+        <div className="fixed top-0 bottom-0 left-0 right-0 bg-[black] z-[1000] overflow-hidden ">
+          <div className="flex justify-center items-center w-full h-full relative">
+            <Image
+              key={post.fields.gallery[clickedImageID].fields.file.url}
+              alt="fotka"
+              ref={ref}
+              width={19200}
+              height={1200}
+              src={'https:' + post.fields.gallery[clickedImageID].fields.file.url}
+              className="my-2 w-full px-2 object-contain xms:max-h-[450px] "
+            />
+            <div className="absolute top-[5px] right-[5px] text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center">
+              <Image src={CloseIcon} alt="CloseIcon" />
+            </div>
+            <div className="absolute bottom-[30px] flex justify-around w-full px-[50px] ">
+              <div className=" text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center">
+                <Image src={LeftArrow} alt="LeftArrow" />
+              </div>
+
+              <div className="text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center">
+                <Image src={RightArrow} alt="RightArrow" />
+              </div>
+            </div>
+          </div>
         </div>
       )} */}
       <div className="w-full max-w-[1920px] 3xl:mx-auto overflow-x-hidden">

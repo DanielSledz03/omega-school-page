@@ -51,5 +51,5 @@
 }
 
 .button-container {
-  @apply my-8 xs:my-5 md:w-3/4 md:mx-auto xl:w-full xl:flex xl:justify-end xl:relative xl:top-[-140px] xl:left-[-5%] xl:my-0 max-w-[1920px];
+  @apply my-8 xs:my-5 md:w-3/4 md:mx-auto xl:w-full xl:flex xl:justify-center xl:w-1/2 xl:mr-0 max-w-[1920px];
 }

@@ -1,7 +1,8 @@
 import { createClient } from 'contentful'
 import Image from 'next/image'
-import { Fragment, useRef } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import { ArticlePreviewBox } from '../components/ArticlePreviewBox/ArticlePreviewBox'
+import Button from '../components/Button/Button'
 import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
@@ -9,6 +10,7 @@ import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import styles from '../styles/HomePage.module.css'
 
 const Aktualnosci = ({ posts }: { posts: any }) => {
+  const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5)
   const ref = useRef<HTMLDivElement>(null)
   const { width } = useWindowDimensions()
 
@@ -47,8 +49,8 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
             Zobacz, <br className="md:hidden" /> co się u nas dzieje
           </h2>
         </div>
-        {posts?.map((post: any) => {
-          console.log(post.fields.mainImage.fields.file.url)
+        {posts?.map((post: any, index: number) => {
+          if (howManyArticlesLoaded < index) return null
           return (
             <ArticlePreviewBox
               key={post.sys.id}
@@ -61,6 +63,16 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
           )
         })}
       </div>
+      {howManyArticlesLoaded < posts.length && (
+        <div className="w-full flex justify-center my-7 max-w-[1920px]">
+          <Button
+            label="Zobacz więcej aktualności"
+            onClick={() => setHowManyArticlesLoaded((prev) => prev + 5)}
+            textColor="text-white"
+            buttonColor="bg-[#FAC13C]"
+          />
+        </div>
+      )}
     </Fragment>
   )
 }
