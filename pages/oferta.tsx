@@ -99,6 +99,7 @@ const activityClubs = [
   'Polonistyczne, Historyczne',
   'Plastyczne, Muzyczne',
   'Informatyczne',
+  'break',
   'Chór "Omega Voce"',
   'Geograficzne Koło Turystyczne',
   'SKS piłka nożna',
@@ -206,13 +207,15 @@ const Offer = () => {
       <div className={` flex-row-reverse  ${styles['section-container']}`}>
         <div className="xl:w-1/2">
           <h3 className={styles['section-header']}>Oferta zajęć pozalekcyjnych w czesnym</h3>
-          {activityClubs.map((activityClub, index) => (
+          {activityClubs.map((activityClub: string, index) => (
             <p
               key={index}
               className={
-                activityClub !== 'Kółka przedmiotowe:'
+                activityClub === 'Kółka przedmiotowe:'
+                  ? styles['section-subheader']
+                  : activityClub !== 'break'
                   ? styles['section-item']
-                  : styles['section-subheader']
+                  : styles['section-break']
               }
             >
               {activityClub}
