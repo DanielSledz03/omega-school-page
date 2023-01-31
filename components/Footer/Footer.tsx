@@ -60,7 +60,7 @@ const Footer = () => {
 
         <div className="mt-5">
           <b>Kasa</b>
-          <p>poniedziałek - piątek: 07:30 – 12:00</p>
+          <p>poniedziałek - piątek: 08:00 – 12:00</p>
         </div>
 
         <div className="mt-5">
@@ -93,7 +93,7 @@ const Footer = () => {
       </div>
 
       <div className={styles['footer-school-name']}>
-        <p>© 2022</p>
+        <p>© 2023</p>
         <p>Społeczna Szkoła Podstawowa OMEGA</p>
       </div>
 

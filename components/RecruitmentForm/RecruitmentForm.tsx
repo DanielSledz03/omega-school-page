@@ -295,7 +295,7 @@ const RecruitmentForm = () => {
         />
 
         <RadioButtons
-          label="Czy uczeń posiada opinię?*"
+          label="Czy uczeń posiada opinię Poradni Psychologiczno-Pedagogicznej?*"
           name="medicalOpinion"
           setFieldValue={setFieldValue}
           error={touched.medicalOpinion ? errors.medicalOpinion : ''}
