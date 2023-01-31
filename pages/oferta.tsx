@@ -93,24 +93,21 @@ const extraCurricularActivities = [
 
 const activityClubs = [
   'Język angielski, hiszpański, niemiecki',
-  'Matematyczne',
-  'Fizyczne',
-  'Chemiczne',
-  'Biologiczne',
+  'Kółka przedmiotowe:',
+  'Matematyczne, Fizyczne',
+  'Chemiczne, Biologiczne',
+  'Polonistyczne, Historyczne',
+  'Plastyczne, Muzyczne',
   'Informatyczne',
-  'Polonistyczne',
-  'Historyczne',
-  'Plastyczne',
-  'Muzyczne',
   'Chór "Omega Voce"',
-  'Geograficzne kółko turystyczne',
+  'Geograficzne Koło Turystyczne',
   'SKS piłka nożna',
   'Gimnastyka artystyczna',
   'Gimnastyka korekcyjna, rehabilitacja ruchowa /ze wskazaniem lekarskim/',
-  'Cyberfan',
+  'CyberFun',
   'Akademia młodego grafika',
   'Arteterapia',
-  'Englishfan',
+  'EnglishFun',
   'Salonik polonistyczny',
   'Klub mistrzów gier planszowych',
   'Fabryka kreatywności',
@@ -210,7 +207,14 @@ const Offer = () => {
         <div className="xl:w-1/2">
           <h3 className={styles['section-header']}>Oferta zajęć pozalekcyjnych w czesnym</h3>
           {activityClubs.map((activityClub, index) => (
-            <p key={index} className={styles['section-item']}>
+            <p
+              key={index}
+              className={
+                activityClub !== 'Kółka przedmiotowe:'
+                  ? styles['section-item']
+                  : styles['section-subheader']
+              }
+            >
               {activityClub}
             </p>
           ))}
