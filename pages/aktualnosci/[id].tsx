@@ -2,13 +2,12 @@ import { createClient } from 'contentful'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Arrow from '../../public/assets/rightArrow.svg'
-import { Fragment, useRef, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from '../../styles/HomePage.module.css'
-import useOutsideClick from '../../hooks/useOutsideClick'
-import CloseIcon from '../../public/assets/news/closeIcon.svg'
-import RightArrow from '../../public/assets/news/rightArrow.svg'
-import LeftArrow from '../../public/assets/news/leftArrow.svg'
+
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import ImagePreview from '../../components/ImagePreview/ImagePreview'
 
 export const getStaticPaths = async () => {
   const client = createClient({
@@ -62,43 +61,26 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
   const createdAt = new Date(createdAtString)
   const [clickedImageID, setClickedImageID] = useState<any>()
   const [isModalVisible, setisModalVisible] = useState(false)
+  const [domLoaded, setDomLoaded] = useState(false)
+
   const router = useRouter()
-  const ref = useRef<any>()
-  useOutsideClick(ref, () => {
-    setisModalVisible(false)
-  })
+
+  useEffect(() => {
+    setDomLoaded(true)
+  }, [])
 
   if (!post) return <div />
 
   return (
     <Fragment>
-      {/* {isModalVisible && (
-        <div className="fixed top-0 bottom-0 left-0 right-0 bg-[black] z-[1000] overflow-hidden ">
-          <div className="flex justify-center items-center w-full h-full relative">
-            <Image
-              key={post.fields.gallery[clickedImageID].fields.file.url}
-              alt="fotka"
-              ref={ref}
-              width={19200}
-              height={1200}
-              src={'https:' + post.fields.gallery[clickedImageID].fields.file.url}
-              className="my-2 w-full px-2 object-contain xms:max-h-[450px] "
-            />
-            <div className="absolute top-[5px] right-[5px] text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center">
-              <Image src={CloseIcon} alt="CloseIcon" />
-            </div>
-            <div className="absolute bottom-[30px] flex justify-around w-full px-[50px] ">
-              <div className=" text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center">
-                <Image src={LeftArrow} alt="LeftArrow" />
-              </div>
-
-              <div className="text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center">
-                <Image src={RightArrow} alt="RightArrow" />
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
+      {isModalVisible && (
+        <ImagePreview
+          clickedImageID={clickedImageID}
+          setClickedImageID={setClickedImageID}
+          setisModalVisible={setisModalVisible}
+          post={post}
+        />
+      )}
       <div className="w-full max-w-[1920px] 3xl:mx-auto overflow-x-hidden">
         <Navbar className={styles['navbar']} />
         <div className="mt-[60px] py-3 px-3 md:mt-[100px] md:px-8 xl:px-[200px] 2xl:px-[250px] xl:mt-0 ">
@@ -133,7 +115,29 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
             {post.fields.title}
           </h1>
           <p className="block w-full bg-[#FAFAFA] px-3 py-4 rounded-[25px] text-[#071E4A] leading-[24px] md:text-[20px] md:leading-[30px] xl:px-12 xl:py-8">
-            {post.fields.content}
+            {domLoaded && (
+              <ReactMarkdown
+                components={{
+                  strong: ({ node, ...props }) => {
+                    return <strong className="font-[700]" {...props} />
+                  },
+                  a: ({ node, ...props }) => {
+                    return (
+                      <a
+                        target="_blank"
+                        className="text-[#579CE2] font-[700] m-0 p-0 underline"
+                        {...props}
+                      />
+                    )
+                  },
+                  em: ({ node, ...props }) => {
+                    return <p className="italic inline-block" {...props} />
+                  },
+                }}
+              >
+                {post.fields.content}
+              </ReactMarkdown>
+            )}
           </p>
           <div className="my-10 xl:flex xl:w-full xl:flex-wrap hover:cursor-pointer">
             {post.fields.gallery?.map((image: any, index: number) => (

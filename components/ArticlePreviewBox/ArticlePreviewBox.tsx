@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import ReactMarkdown from 'react-markdown'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 import PostImage from '../../public/postImage.svg'
 import Button from '../Button/Button'
@@ -39,7 +40,28 @@ export const ArticlePreviewBox = ({
       </div>
       <div className={styles['content-box']}>
         <h5 className={styles.title}>{title}</h5>
-        <p className={styles.content}>{shortDescription}</p>
+        <ReactMarkdown
+          className={styles.content}
+          components={{
+            strong: ({ node, ...props }) => {
+              return <strong className="font-[700]" {...props} />
+            },
+            a: ({ node, ...props }) => {
+              return (
+                <a
+                  target="_blank"
+                  className="text-[#579CE2] font-[700] m-0 p-0 underline"
+                  {...props}
+                />
+              )
+            },
+            em: ({ node, ...props }) => {
+              return <p className="italic inline-block" {...props} />
+            },
+          }}
+        >
+          {shortDescription}
+        </ReactMarkdown>
         <Button
           label="Czytaj całość"
           onClick={() => router.push('/aktualnosci/' + id)}

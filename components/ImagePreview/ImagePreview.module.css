@@ -1,0 +1,27 @@
+.wrapper {
+  @apply fixed top-0 bottom-0 left-0 right-0 bg-[black]/95 z-[1000] overflow-hidden px-2 pt-2 md:px-5 md:pt-5;
+}
+
+.inner-wrapper {
+  @apply flex justify-center items-center w-full h-full relative;
+}
+
+.image {
+  @apply z-[300] my-2 w-full px-2 object-contain xms:max-h-[450px] xl:w-10/12 xl:max-h-[650px] xl:py-12 3xl:max-h-[800px];
+}
+
+.close-icon-container {
+  @apply absolute top-[5px] right-[5px] text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center md:w-[65px] md:h-[65px] hover:cursor-pointer;
+}
+
+.arrows-container {
+  @apply absolute bottom-4 right-0 flex justify-around w-auto md:bottom-12 xl:w-full xl:justify-between xl:top-[49%] xl:z-[200] xl:px-[30px];
+}
+
+.left-arrow {
+  @apply text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center mr-6 md:w-[65px] md:h-[65px] xl:z-[401] hover:cursor-pointer;
+}
+
+.right-arrow {
+  @apply text-white w-[50px] h-[50px] bg-white rounded-[20px] flex justify-center items-center md:w-[65px] md:h-[65px] xl:z-[401] hover:cursor-pointer;
+}
