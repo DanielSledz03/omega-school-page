@@ -130,7 +130,10 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
           <h1 className="text-[#071E4A] font-bold text-[30px] leading-[35px] mt-5 mb-7 md:text-[50px] md:leading-[55px] md:mb-10 xl:text-[85px] xl:leading-[84px] xl:my-10">
             {post.fields.title}
           </h1>
-          <p className="block w-full bg-[#FAFAFA] px-3 py-4 rounded-[25px] text-[#071E4A] leading-[24px] md:text-[20px] md:leading-[30px] xl:px-12 xl:py-8">
+          <p
+            style={{ whiteSpace: 'pre-line' }}
+            className="block w-full bg-[#FAFAFA] px-3 py-4 rounded-[25px] text-[#071E4A] leading-[24px] md:text-[20px] md:leading-[30px] xl:px-12 xl:py-8"
+          >
             {domLoaded && (
               <ReactMarkdown
                 components={{
@@ -149,6 +152,9 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
                   em: ({ node, ...props }) => {
                     return <p className="italic inline-block" {...props} />
                   },
+                  br: ({ node, ...props }) => {
+                    return <br {...props} />
+                  },
                 }}
               >
                 {post.fields.content}
@@ -164,8 +170,8 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
                   setClickedImageID(index)
                   setisModalVisible(true)
                 }}
-                width={1300}
-                height={1500}
+                width={500}
+                height={400}
                 src={'https:' + image.fields.file.url}
                 className="my-2 w-full h-[215px] object-cover rounded-[10px] md:mb-8 md:h-[300px] xl:w-1/3 xl:mb-4 xl:px-4 "
               />
