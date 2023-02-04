@@ -13,7 +13,6 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
   const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5)
   const ref = useRef<HTMLDivElement>(null)
   const { width } = useWindowDimensions()
-  console.log(posts)
 
   const executeScroll = () => {
     if (ref?.current?.offsetTop)

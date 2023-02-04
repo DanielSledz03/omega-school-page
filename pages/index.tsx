@@ -8,8 +8,7 @@ import Button from '../components/Button/Button'
 import AboutUsMobile from '../public/assets/homepage/aboutUsMobile.svg'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
-import { createClient, EntryCollection } from 'contentful'
-import Link from 'next/link'
+import { createClient } from 'contentful'
 
 export default function Home({ posts }: { posts: any }) {
   const router = useRouter()

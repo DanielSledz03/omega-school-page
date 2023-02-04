@@ -22,10 +22,10 @@ export default function Layout({ children }: ILayout) {
         <meta property="og:title" content={'Społeczna Szkoła Podstawowa OMEGA'} key={'og-title'} />
         <meta
           property="og:description"
-          content="Zapraszamy na naszą stronę internetową!"
-          key={'og:desc'}
+          content="Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach to szkoła z ponad 30 letnim doświadczeniem. Gwarantujemy najskuteczniejsze metody edukacji. Zapisz swoje dziecko już teraz!"
+          key={'og:description'}
         />
-        <meta property="og:image" content="/assets/logo.svg" />
+        <meta key={'og:image'} property="og:image" content="/assets/homepage/aboutUsMobile.svg" />
       </Head>
       {width && width < 1280 && <Navbar />}
       <>{children}</>

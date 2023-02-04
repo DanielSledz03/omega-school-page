@@ -96,7 +96,6 @@ const RecruitmentForm = () => {
         body: JSON.stringify(values),
       })
         .then((res) => {
-          console.log('Response received')
           if (res.status === 200) {
             resetForm()
             setMailSendStatus('Success')

@@ -47,7 +47,7 @@
 }
 
 .about-us-paragraph {
-  @apply text-[#071E4A] xl:text-[20px] xl:leading-[24px] xl:w-full;
+  @apply text-[#071E4A] xl:text-[20px] xl:leading-[24px] xl:w-10/12;
 }
 
 .about-us-paragraph span {
