@@ -51,7 +51,7 @@ export default async (req: any, res: any) => {
       values.registeredAddress
     }</td> </tr> <tr> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Nazwa i adres szkoły obwodowej</td> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">${
       values.districtSchoolData
-    }</td> </tr> <tr> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Czy uczeń posiada opinię?</td> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">${
+    }</td> </tr> <tr> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Czy uczeń posiada opinię Poradni Psychologiczno-Pedagogicznej?</td> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">${
       values.medicalOpinion ? 'Tak' : 'Nie'
     }</td> </tr> <tr> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Czy uczeń posiada orzeczenie zdrowotne?</td> <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">${
       values.healthCertificate ? 'Tak' : 'Nie'
