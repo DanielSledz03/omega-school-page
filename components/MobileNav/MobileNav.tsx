@@ -120,14 +120,14 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
               rel="noopener noreferrer"
               href="https://www.youtube.com/channel/UCQn_lSAlyQnH3CpkMIiLy-g"
             >
-              <Image src={YoutubeIcon} alt="Youtube Icon" className="mx-2" />
+              <Image src={YoutubeIcon} alt="Youtube Icon" className="mx-2 md:mx-5" />
             </Link>
             <Link
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/zespolszkolomega"
             >
-              <Image src={FacebookIcon} alt="Facebook Icon" className="mx-2" />
+              <Image src={FacebookIcon} alt="Facebook Icon" className="mx-2 md:mx-5" />
             </Link>
           </div>
         </div>

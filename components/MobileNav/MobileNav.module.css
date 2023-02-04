@@ -7,7 +7,7 @@
 }
 
 .mobile-nav-header {
-  @apply px-4 font-[700] text-[25px] text-[#FAC13C] flex items-center justify-center h-[30px] w-full text-center;
+  @apply px-4 font-[700] text-[25px] text-[#FAC13C] flex items-center justify-center h-[30px] w-full text-center md:text-[45px];
 }
 
 .list {
@@ -15,11 +15,11 @@
 }
 
 .list-item {
-  @apply w-full flex items-center justify-center border-y-[1px] border-[#112F69] py-2;
+  @apply w-full flex items-center justify-center border-y-[1px] border-[#112F69] py-2 md:py-5;
 }
 
 .list-item-anchor {
-  @apply text-white text-[25px] w-full block text-center;
+  @apply text-white text-[25px] w-full block text-center md:text-[35px];
 }
 
 .contact-button {
