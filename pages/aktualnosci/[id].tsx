@@ -8,6 +8,7 @@ import styles from '../../styles/HomePage.module.css'
 
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import ImagePreview from '../../components/ImagePreview/ImagePreview'
+import Head from 'next/head'
 
 export const getStaticPaths = async () => {
   const client = createClient({
@@ -73,6 +74,21 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{post.fields.title}</title>
+        <meta name="description" content={post.fields.shortDescription} key="desc" />
+        <meta property="og:title" content={post.fields.title} key={'og-title'} />
+        <meta
+          property="og:description"
+          content={post.fields.shortDescription}
+          key={'og:description'}
+        />
+        <meta
+          key={'og:image'}
+          property="og:image"
+          content={'https:' + post.fields.mainImage.fields.file.url}
+        />
+      </Head>
       {isModalVisible && (
         <ImagePreview
           clickedImageID={clickedImageID}
