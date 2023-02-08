@@ -1,0 +1,15 @@
+.header2-container {
+  @apply w-full flex justify-center relative mt-4 md:w-3/4 xl:w-10/12 md:mx-auto xl:self-center xl:my-10 2xl:w-3/5 3xl:w-2/5;
+}
+
+.header2 {
+  @apply text-[#579CE2] font-bold text-center text-3xl py-2 w-[150px] md:text-4xl md:w-3/4 xl:text-5xl;
+}
+
+.ellipses-left {
+  @apply absolute top-[35%] left-[10px];
+}
+
+.ellipses-right {
+  @apply absolute top-[35%] right-[10px];
+}

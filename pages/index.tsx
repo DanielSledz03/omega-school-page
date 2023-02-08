@@ -19,7 +19,6 @@ export default function Home({ posts }: { posts: any }) {
         <p className="text-center text-[#579CE2] text-[20px] underline font-[700]">
           Rekrutacja na rok 2023 trwa, zapisz swoje dziecko już dziś!
         </p>
-
         <Button
           label="Wypełnij formularz"
           buttonColor="bg-[#579CE2]"
@@ -38,7 +37,6 @@ export default function Home({ posts }: { posts: any }) {
         onClick={() => router.push('/rekrutacja')}
         checkKindergarten
         textContainerStyles={styles['text-container']}
-        bgClassStyle={styles['bg-style']}
       />
       <div className={styles['content-box']}>
         <div className={styles['header2-container']}>
