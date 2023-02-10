@@ -9,15 +9,7 @@ import Hamburger from '../Hamburger/Hamburger'
 import { useState } from 'react'
 import { MobileNav } from '../MobileNav/MobileNav'
 
-const ALink = ({
-  title,
-  isBuilding,
-  href,
-}: {
-  title: string
-  isBuilding?: boolean
-  href: string
-}) => {
+const ALink = ({ title, href }: { title: string; href: string }) => {
   const router = useRouter()
   return (
     <Link
@@ -25,15 +17,6 @@ const ALink = ({
       href={href}
     >
       {title}
-      {isBuilding && (
-        <div className={styles['nav-under-contruction-box']}>
-          <div className={styles['nav-under-contruction-arrow']} />
-          <div className={styles['nav-under-contruction-text-container']}>
-            <p>Podstrona w budowie!</p>
-            <p>Zapraszamy wkrótce.</p>
-          </div>
-        </div>
-      )}
     </Link>
   )
 }
@@ -55,23 +38,13 @@ const Navbar = ({ className }: any) => {
 
       <MobileNav isMenuOpen={isMenuOpen} />
       <div className="flex w-screen hidden xl:flex ">
-        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-1/2 ">
-          {/* <ALink title="O&nbsp;naszej&nbsp;szkole" href="/o-nas" isBuilding /> */}
+        <div className="flex justify-around w-8/12 xl:w-1/2 xl:ml-[50px] 3xl:w-2/3 ">
           <ALink title="Aktualności" href="/aktualnosci" />
+          <ALink title="Nasza szkoła" href="/o-nas" />
           <ALink title="Oferta" href="/oferta" />
           <ALink title="Rekrutacja" href="/rekrutacja" />
         </div>
         <div className="flex justify-center items-center xl:w-1/3 3xl:w-2/3 3xl:ml-10">
-          {/* <Link className={`${styles['nav-contact']}`} href="">
-            Kontakt
-            <div className={styles['nav-under-contruction-box']}>
-              <div className={styles['nav-under-contruction-arrow']} />
-              <div className={styles['nav-under-contruction-text-container']}>
-                <p>Podstrona w budowie!</p>
-                <p>Zapraszamy wkrótce.</p>
-              </div>
-            </div>
-          </Link> */}
           <Link
             target="_blank"
             rel="noopener noreferrer"

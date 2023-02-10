@@ -11,7 +11,7 @@
 }
 
 .nav-a {
-  @apply block h-[45px] text-[22px] text-center text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300 block w-min;
+  @apply block h-[45px] text-[22px] text-center text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300 block;
 }
 
 .nav-a-selected {

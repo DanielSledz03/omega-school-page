@@ -10,13 +10,12 @@ import { useState } from 'react'
 interface IProps {
   title: string
   titleSpan: string
+  titleSpanColor?: string
   paragraph: string
   onClick: () => void
   buttonTitle: string
   bgUrl: any
   bgXlUrl: any
-  bgStyle?: React.CSSProperties
-  bgClassStyle?: any
   textContainerStyles?: any
   checkKindergarten?: boolean
 }
@@ -25,18 +24,17 @@ export const PageHeader = ({
   onClick,
   title,
   titleSpan,
+  titleSpanColor,
   paragraph,
   buttonTitle,
   bgUrl,
   bgXlUrl,
   textContainerStyles,
-  bgStyle = {},
-  bgClassStyle,
   checkKindergarten = false,
 }: IProps) => {
   const { width } = useWindowDimensions()
   return (
-    <div style={bgStyle} className={`${bgClassStyle} ${styles.container} `}>
+    <div className={` ${styles.container} `}>
       <div className="w-full h-full absolute z-[-1]">
         {width && (
           <Image
@@ -52,7 +50,12 @@ export const PageHeader = ({
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>
           <h1 className={styles['header1']}>{title}</h1>
-          <span className={styles['header1-span']}>{titleSpan}</span>
+          <span
+            style={{ color: titleSpanColor ? titleSpanColor : '#FAC13C' }}
+            className={styles['header1-span']}
+          >
+            {titleSpan}
+          </span>
         </div>
         <p className={styles['paragraph']}>{paragraph}</p>
         <Button
