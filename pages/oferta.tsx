@@ -17,7 +17,8 @@ import extracurricularActivitiesMobile from '../public/assets/offer/extracurricu
 import activityClubsMobile from '../public/assets/offer/activityClubsMobile.png'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import IconsDestkop from '../public/assets/offer/icons/iconsDesktop.svg'
-
+import BgDesktop from '../public/assets/headers/bgOfferDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgOfferMobile.jpg'
 const icons = [
   {
     name: 'Rozwijamy',
@@ -147,8 +148,8 @@ const Offer = () => {
   return (
     <Fragment>
       <PageHeader
-        bgUrl="bg-[url(/assets/headers/bgOfferMobile.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/headers/bgOfferDesktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Dlaczego warto"
         titleSpan="nas wybrać?"
         paragraph="Jeżeli zastanawiasz się jakie miejsce będzie

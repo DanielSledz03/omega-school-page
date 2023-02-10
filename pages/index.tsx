@@ -9,6 +9,8 @@ import AboutUsMobile from '../public/assets/homepage/aboutUsMobile.svg'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import { createClient } from 'contentful'
+import BgDesktop from '../public/assets/headers/bgHomeDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgHomeMobile.jpg'
 
 export default function Home({ posts }: { posts: any }) {
   const router = useRouter()
@@ -28,8 +30,8 @@ export default function Home({ posts }: { posts: any }) {
         />
       </div>
       <PageHeader
-        bgUrl="bg-[url(/assets/headers/bgHomeMobile.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/headers/bgHomeDesktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Kreuj z nami"
         titleSpan="swoją przyszłość"
         paragraph="Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach"
@@ -90,7 +92,11 @@ export default function Home({ posts }: { posts: any }) {
         />
         <div className={styles['about-us-container']}>
           <div className={styles['about-us-image']}>
-            <Image className="w-full" src={AboutUsMobile} alt="O nas" />
+            <Image
+              className="w-full md:w-1/2 md:mx-auto xl:w-full"
+              src={AboutUsMobile}
+              alt="O nas"
+            />
           </div>
 
           <div className={styles['about-us-text-container']}>

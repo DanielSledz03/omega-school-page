@@ -3,13 +3,14 @@ import CalendarMultiEvents from '../components/CalendarMultiEvents/CalendarMulti
 import CalendarSingleEvent from '../components/CalendarSingleEvent/CalendarSingleEvent'
 import HeaderWithBubbles from '../components/HeaderWithBubbles/HeaderWithBubbles'
 import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-
+import BgDesktop from '../public/assets/headers/bgCalendarDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgCalendarMobilee.jpg'
 const Kalendarz = () => {
   return (
     <Fragment>
       <PageHeader
-        bgUrl="bg-[url(/assets/headers/bgCalendarMobile.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/headers/bgCalendarDesktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Kalendarz"
         titleSpan="roku szkolnego"
         paragraph="Jeżeli zastanawiasz się, kiedy wypada istotne

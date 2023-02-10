@@ -5,7 +5,6 @@ import Arrow from '../../public/assets/rightArrow.svg'
 import { Fragment, useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from '../../styles/HomePage.module.css'
-
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import ImagePreview from '../../components/ImagePreview/ImagePreview'
 import Head from 'next/head'

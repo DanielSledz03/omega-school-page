@@ -1,5 +1,5 @@
 .container {
-  @apply flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-no-repeat bg-cover bg-left-bottom md:bg-top md:h-[1000px] xl:h-screen xl:pt-0 xl:justify-start xl:items-start xl:h-[800px] max-w-[1920px] xl:mx-auto overflow-x-hidden;
+  @apply relative flex flex-col justify-end items-center w-full h-screen pt-[60px] bg-no-repeat bg-cover bg-left-bottom md:bg-top md:h-[1000px] xl:h-screen xl:pt-0 xl:justify-start xl:items-start xl:h-[800px] max-w-[1920px] xl:mx-auto overflow-x-hidden;
 }
 
 .texts-container {

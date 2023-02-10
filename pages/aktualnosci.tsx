@@ -8,6 +8,8 @@ import useWindowDimensions from '../hooks/useWindowDimensions'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import styles from '../styles/HomePage.module.css'
+import BgDesktop from '../public/assets/headers/bgNewsDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgNewsMobile.jpg'
 
 const Aktualnosci = ({ posts }: { posts: any }) => {
   const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5)
@@ -27,15 +29,14 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
   return (
     <Fragment>
       <PageHeader
-        bgUrl="bg-[url(/assets/headers/bgNewsMobile.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/headers/bgNewsDesktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Sprawdź,"
         titleSpan="co u nas słychać"
         paragraph="Przeczytaj wszystkie z naszych aktualności,
         aby być na bieżąco!"
         buttonTitle="Nasze aktualności"
         onClick={() => executeScroll()}
-        bgClassStyle={styles['news-bg']}
       />
       <div ref={ref} className={styles['content-box']}>
         <div className={styles['header2-container']}>

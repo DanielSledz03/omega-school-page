@@ -3,6 +3,9 @@ import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg'
 import Button from '../Button/Button'
 import styles from './PageHeader.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
+import { useState } from 'react'
 
 interface IProps {
   title: string
@@ -10,8 +13,8 @@ interface IProps {
   paragraph: string
   onClick: () => void
   buttonTitle: string
-  bgUrl: string
-  bgXlUrl: string
+  bgUrl: any
+  bgXlUrl: any
   bgStyle?: React.CSSProperties
   bgClassStyle?: any
   textContainerStyles?: any
@@ -31,8 +34,20 @@ export const PageHeader = ({
   bgClassStyle,
   checkKindergarten = false,
 }: IProps) => {
+  const { width } = useWindowDimensions()
   return (
-    <div style={bgStyle} className={`${bgClassStyle} ${bgUrl}  ${bgXlUrl}  ${styles.container} `}>
+    <div style={bgStyle} className={`${bgClassStyle} ${styles.container} `}>
+      <div className="w-full h-full absolute z-[-1]">
+        {width && (
+          <Image
+            src={width >= 1280 ? bgXlUrl : bgUrl}
+            alt="head iamge"
+            className="w-full object-cover h-full"
+            loading="eager"
+            quality={100}
+          />
+        )}
+      </div>
       <Navbar />
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>
