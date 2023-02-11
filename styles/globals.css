@@ -9,3 +9,7 @@
   font-family: neuzeit-grotesk, sans-serif;
   font-style: normal;
 }
+
+.image {
+  @apply object-cover w-full h-full;
+}
