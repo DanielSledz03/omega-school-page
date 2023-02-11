@@ -32,26 +32,26 @@ import NationalIndependenceDay_5 from '../public/assets/gallery/Narodowe Święt
 import NationalIndependenceDay_6 from '../public/assets/gallery/Narodowe Święto Niepodległości/6.jpg'
 import NationalIndependenceDay_7 from '../public/assets/gallery/Narodowe Święto Niepodległości/7.jpg'
 
-// import AndrewSParty_1 from '../public/assets/gallery/Zabawa Andrzejkowa/1.jpg'
-// import AndrewSParty_2 from '../public/assets/gallery/Zabawa Andrzejkowa/2.jpg'
-// import AndrewSParty_3 from '../public/assets/gallery/Zabawa Andrzejkowa/3.jpg'
-// import AndrewSParty_4 from '../public/assets/gallery/Zabawa Andrzejkowa/4.jpg'
-// import AndrewSParty_5 from '../public/assets/gallery/Zabawa Andrzejkowa/5.jpg'
-// import AndrewSParty_6 from '../public/assets/gallery/Zabawa Andrzejkowa/6.jpg'
-// import AndrewSParty_7 from '../public/assets/gallery/Zabawa Andrzejkowa/7.jpg'
-// import AndrewSParty_8 from '../public/assets/gallery/Zabawa Andrzejkowa/8.jpg'
-// import AndrewSParty_9 from '../public/assets/gallery/Zabawa Andrzejkowa/9.jpg'
-// import AndrewSParty_10 from '../public/assets/gallery/Zabawa Andrzejkowa/10.jpg'
-// import AndrewSParty_11 from '../public/assets/gallery/Zabawa Andrzejkowa/11.jpg'
-// import AndrewSParty_12 from '../public/assets/gallery/Zabawa Andrzejkowa/12.jpg'
-// import AndrewSParty_13 from '../public/assets/gallery/Zabawa Andrzejkowa/13.jpg'
-// import AndrewSParty_14 from '../public/assets/gallery/Zabawa Andrzejkowa/14.jpg'
-// import AndrewSParty_15 from '../public/assets/gallery/Zabawa Andrzejkowa/15.jpg'
-// import AndrewSParty_16 from '../public/assets/gallery/Zabawa Andrzejkowa/16.jpg'
-// import AndrewSParty_17 from '../public/assets/gallery/Zabawa Andrzejkowa/17.jpg'
-// import AndrewSParty_18 from '../public/assets/gallery/Zabawa Andrzejkowa/18.jpg'
-// import AndrewSParty_19 from '../public/assets/gallery/Zabawa Andrzejkowa/19.jpg'
-// import AndrewSParty_20 from '../public/assets/gallery/Zabawa Andrzejkowa/20.jpg'
+import AndrewSParty_1 from '../public/assets/gallery/Zabawa Andrzejkowa/1.jpg'
+import AndrewSParty_2 from '../public/assets/gallery/Zabawa Andrzejkowa/2.jpg'
+import AndrewSParty_3 from '../public/assets/gallery/Zabawa Andrzejkowa/3.jpg'
+import AndrewSParty_4 from '../public/assets/gallery/Zabawa Andrzejkowa/4.jpg'
+import AndrewSParty_5 from '../public/assets/gallery/Zabawa Andrzejkowa/5.jpg'
+import AndrewSParty_6 from '../public/assets/gallery/Zabawa Andrzejkowa/6.jpg'
+import AndrewSParty_7 from '../public/assets/gallery/Zabawa Andrzejkowa/7.jpg'
+import AndrewSParty_8 from '../public/assets/gallery/Zabawa Andrzejkowa/8.jpg'
+import AndrewSParty_9 from '../public/assets/gallery/Zabawa Andrzejkowa/9.jpg'
+import AndrewSParty_10 from '../public/assets/gallery/Zabawa Andrzejkowa/10.jpg'
+import AndrewSParty_11 from '../public/assets/gallery/Zabawa Andrzejkowa/11.jpg'
+import AndrewSParty_12 from '../public/assets/gallery/Zabawa Andrzejkowa/12.jpg'
+import AndrewSParty_13 from '../public/assets/gallery/Zabawa Andrzejkowa/13.jpg'
+import AndrewSParty_14 from '../public/assets/gallery/Zabawa Andrzejkowa/14.jpg'
+import AndrewSParty_15 from '../public/assets/gallery/Zabawa Andrzejkowa/15.jpg'
+import AndrewSParty_16 from '../public/assets/gallery/Zabawa Andrzejkowa/16.jpg'
+import AndrewSParty_17 from '../public/assets/gallery/Zabawa Andrzejkowa/17.jpg'
+import AndrewSParty_18 from '../public/assets/gallery/Zabawa Andrzejkowa/18.jpg'
+import AndrewSParty_19 from '../public/assets/gallery/Zabawa Andrzejkowa/19.jpg'
+import AndrewSParty_20 from '../public/assets/gallery/Zabawa Andrzejkowa/20.jpg'
 
 import ChristmasMarket_1 from '../public/assets/gallery/Kiermasz Świąteczny/1.jpg'
 import ChristmasMarket_4 from '../public/assets/gallery/Kiermasz Świąteczny/4.jpg'
@@ -59,27 +59,27 @@ import ChristmasMarket_5 from '../public/assets/gallery/Kiermasz Świąteczny/5.
 import ChristmasMarket_8 from '../public/assets/gallery/Kiermasz Świąteczny/8.jpg'
 import ChristmasMarket_9 from '../public/assets/gallery/Kiermasz Świąteczny/9.jpg'
 import ChristmasMarket_10 from '../public/assets/gallery/Kiermasz Świąteczny/10.jpg'
-// import ChristmasMarket_11 from '../public/assets/gallery/Kiermasz Świąteczny/11.jpg'
-// import ChristmasMarket_12 from '../public/assets/gallery/Kiermasz Świąteczny/12.jpg'
-// import ChristmasMarket_13 from '../public/assets/gallery/Kiermasz Świąteczny/13.jpg'
-// import ChristmasMarket_14 from '../public/assets/gallery/Kiermasz Świąteczny/14.jpg'
-// import ChristmasMarket_15 from '../public/assets/gallery/Kiermasz Świąteczny/15.jpg'
-// import ChristmasMarket_16 from '../public/assets/gallery/Kiermasz Świąteczny/16.jpg'
-// import ChristmasMarket_17 from '../public/assets/gallery/Kiermasz Świąteczny/17.jpg'
-// import ChristmasMarket_18 from '../public/assets/gallery/Kiermasz Świąteczny/18.jpg'
+import ChristmasMarket_11 from '../public/assets/gallery/Kiermasz Świąteczny/11.jpg'
+import ChristmasMarket_12 from '../public/assets/gallery/Kiermasz Świąteczny/12.jpg'
+import ChristmasMarket_13 from '../public/assets/gallery/Kiermasz Świąteczny/13.jpg'
+import ChristmasMarket_14 from '../public/assets/gallery/Kiermasz Świąteczny/14.jpg'
+import ChristmasMarket_15 from '../public/assets/gallery/Kiermasz Świąteczny/15.jpg'
+import ChristmasMarket_16 from '../public/assets/gallery/Kiermasz Świąteczny/16.jpg'
+import ChristmasMarket_17 from '../public/assets/gallery/Kiermasz Świąteczny/17.jpg'
+import ChristmasMarket_18 from '../public/assets/gallery/Kiermasz Świąteczny/18.jpg'
 
-// import NativityPlay_1 from '../public/assets/gallery/Jasełka/1.jpg'
-// import NativityPlay_2 from '../public/assets/gallery/Jasełka/2.jpg'
-// import NativityPlay_3 from '../public/assets/gallery/Jasełka/3.jpg'
+import NativityPlay_1 from '../public/assets/gallery/Jasełka/1.jpg'
+import NativityPlay_2 from '../public/assets/gallery/Jasełka/2.jpg'
+import NativityPlay_3 from '../public/assets/gallery/Jasełka/3.jpg'
 import NativityPlay_4 from '../public/assets/gallery/Jasełka/4.jpg'
 import NativityPlay_5 from '../public/assets/gallery/Jasełka/5.jpg'
 import NativityPlay_6 from '../public/assets/gallery/Jasełka/6.jpg'
 import NativityPlay_7 from '../public/assets/gallery/Jasełka/7.jpg'
 import NativityPlay_8 from '../public/assets/gallery/Jasełka/8.jpg'
-// import NativityPlay_9 from '../public/assets/gallery/Jasełka/9.jpg'
-// import NativityPlay_10 from '../public/assets/gallery/Jasełka/10.jpg'
-// import NativityPlay_11 from '../public/assets/gallery/Jasełka/11.jpg'
-// import NativityPlay_12 from '../public/assets/gallery/Jasełka/12.jpg'
+import NativityPlay_9 from '../public/assets/gallery/Jasełka/9.jpg'
+import NativityPlay_10 from '../public/assets/gallery/Jasełka/10.jpg'
+import NativityPlay_11 from '../public/assets/gallery/Jasełka/11.jpg'
+import NativityPlay_12 from '../public/assets/gallery/Jasełka/12.jpg'
 
 export const GalleryData = [
   {
@@ -136,32 +136,32 @@ export const GalleryData = [
     ],
     thumbnail: NationalIndependenceDay_2,
   },
-  // {
-  //   header: 'Zabawa Andrzejkowa',
-  //   images: [
-  //     AndrewSParty_1,
-  //     AndrewSParty_2,
-  //     AndrewSParty_3,
-  //     AndrewSParty_4,
-  //     AndrewSParty_5,
-  //     AndrewSParty_6,
-  //     AndrewSParty_7,
-  //     AndrewSParty_8,
-  //     AndrewSParty_9,
-  //     AndrewSParty_10,
-  //     AndrewSParty_11,
-  //     AndrewSParty_12,
-  //     AndrewSParty_13,
-  //     AndrewSParty_14,
-  //     AndrewSParty_15,
-  //     AndrewSParty_16,
-  //     AndrewSParty_17,
-  //     AndrewSParty_18,
-  //     AndrewSParty_19,
-  //     AndrewSParty_20,
-  //   ],
-  //   thumbnail: AndrewSParty_14,
-  // },
+  {
+    header: 'Zabawa Andrzejkowa',
+    images: [
+      AndrewSParty_1,
+      AndrewSParty_2,
+      AndrewSParty_3,
+      AndrewSParty_4,
+      AndrewSParty_5,
+      AndrewSParty_6,
+      AndrewSParty_7,
+      AndrewSParty_8,
+      AndrewSParty_9,
+      AndrewSParty_10,
+      AndrewSParty_11,
+      AndrewSParty_12,
+      AndrewSParty_13,
+      AndrewSParty_14,
+      AndrewSParty_15,
+      AndrewSParty_16,
+      AndrewSParty_17,
+      AndrewSParty_18,
+      AndrewSParty_19,
+      AndrewSParty_20,
+    ],
+    thumbnail: AndrewSParty_14,
+  },
   {
     header: 'Kiermasz Świąteczny',
     images: [
@@ -171,33 +171,33 @@ export const GalleryData = [
       ChristmasMarket_8,
       ChristmasMarket_9,
       ChristmasMarket_10,
-      // ChristmasMarket_11,
-      // ChristmasMarket_12,
-      // ChristmasMarket_13,
-      // ChristmasMarket_14,
-      // ChristmasMarket_15,
-      // ChristmasMarket_16,
-      // ChristmasMarket_17,
-      // ChristmasMarket_18,
+      ChristmasMarket_11,
+      ChristmasMarket_12,
+      ChristmasMarket_13,
+      ChristmasMarket_14,
+      ChristmasMarket_15,
+      ChristmasMarket_16,
+      ChristmasMarket_17,
+      ChristmasMarket_18,
     ],
-    thumbnail: ChristmasMarket_10,
+    thumbnail: ChristmasMarket_14,
   },
   {
     header: 'Jasełka',
     images: [
-      // NativityPlay_1,
-      // NativityPlay_2,
-      // NativityPlay_3,
+      NativityPlay_1,
+      NativityPlay_2,
+      NativityPlay_3,
       NativityPlay_4,
       NativityPlay_5,
       NativityPlay_6,
       NativityPlay_7,
       NativityPlay_8,
-      // NativityPlay_9,
-      // NativityPlay_10,
-      // NativityPlay_11,
-      // NativityPlay_12,
+      NativityPlay_9,
+      NativityPlay_10,
+      NativityPlay_11,
+      NativityPlay_12,
     ],
-    thumbnail: NativityPlay_7,
+    thumbnail: NativityPlay_12,
   },
 ]
