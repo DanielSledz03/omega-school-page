@@ -43,6 +43,7 @@ export const PageHeader = ({
             className="w-full object-cover h-full"
             loading="eager"
             quality={100}
+            priority
           />
         )}
       </div>
