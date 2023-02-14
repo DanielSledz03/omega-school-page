@@ -9,6 +9,7 @@ import TeachingStaff from '../components/TeachingStaff/TeachingStaff'
 import styles from '../styles/About.module.css'
 import Image from 'next/image'
 import PatternImg from '../public/assets/about/Pattern.svg'
+import AboutUs_SocialMedia from '../components/AboutUs-SocialMedia/AboutUs-SocialMedia'
 const ONas = () => {
   const ref = useRef<any>(null)
   const { width } = useWindowDimensions()
@@ -54,6 +55,7 @@ const ONas = () => {
             <Image src={PatternImg} alt="tło" className={styles['pattern-image']} />
           </div>
         </div>
+        <AboutUs_SocialMedia />
         <TeachingStaff />
       </main>
     </Fragment>

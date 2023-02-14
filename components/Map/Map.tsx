@@ -10,13 +10,13 @@ const Map = () => {
   })
   if (window) {
     return (
-      <div className="w-full h-[205px] bg-black my-8 rounded-[25px] xl:w-[60%] xl:h-auto">
+      <div className=" w-full h-[205px] bg-black my-8 rounded-[25px] xl:w-[60%] xl:h-auto">
         <MapContainer
           center={[50.2725839, 18.9636333]}
           scrollWheelZoom={true}
           zoom={15}
           zoomControl={false}
-          className="w-full h-full rounded-[25px]"
+          className="w-full h-full rounded-[25px] z-[900]"
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

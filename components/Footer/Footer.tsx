@@ -6,7 +6,7 @@ const Footer = () => {
   const router = useRouter()
   return (
     <footer
-      className={`${router.pathname === '/' ? 'mb-[80px] 2xl:mb-[100px]' : ''} ${styles.footer}`}
+      className={`${router.pathname === '/' ? 'xl:mb-[80px] 2xl:mb-[100px]' : ''} ${styles.footer}`}
     >
       <div className={styles['footer-header-container']}>
         <h4 className={styles['footer-header-text']}>

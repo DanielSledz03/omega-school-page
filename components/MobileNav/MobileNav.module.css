@@ -3,7 +3,7 @@
 }
 
 .mobile-nav-visible {
-  @apply left-full;
+  @apply left-full z-[999];
 }
 
 .mobile-nav-header {
