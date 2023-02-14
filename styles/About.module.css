@@ -1,0 +1,3 @@
+.pattern-image {
+  @apply object-cover w-full h-full;
+}

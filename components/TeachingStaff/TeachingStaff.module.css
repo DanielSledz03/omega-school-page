@@ -1,0 +1,35 @@
+.container {
+  @apply w-full;
+}
+
+.header {
+  @apply text-[#FAC13C] text-[25px] font-bold text-center my-5 md:my-10 xl:mt-8 xl:mb-7;
+}
+
+.director-container {
+  @apply w-full bg-[#FAFAFA] rounded-[30px] px-5 py-7 mb-5 xl:w-[49%] xl:py-[60px];
+}
+
+.director-name {
+  @apply text-[#579CE2] font-bold text-[25px] text-center;
+}
+
+.director-position {
+  @apply text-center text-[20px] text-[#071E4A];
+}
+
+.techaing-staff-list {
+  @apply mt-12;
+}
+
+.teacher-box {
+  @apply w-full py-5 border-t-[1px] border-[#F0F0F0] xl:flex xl:justify-between xl:items-center;
+}
+
+.teacher-name {
+  @apply text-[#579CE2] font-bold text-[20px];
+}
+
+.teacher-position {
+  @apply text-[20px] text-[#071E4A] xl:ml-2;
+}
