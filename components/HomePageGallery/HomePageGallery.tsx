@@ -35,7 +35,6 @@ const HomePageGallery = () => {
       </p>
       <SlideshowLightbox lightboxIdentifier="lightbox2" framework="next" images={images} fullScreen>
         <div className="pb-3 min-w-screen flex overflow-x-scroll mt-5 xl:overflow-x-hidden">
-          {' '}
           {images &&
             images.map((image: any, index: number) => (
               <div key={index} className={styles['gallery-image']}>

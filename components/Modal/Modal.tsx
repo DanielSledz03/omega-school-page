@@ -8,11 +8,6 @@ const Modal = ({ show, onClose, children, title }) => {
     setIsBrowser(true)
   }, [])
 
-  const handleCloseClick = (e) => {
-    e.preventDefault()
-    onClose()
-  }
-
   const modalContent = show ? children : null
 
   if (isBrowser) {

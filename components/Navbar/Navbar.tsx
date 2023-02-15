@@ -10,7 +10,7 @@ import { Fragment, useState } from 'react'
 import { MobileNav } from '../MobileNav/MobileNav'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 
-const Navbar = ({ className }: any) => {
+const Navbar = ({ className }: { className?: any }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
   const { width } = useWindowDimensions()
@@ -32,10 +32,25 @@ const Navbar = ({ className }: any) => {
       )}
       <div className="hidden xl:flex flex-1 pl-[30px]">
         <div className={styles['navbar-a-wrapper']}>
-          <Link href="/aktualnosci" className={styles['navbar-a']}>
+          <Link
+            href="/aktualnosci"
+            className={`${router.route === '/aktualnosci' ? styles['navbar-selected'] : ''} ${
+              router.route === '/o-nas' || router.route === '/kontakt'
+                ? styles['navbar-a-about-page']
+                : ''
+            } ${styles['navbar-a']}`}
+          >
             Aktualności
           </Link>
-          <div className={styles['navbar-our-school']}>
+          <div
+            className={`${
+              router.route === '/kalendarz' || router.route === '/galeria'
+                ? styles['navbar-our-school-selected']
+                : ''
+            } ${router.route === '/o-nas' ? styles['navbar-our-school-selected-black'] : ''} ${
+              styles['navbar-our-school']
+            }`}
+          >
             Nasza szkoła
             <div className={styles['navbar-our-school-modal']}>
               <Link href="/o-nas">O nas</Link>
@@ -43,16 +58,35 @@ const Navbar = ({ className }: any) => {
               <Link href="/galeria">Galeria</Link>
             </div>
           </div>
-          <Link href="/oferta" className={styles['navbar-a']}>
+          <Link
+            href="/oferta"
+            className={`${router.route === '/oferta' ? styles['navbar-selected'] : ''} ${
+              router.route === '/o-nas' || router.route === '/kontakt'
+                ? styles['navbar-a-about-page']
+                : ''
+            } ${styles['navbar-a']}`}
+          >
             Oferta
           </Link>
-          <Link href="/rekrutacja" className={styles['navbar-a']}>
+          <Link
+            href="/rekrutacja"
+            className={`${router.route === '/rekrutacja' ? styles['navbar-selected'] : ''} ${
+              router.route === '/o-nas' || router.route === '/kontakt'
+                ? styles['navbar-a-about-page']
+                : ''
+            } ${styles['navbar-a']}`}
+          >
             Rekrutacja
           </Link>
         </div>
 
         <div className="w-[45%] flex justify-end items-center">
-          <Link href="/kontakt" className={styles['navbar-contact']}>
+          <Link
+            href="/kontakt"
+            className={`${router.route === '/kontakt' ? styles['navbar-contact-selected'] : ''} ${
+              styles['navbar-contact']
+            }`}
+          >
             Kontakt
           </Link>
 
@@ -62,12 +96,7 @@ const Navbar = ({ className }: any) => {
               rel="noopener noreferrer"
               href="https://www.youtube.com/channel/UCQn_lSAlyQnH3CpkMIiLy-g"
             >
-              <div
-                onClick={() =>
-                  router.replace('https://www.youtube.com/channel/UCQn_lSAlyQnH3CpkMIiLy-g')
-                }
-                className="mx-2"
-              >
+              <div className="mx-2">
                 <Image src={YoutubeIcon} alt="Yt" />
               </div>
             </Link>

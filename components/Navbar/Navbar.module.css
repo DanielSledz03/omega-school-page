@@ -1,5 +1,5 @@
 .navbar {
-  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] xl:sticky xl:flex xl:bg-transparent xl:mt-5 xl:px-[110px] 2xl:px-[180px];
+  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] xl:sticky xl:flex xl:bg-transparent xl:mt-5 xl:px-[110px] 2xl:px-[180px] max-w-[1920px];
 }
 
 .navbar-a-wrapper {
@@ -10,16 +10,36 @@
   @apply text-white font-bold text-[22px] hover:text-[#FAC13C] duration-300 px-3 2xl:px-6;
 }
 
+.navbar-selected {
+  @apply text-[#FAC13C] hover:cursor-default;
+}
+
+.navbar-a-about-page {
+  @apply hover:text-black;
+}
+
 .navbar-contact {
   @apply text-black font-bold text-[22px] block px-12 py-2 w-min bg-white rounded-[30px] mr-10;
+}
+
+.navbar-contact-selected {
+  @apply bg-[#071E4A] text-white hover:cursor-default;
 }
 
 .navbar-our-school {
   @apply relative text-white font-bold text-[22px] rounded-t-[15px] px-3 pt-3 -mt-3 font-bold 2xl:px-6 2xl:px-6 2xl:-mt-4  2xl:pt-4;
 }
 
+.navbar-our-school-selected {
+  @apply text-[#FAC13C];
+}
+
+.navbar-our-school-selected-black {
+  @apply text-black;
+}
+
 .navbar-our-school-modal {
-  @apply flex flex-col absolute opacity-0 rounded-b-[15px] text-[#071E4A] font-bold -mx-3 px-3 pb-3 2xl:px-6 2xl:-mx-6 2xl:pb-4;
+  @apply shadow-md flex flex-col absolute opacity-0 rounded-b-[15px] text-[#071E4A] font-bold -mx-3 px-3 pb-3 2xl:px-6 2xl:-mx-6 2xl:pb-4;
 }
 
 .navbar-our-school-modal a {

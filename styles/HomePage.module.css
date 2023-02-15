@@ -67,5 +67,5 @@
 }
 
 .navbar {
-  @apply xl:bg-[#071E4A] xl:mx-0 xl:pl-[250px];
+  @apply xl:bg-[#071E4A] xl:py-12 xl:mt-0;
 }
