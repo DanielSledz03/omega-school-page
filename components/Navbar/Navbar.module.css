@@ -1,51 +1,39 @@
 .navbar {
-  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] md:py-0 md:h-[100px] md:px-8 xl:px-[0] xl:mx-[100px]  xl:bg-transparent xl:sticky xl:px-[100px] xl:h-[130px] xl:overflow-y-hidden xl:overflow-x-hidden 2xl:mx-[200px] max-w-[1920px];
+  @apply fixed top-0 bg-[#071E4A] w-screen h-[60px] flex items-center justify-between px-3 py-4 z-[100] xl:sticky xl:flex xl:bg-transparent xl:mt-5 xl:px-[110px] 2xl:px-[180px];
 }
 
-.logo-container {
-  @apply flex z-[99] items-center justify-center w-[60px] md:w-[90px] md:h-full xl:w-[100px] hover:cursor-pointer;
+.navbar-a-wrapper {
+  @apply flex w-[55%] justify-around items-center;
 }
 
-.logo {
-  @apply w-screen md:w-full md:h-full;
+.navbar-a {
+  @apply text-white font-bold text-[22px] hover:text-[#FAC13C] duration-300 px-3 2xl:px-6;
 }
 
-.nav-a {
-  @apply block h-[45px] text-[22px] text-center text-white font-bold py-2 hover:text-[#FAC13C] ease-in-out duration-300 block;
+.navbar-contact {
+  @apply text-black font-bold text-[22px] block px-12 py-2 w-min bg-white rounded-[30px] mr-10;
 }
 
-.nav-a-selected {
-  @apply text-[#FAC13C] hover:cursor-default;
+.navbar-our-school {
+  @apply relative text-white font-bold text-[22px] rounded-t-[15px] px-3 pt-3 -mt-3 font-bold 2xl:px-6 2xl:px-6 2xl:-mt-4  2xl:pt-4;
 }
 
-.nav-contact {
-  @apply block relative h-[45px] text-[22px] text-[#071E4A] font-bold bg-white py-2 rounded-full w-[160px] text-center mr-12;
+.navbar-our-school-modal {
+  @apply flex flex-col absolute opacity-0 rounded-b-[15px] text-[#071E4A] font-bold -mx-3 px-3 pb-3 2xl:px-6 2xl:-mx-6 2xl:pb-4;
 }
 
-.nav-a:hover .nav-under-contruction-box {
-  @apply block opacity-100;
+.navbar-our-school-modal a {
+  @apply duration-200 hover:text-[#FAC13C];
 }
 
-.nav-contact:hover .nav-under-contruction-box {
-  @apply block opacity-100 left-[5px] mt-6;
+.navbar-our-school-modal a:hover .navbar-our-school {
+  @apply hover:cursor-pointer text-[#071E4A];
 }
 
-.nav-contact .nav-under-contruction-box {
-  @apply w-[160px] mt-5;
+.navbar-our-school:hover {
+  @apply bg-white text-[#071E4A];
 }
 
-.nav-under-contruction-box {
-  @apply opacity-0 absolute bottom-[-50px] p-4 bg-white text-[13px] text-[#071E4A] rounded-[15px] mt-5 duration-300;
-}
-
-.nav-under-contruction-arrow {
-  @apply absolute z-[-1] bg-[white] w-[20px] h-[20px] top-[-10px] rotate-45;
-}
-
-.nav-under-contruction-arrow {
-  transform: translateX(50px) rotate(45deg);
-}
-
-.nav-under-contruction-text-container {
-  @apply w-full h-full z-[55] flex justify-center items-center font-[600] flex-col;
+.navbar-our-school:hover .navbar-our-school-modal {
+  @apply opacity-100 bg-white h-auto w-full text-black;
 }

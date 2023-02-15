@@ -18,7 +18,7 @@ const LogoAndStatut = () => {
 
       <div
         onClick={() => router.push('/statut.pdf')}
-        className="w-full bg-[#579CE2] p-5 rounded-[25px] my-8 flex items-center justify-between xl:rounded-[50px] xl:justify-center xl:w-4/5 xl:py-3 2xl:w-1/2"
+        className="w-full bg-[#579CE2] p-5 rounded-[25px] my-8 flex items-center justify-between xl:rounded-[50px] xl:justify-center xl:w-4/5 xl:py-3 2xl:w-1/2 hover:cursor-pointer"
       >
         <div className="w-1/6 xl:w-auto">
           <Image src={BookIcon} alt="Książka" />
