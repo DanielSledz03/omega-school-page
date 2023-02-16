@@ -20,8 +20,8 @@ const Kalendarz = () => {
         onClick={() => null}
       />
       <HeaderWithBubbles header="Kalendarz roku szkolnego 2022 - 2023" />
-      <div className="xl:flex xl:flex-wrap ">
-        <div className="xl: w-full">
+      <div className="xl:flex xl:flex-wrap xl:justify-between max-w-[1300px] xl:mx-auto">
+        <div className="xl:w-full">
           <CalendarSingleEvent single header="Dzień otwaty" dates={['12 czerwca 2023']} />
         </div>
 
@@ -56,26 +56,28 @@ const Kalendarz = () => {
           ]}
         />
       </div>
-      <CalendarMultiEvents
-        header="Inne ważne daty"
-        dates={[
-          { label: 'Rozpoczęcie roku szkolnego', date: '1 września 2022' },
-          { label: 'Dzień edukacji narodowej', date: '14 października 2022' },
-          { label: 'Klasowe spotkanie świąteczne', date: '23 grudnia 2022' },
-          { label: 'Zimowa przerwa świąteczna', date: '23 grudnia 2022 - 31 grudnia 2022' },
-          { label: 'Zakończenie I semestru', date: '27 stycznia 2023' },
-          { label: 'Rozpoczęcie II semestru', date: '30 stycznia 2023' },
-          { label: 'Ferie zimowe', date: '16 stycznia - 29 stycznia 2023' },
-          {
-            label: 'Zakończenie zajęć dydaktyczno-wychowawczych',
-            date: '23 czerwca 2023',
-          },
-          {
-            label: 'Ferie letnie',
-            date: '24 czerwca - 31 sierpnia 2023',
-          },
-        ]}
-      />
+      <div className="pb-[50px] max-w-[1300px] mx-auto xl:pb-[100px]">
+        <CalendarMultiEvents
+          header="Inne ważne daty"
+          dates={[
+            { label: 'Rozpoczęcie roku szkolnego', date: '1 września 2022' },
+            { label: 'Dzień edukacji narodowej', date: '14 października 2022' },
+            { label: 'Klasowe spotkanie świąteczne', date: '23 grudnia 2022' },
+            { label: 'Zimowa przerwa świąteczna', date: '23 grudnia 2022 - 31 grudnia 2022' },
+            { label: 'Zakończenie I semestru', date: '27 stycznia 2023' },
+            { label: 'Rozpoczęcie II semestru', date: '30 stycznia 2023' },
+            { label: 'Ferie zimowe', date: '16 stycznia - 29 stycznia 2023' },
+            {
+              label: 'Zakończenie zajęć dydaktyczno-wychowawczych',
+              date: '23 czerwca 2023',
+            },
+            {
+              label: 'Ferie letnie',
+              date: '24 czerwca - 31 sierpnia 2023',
+            },
+          ]}
+        />
+      </div>
     </Fragment>
   )
 }

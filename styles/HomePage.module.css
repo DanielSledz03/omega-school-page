@@ -6,8 +6,12 @@
   @apply h-[310px] md:h-[430px] xl:h-full;
 }
 
-.content-box {
-  @apply w-full flex flex-col items-center my-5 px-3 md:px-8 xl:px-[110px]  2xl:px-[200px];
+.content-box-home {
+  @apply w-full flex flex-col items-center my-5 px-3 pb-[50px] xl:pb-[100px] md:px-8 xl:px-[110px] 2xl:px-[200px];
+}
+
+.content-box-news {
+  @apply w-full flex flex-col items-center my-5 px-3 pb-[20px] xl:pb-[30px] md:px-8 xl:px-[110px] 2xl:px-[200px];
 }
 
 .header2-container {

@@ -107,7 +107,7 @@ const TeachingStaff = () => {
           </div>
         ))}
         {teacherCount < teachers.length && (
-          <div className="mt-5 xl:flex xl:justify-center xl:mt-8">
+          <div className="mt-5 xl:flex xl:justify-center xl:mt-[50px]">
             <Button
               onClick={() => setTeacherCount((prev) => prev + 15)}
               buttonColor="bg-[#FAC13C]"

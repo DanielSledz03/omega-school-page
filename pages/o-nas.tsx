@@ -40,7 +40,7 @@ const ONas = () => {
       />
       <main
         ref={ref}
-        className="px-5 pb-8 md:px-8 md:pb-12 md:mt-8 xl:px-[110px] 2xl:px-[180px] overflow-hidden"
+        className="pb-[50px] px-5 md:px-8 md:mt-8 xl:px-[110px] xl:pb-[100px] 2xl:px-[180px] overflow-hidden"
       >
         <LogoAndStatut />
         <WhatWeOffer />

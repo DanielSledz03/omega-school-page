@@ -52,7 +52,10 @@ const Galeria = ({ gallery }: any) => {
         buttonTitle="Zobacz zdjęcia"
         onClick={executeScroll}
       />
-      <main ref={ref} className="px-5 pb-8 md:px-8 md:pb-12 md:mt-8 xl:px-[110px] 2xl:px-[180px]">
+      <main
+        ref={ref}
+        className="px-5 pb-[50px] md:px-8 md:mt-8 xl:px-[110px] xl:pb-[100px] 2xl:px-[180px]"
+      >
         <HeaderWithBubbles header="Galeria zdjęć" />
         {!selectedItem && (
           <div className="md:mt-12 xl:flex xl:flex-wrap xl:justify-evenly">
@@ -62,7 +65,7 @@ const Galeria = ({ gallery }: any) => {
                   setSelectedItem(data)
                   width < 1280 && executeScroll()
                 }}
-                thumbnail={'http:' + gallery[0].fields.thumbnail.fields.file.url}
+                thumbnail={'http:' + data.fields.thumbnail.fields.file.url}
                 key={index}
                 header={data.fields.title}
               />
@@ -92,7 +95,7 @@ const Galeria = ({ gallery }: any) => {
                 framework="next"
                 images={galleryImages}
               >
-                <div className="flex flex-wrap justify-between my-4">
+                <div className="flex flex-wrap justify-between my-4 ">
                   {galleryImages.length > 0 &&
                     galleryImages.map((image: any, index: number) => (
                       <div
@@ -141,16 +144,16 @@ const Galeria = ({ gallery }: any) => {
                         framework="next"
                         images={galleryImages}
                       >
-                        <div className="flex flex-wrap my-4">
+                        <div className="flex flex-wrap my-4 max-h-[500px] overflow-y-scroll">
                           {galleryImages.length > 0 &&
                             galleryImages.map((image: any, index: number) => (
                               <div
                                 key={image.alt}
-                                className="	w-[20%] rounded-[15px] overflow-hidden h-[200px] md:mb-3 px-2"
+                                className="w-[20%] overflow-hidden h-[200px] md:mb-3 px-2 "
                               >
                                 <Image
-                                  width={500}
-                                  height={300}
+                                  width={600}
+                                  height={400}
                                   style={{
                                     objectFit: 'cover',
                                     width: '100%',
@@ -158,6 +161,7 @@ const Galeria = ({ gallery }: any) => {
                                   }}
                                   src={image.src}
                                   alt={image.alt}
+                                  className="rounded-[15px]"
                                   data-lightboxjs={'lightbox' + galleryImages.length}
                                 />
                               </div>

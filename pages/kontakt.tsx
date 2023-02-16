@@ -31,7 +31,7 @@ const Kontakt = () => {
         buttonTitle="Odwiedź nas"
         onClick={() => null}
       />
-      <main className="px-5 py-8 md:px-8 md:py-12 xl:px-[110px] 2xl:px-[180px]">
+      <main className="px-5 py-8 pb-[50px] md:px-8 md:py-12 xl:px-[110px] xl:pb-[100px] 2xl:px-[180px]">
         <ContactHeaderWithMap />
         <div className="xl:flex">
           <ContactData />

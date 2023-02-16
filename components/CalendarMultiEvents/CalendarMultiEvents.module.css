@@ -1,5 +1,5 @@
 .container {
-  @apply w-full px-5 mt-12 md:px-8 xl:px-[110px] xl:mb-12 2xl:px-[180px];
+  @apply w-full px-5 mt-12 md:px-8 xl:px-0 xl:mb-12;
 }
 
 .header {

@@ -38,7 +38,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
         buttonTitle="Nasze aktualności"
         onClick={() => executeScroll()}
       />
-      <div ref={ref} className={styles['content-box']}>
+      <div ref={ref} className={styles['content-box-news']}>
         <div className={styles['header2-container']}>
           <div className={styles['ellipses-left']}>
             <Image src={EllipsesLeft} alt="EllipsesLeft" />
@@ -83,7 +83,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
           })}
       </div>
       {howManyArticlesLoaded < posts.length && (
-        <div className="w-full flex justify-center my-7 max-w-[1920px]">
+        <div className="w-full flex justify-center my-7 px-3 pb-[50px] max-w-[1920px] xl:pb-[100px] md:px-8 xl:px-[110px] 2xl:px-[200px]">
           <Button
             label="Zobacz więcej aktualności"
             onClick={() => setHowManyArticlesLoaded((prev) => prev + 5)}

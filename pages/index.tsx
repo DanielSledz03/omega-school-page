@@ -45,7 +45,7 @@ export default function Home({ posts }: { posts: any }) {
         checkKindergarten
         textContainerStyles={styles['text-container']}
       />
-      <div className={styles['content-box']}>
+      <div className={styles['content-box-home']}>
         <div className={styles['header2-container']}>
           <div className={styles['ellipses-left']}>
             <Image src={EllipsesLeft} alt="EllipsesLeft" />
