@@ -15,6 +15,7 @@ const GalleryBox = ({ header, thumbnail, onClick }: IProps) => {
     >
       <div className="absolute w-full h-full top-0 z-[-1]">
         <Image
+          quality={70}
           src={thumbnail}
           width={300}
           height={300}

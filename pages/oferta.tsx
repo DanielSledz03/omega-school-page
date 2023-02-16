@@ -3,6 +3,7 @@ import { Fragment, useRef } from 'react'
 import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
 import styles from '../styles/Oferta.module.css'
 import Button from '../components/Button/Button'
+import CalendarEvent from '../components/CalendarEvent/CalendarEvent'
 import { useRouter } from 'next/router'
 import IconImg1 from '../public/assets/offer/icons/Icon1.svg'
 import IconImg2 from '../public/assets/offer/icons/Icon2.svg'
@@ -19,6 +20,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions'
 import IconsDestkop from '../public/assets/offer/icons/iconsDesktop.svg'
 import BgDesktop from '../public/assets/headers/bgOfferDesktop.jpg'
 import BgMobile from '../public/assets/headers/bgOfferMobile.jpg'
+import CalendarMultiEvents from '../components/CalendarMultiEvents/CalendarMultiEvents'
 const icons = [
   {
     name: 'Rozwijamy',
@@ -240,17 +242,33 @@ const Offer = () => {
             </p>
           ))}
         </div>
-        <div className={` ${styles['section-images-container']}`}>
+        <div className={` ${styles['section-images-container']} flex-col justify-center`}>
           <Image src={activityClubsMobile} alt="Co nas wyróżnia" />
+          <div className="mt-[50px] xl:mt-[50px]">
+            <Button
+              label="Zapisz swoje dziecko do nas"
+              onClick={() => router.replace('/rekrutacja')}
+              textColor="text-white"
+              buttonColor="bg-[#FAC13C]"
+            />
+          </div>
         </div>
       </div>
-      <div className={`${styles['button-container']} ${styles['section-container']}`}>
-        <Button
-          label="Zapisz swoje dziecko do nas"
-          onClick={() => router.replace('/rekrutacja')}
-          textColor="text-white"
-          buttonColor="bg-[#FAC13C]"
-        />
+
+      <div className="w-full mt-12 py-5 px-3 xs:px-7 xl:flex xl:flex-col xl:px-[110px] 2xl:px-[200px] max-w-[1600px] mx-auto xl:py-2">
+        <div>
+          <h5 className="text-center text-[#FAC13C] font-bold text-[30px]">Opłaty</h5>
+          <CalendarEvent date="Wpisowe opłata jednorazowa" label="1500 zł" />
+        </div>
+
+        <div className="mt-10 pb-[50px] xl:pb-[100px]">
+          <h5 className="text-center text-[#FAC13C] font-bold text-[30px]">Czesne</h5>
+          <CalendarEvent date="Opłata roczna" label="12 360 zł" />
+          <div className="w-full xl:flex xl:justify-between">
+            <CalendarEvent fullWidth date="10 rat" label="1 236 zł miesięcznie" />
+            <CalendarEvent fullWidth date="12 rat" label="1 030 zł miesięcznie" />
+          </div>
+        </div>
       </div>
     </Fragment>
   )
