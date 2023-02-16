@@ -7,7 +7,7 @@
 }
 
 .label {
-  @apply font-bold text-[#6D6D6D] text-[16px] text-center leading-[18px] xms:text-[20px]  xms:leading-[22px] xl:text-[25px] xl:leading-[27px];
+  @apply text-[#6D6D6D] text-[16px] text-center leading-[18px] xms:text-[20px]  xms:leading-[22px] xl:text-[25px] xl:leading-[27px];
 }
 
 .full-width {
