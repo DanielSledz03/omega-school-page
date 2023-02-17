@@ -22,7 +22,7 @@ const Kalendarz = () => {
       <HeaderWithBubbles header="Kalendarz roku szkolnego 2022 - 2023" />
       <div className="xl:flex xl:flex-wrap xl:justify-between max-w-[1300px] xl:mx-auto">
         <div className="xl:w-full">
-          <CalendarSingleEvent single header="Dzień otwaty" dates={['12 czerwca 2023']} />
+          <CalendarSingleEvent single header="Dzień otwarty" dates={['4 marca 2023']} />
         </div>
 
         <CalendarSingleEvent
