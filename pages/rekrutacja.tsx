@@ -2,7 +2,8 @@ import { Fragment, useRef } from 'react'
 import RecruitmentForm from '../components/RecruitmentForm/RecruitmentForm'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-
+import BgDesktop from '../public/assets/headers/bgRecruitmentDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgRecruitmentMobile.jpg'
 export default function Home() {
   const ref = useRef<HTMLDivElement>(null)
   const { width } = useWindowDimensions()
@@ -21,8 +22,8 @@ export default function Home() {
   return (
     <Fragment>
       <PageHeader
-        bgUrl="bg-[url(/assets/Bg1.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/Bg1-desktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Zapisz dziecko"
         titleSpan=" do naszej szkoły"
         paragraph="Wypełnij formularz on-line i zapisz swoje dziecko do naszej szkoły, bez wychodzenia z

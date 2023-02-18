@@ -1,0 +1,19 @@
+.container {
+  @apply w-full px-5 mt-12 md:px-8 xl:w-[49%] xl:px-0;
+}
+
+.single {
+  @apply xl:w-full;
+}
+
+.header {
+  @apply text-center text-[#FAC13C] text-[30px] font-bold leading-[34px] my-5;
+}
+
+.date-box {
+  @apply h-[55px] my-3 rounded-[15px] bg-[#FAFAFA] flex justify-center items-center xl:h-[70px];
+}
+
+.date {
+  @apply text-[#579CE2] text-[16px] font-bold xms:text-[20px] xl:text-[25px];
+}

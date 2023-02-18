@@ -1,0 +1,20 @@
+.last-section-container,
+.section-container {
+  @apply w-full flex flex-col text-[#071E4A] border-b-[1px] border-[#F0F0F0] py-6;
+}
+
+.last-section-container {
+  @apply border-none xl:hidden;
+}
+
+.section-header {
+  @apply text-[#579CE2] text-[25px] font-bold mb-3 md:text-[30px] xl:text-[35px];
+}
+
+.section-inner-box {
+  @apply mb-3 md:text-[20px] xl:text-[25px];
+}
+
+.day-room-section-container {
+  @apply xl:border-none;
+}

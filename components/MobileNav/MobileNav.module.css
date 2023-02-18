@@ -3,7 +3,7 @@
 }
 
 .mobile-nav-visible {
-  @apply left-full;
+  @apply left-full z-[999];
 }
 
 .mobile-nav-header {
@@ -23,9 +23,9 @@
 }
 
 .contact-button {
-  @apply bg-white text-[#071E4A] w-[160px] text-center px-12 py-2 font-[700] text-[22px] rounded-full;
+  @apply bg-white text-[#071E4A] w-[160px] text-center px-12 py-2 font-[700] text-[22px] rounded-full md:text-[35px] md:py-4 md:px-[60px] md:mb-[50px];
 }
 
 .social-media-container {
-  @apply w-full flex items-center justify-center mt-[30px];
+  @apply w-full flex items-center justify-center mt-[30px] md:mt-12;
 }

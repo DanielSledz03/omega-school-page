@@ -3,6 +3,7 @@ import Footer from '../components/Footer/Footer'
 import { ReactNode } from 'react'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 interface ILayout {
   children: ReactNode
@@ -10,6 +11,7 @@ interface ILayout {
 
 export default function Layout({ children }: ILayout) {
   const { width } = useWindowDimensions()
+
   return (
     <>
       <Head>

@@ -5,7 +5,6 @@ import Arrow from '../../public/assets/rightArrow.svg'
 import { Fragment, useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from '../../styles/HomePage.module.css'
-
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import ImagePreview from '../../components/ImagePreview/ImagePreview'
 import Head from 'next/head'
@@ -74,6 +73,8 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
 
   return (
     <Fragment>
+      <Navbar className={styles['navbar']} />
+
       <Head>
         <title>{post.fields.title}</title>
         <meta name="description" content={post.fields.shortDescription} key="desc" />
@@ -89,6 +90,7 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
           content={'https:' + post.fields.mainImage.fields.file.url}
         />
       </Head>
+
       {isModalVisible && (
         <ImagePreview
           clickedImageID={clickedImageID}
@@ -98,7 +100,6 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
         />
       )}
       <div className="w-full max-w-[1920px] 3xl:mx-auto overflow-x-hidden">
-        <Navbar className={styles['navbar']} />
         <div className="mt-[60px] py-3 px-3 md:mt-[100px] md:px-8 xl:px-[200px] 2xl:px-[250px] xl:mt-0 ">
           <div className="flex justify-between items-center pb-2 md:py-5">
             <div

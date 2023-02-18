@@ -9,6 +9,10 @@ import AboutUsMobile from '../public/assets/homepage/aboutUsMobile.svg'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import { createClient } from 'contentful'
+import BgDesktop from '../public/assets/headers/bgHomeDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgHomeMobile.jpg'
+import Link from 'next/link'
+import HomePageGallery from '../components/HomePageGallery/HomePageGallery'
 
 export default function Home({ posts }: { posts: any }) {
   const router = useRouter()
@@ -16,10 +20,12 @@ export default function Home({ posts }: { posts: any }) {
   return (
     <Fragment>
       <div className="hidden xl:flex fixed bottom-0 w-full h-[80px] bg-white z-[90] flex items-center justify-center 2xl:h-[100px]">
-        <p className="text-center text-[#579CE2] text-[20px] underline font-[700]">
+        <Link
+          href="/rekrutacja"
+          className="text-center text-[#579CE2] text-[20px] underline font-[700]"
+        >
           Rekrutacja na rok 2023 trwa, zapisz swoje dziecko już dziś!
-        </p>
-
+        </Link>
         <Button
           label="Wypełnij formularz"
           buttonColor="bg-[#579CE2]"
@@ -29,8 +35,8 @@ export default function Home({ posts }: { posts: any }) {
         />
       </div>
       <PageHeader
-        bgUrl="bg-[url(/assets/headers/bgHomeMobile.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/headers/bgHomeDesktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Kreuj z nami"
         titleSpan="swoją przyszłość"
         paragraph="Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach"
@@ -38,9 +44,8 @@ export default function Home({ posts }: { posts: any }) {
         onClick={() => router.push('/rekrutacja')}
         checkKindergarten
         textContainerStyles={styles['text-container']}
-        bgClassStyle={styles['bg-style']}
       />
-      <div className={styles['content-box']}>
+      <div className={styles['content-box-home']}>
         <div className={styles['header2-container']}>
           <div className={styles['ellipses-left']}>
             <Image src={EllipsesLeft} alt="EllipsesLeft" />
@@ -92,7 +97,11 @@ export default function Home({ posts }: { posts: any }) {
         />
         <div className={styles['about-us-container']}>
           <div className={styles['about-us-image']}>
-            <Image className="w-full" src={AboutUsMobile} alt="O nas" />
+            <Image
+              className="w-full md:w-1/2 md:mx-auto xl:w-full"
+              src={AboutUsMobile}
+              alt="O nas"
+            />
           </div>
 
           <div className={styles['about-us-text-container']}>
@@ -110,47 +119,16 @@ export default function Home({ posts }: { posts: any }) {
                 prawdziwi Nauczyciele z klasą...
               </span>
             </p>
-            {/* <Button
+            <Button
               label="Dowiedz się o nas więcej"
-              onClick={() => null}
+              onClick={() => router.push('/o-nas')}
               textColor="text-white "
               className={styles['button-about-us']}
               buttonColor="bg-[#579CE2]"
-            /> */}
+            />
           </div>
         </div>
-
-        {/* <div className={styles['gallery-container']}>
-          <div className={styles['header2-container']}>
-            <div className={styles['ellipses-left']}>
-              <Image src={EllipsesLeft} alt="EllipsesLeft" />
-            </div>
-            <div className={styles['ellipses-right']}>
-              <Image src={EllipsesRight} alt="EllipsesRight" />
-            </div>
-            <h2 className={styles.header2}>Galeria zdjęć</h2>
-          </div>
-
-          <p className={styles['gallery-paragraph']}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sed mattis
-            congue. Etiam eu ultricies enim. Curabitur vel nisl purus.{' '}
-          </p>
-          
-          <div className="w-[414px] flex overflow-x-scroll">
-            <div className={styles['gallery-image']}>
-              <Image className="w-full" src={galleryImg1} alt="Zdjęcie z galerii nr 1" />
-            </div>
-            <div className={styles['gallery-image']}>
-              <Image className="w-full" src={galleryImg2} alt="Zdjęcie z galerii nr 1" />
-            </div>
-            <div className={styles['gallery-image']}>
-              <Image className="w-full" src={galleryImg3} alt="Zdjęcie z galerii nr 1" />
-            </div>
-            <div className={styles['gallery-image']}>
-              <Image className="w-full" src={galleryImg4} alt="Zdjęcie z galerii nr 1" />
-            </div>
-          </div>
-        </div> */}
+        <HomePageGallery />
       </div>
     </Fragment>
   )

@@ -1,0 +1,7 @@
+.container {
+  @apply w-full;
+}
+
+.header-text {
+  @apply text-[#579CE2] font-bold text-[25px] leading-[28px] xs:text-[30px] xs:leading-[32px] xl:w-full xl:py-8 xl:mb-8 xl:px-[80px] xl:text-[50px] xl:leading-[60px] xl:text-center;
+}

@@ -1,4 +1,7 @@
 import '../styles/globals.css'
+import 'leaflet/dist/leaflet.css'
+import 'lightbox.js-react/dist/index.css'
+
 import type { AppProps } from 'next/app'
 import Layout from './layout'
 import Script from 'next/script'

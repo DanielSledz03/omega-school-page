@@ -8,6 +8,8 @@ import useWindowDimensions from '../hooks/useWindowDimensions'
 import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
 import EllipsesRight from '../public/assets/EllipsesRight.svg'
 import styles from '../styles/HomePage.module.css'
+import BgDesktop from '../public/assets/headers/bgNewsDesktop.jpg'
+import BgMobile from '../public/assets/headers/bgNewsMobile.jpg'
 
 const Aktualnosci = ({ posts }: { posts: any }) => {
   const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5)
@@ -27,17 +29,16 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
   return (
     <Fragment>
       <PageHeader
-        bgUrl="bg-[url(/assets/headers/bgNewsMobile.svg)]"
-        bgXlUrl="xl:bg-[url(/assets/headers/bgNewsDesktop.svg)]"
+        bgUrl={BgMobile}
+        bgXlUrl={BgDesktop}
         title="Sprawdź,"
         titleSpan="co u nas słychać"
         paragraph="Przeczytaj wszystkie z naszych aktualności,
         aby być na bieżąco!"
         buttonTitle="Nasze aktualności"
         onClick={() => executeScroll()}
-        bgClassStyle={styles['news-bg']}
       />
-      <div ref={ref} className={styles['content-box']}>
+      <div ref={ref} className={styles['content-box-news']}>
         <div className={styles['header2-container']}>
           <div className={styles['ellipses-left']}>
             <Image src={EllipsesLeft} alt="EllipsesLeft" />
@@ -82,7 +83,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
           })}
       </div>
       {howManyArticlesLoaded < posts.length && (
-        <div className="w-full flex justify-center my-7 max-w-[1920px]">
+        <div className="w-full flex justify-center my-7 px-3 pb-[50px] max-w-[1920px] xl:pb-[100px] md:px-8 xl:px-[110px] 2xl:px-[200px]">
           <Button
             label="Zobacz więcej aktualności"
             onClick={() => setHowManyArticlesLoaded((prev) => prev + 5)}

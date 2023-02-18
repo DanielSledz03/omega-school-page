@@ -1,0 +1,31 @@
+.header2-container {
+  @apply w-full flex justify-center relative md:my-5 xl:w-3/4 xl:self-center xl:my-10 2xl:w-3/5  max-w-[1920px];
+}
+
+.header2 {
+  @apply text-[#579CE2] font-bold text-center text-3xl py-2 w-[150px] md:text-4xl md:w-auto xl:text-5xl;
+}
+
+.gallery-container {
+  @apply w-full pb-4 my-5 px-3 xl:flex xl:items-center xl:flex-col xl:my-12 overflow-hidden xl:pb-12;
+}
+
+.gallery-paragraph {
+  @apply text-center text-[#6D6D6D] my-4 mb-4 xl:w-1/2 xl:text-[20px];
+}
+
+.gallery-image {
+  @apply mx-2 min-w-[130px] max-w-[135px] xl:min-w-[190px] xl:max-w-[195px] 2xl:min-w-[200px] 2xl:max-w-[205px] 2xl:min-w-[260px] 2xl:max-w-[265px] even:mt-5 xl:even:mt-8;
+}
+
+.gallery-show-all-images {
+  @apply block mx-2 px-2 rounded-[25px] min-w-[130px] min-w-[130px] xl:min-w-[190px] xl:max-w-[190px] 2xl:min-w-[205px] 2xl:max-w-[205px] 3xl:min-w-[265px] 2xl:max-w-[265px] bg-[#579CE2] flex justify-center items-center text-white text-[18px] font-bold text-center xl:text-[22px] xl:rounded-[50px] hover:bg-[#34689F] hover:cursor-pointer duration-300;
+}
+
+.ellipses-left {
+  @apply absolute top-[10px] left-[10px];
+}
+
+.ellipses-right {
+  @apply absolute top-[10px] right-[10px];
+}

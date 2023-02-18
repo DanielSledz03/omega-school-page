@@ -1,0 +1,7 @@
+.container {
+  @apply w-full px-5 mt-12 md:px-8 xl:px-0 xl:mb-12;
+}
+
+.header {
+  @apply text-center text-[#FAC13C] text-[30px] font-bold leading-[34px] my-5;
+}

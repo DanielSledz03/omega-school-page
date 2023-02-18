@@ -3,17 +3,19 @@ import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg'
 import Button from '../Button/Button'
 import styles from './PageHeader.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
+import { useState } from 'react'
 
 interface IProps {
   title: string
   titleSpan: string
+  titleSpanColor?: string
   paragraph: string
   onClick: () => void
   buttonTitle: string
-  bgUrl: string
-  bgXlUrl: string
-  bgStyle?: React.CSSProperties
-  bgClassStyle?: any
+  bgUrl: any
+  bgXlUrl: any
   textContainerStyles?: any
   checkKindergarten?: boolean
 }
@@ -22,22 +24,39 @@ export const PageHeader = ({
   onClick,
   title,
   titleSpan,
+  titleSpanColor,
   paragraph,
   buttonTitle,
   bgUrl,
   bgXlUrl,
   textContainerStyles,
-  bgStyle = {},
-  bgClassStyle,
   checkKindergarten = false,
 }: IProps) => {
+  const { width } = useWindowDimensions()
   return (
-    <div style={bgStyle} className={`${bgClassStyle} ${bgUrl}  ${bgXlUrl}  ${styles.container} `}>
+    <div className={` ${styles.container} `}>
+      <div className="w-full h-full absolute z-[-1]">
+        {width && (
+          <Image
+            src={width >= 1280 ? bgXlUrl : bgUrl}
+            alt="head iamge"
+            className="w-full object-cover h-full"
+            loading="eager"
+            quality={100}
+            priority
+          />
+        )}
+      </div>
       <Navbar />
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>
           <h1 className={styles['header1']}>{title}</h1>
-          <span className={styles['header1-span']}>{titleSpan}</span>
+          <span
+            style={{ color: titleSpanColor ? titleSpanColor : '#FAC13C' }}
+            className={styles['header1-span']}
+          >
+            {titleSpan}
+          </span>
         </div>
         <p className={styles['paragraph']}>{paragraph}</p>
         <Button
