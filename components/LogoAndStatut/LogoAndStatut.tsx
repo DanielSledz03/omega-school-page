@@ -9,11 +9,11 @@ const LogoAndStatut = () => {
   return (
     <div className="pt-5 flex flex-col items-center xl:pt-8">
       <div className="w-3/4 flex justify-center">
-        <Image src={Logo} alt="Logo szkoły" />
+        <Image src={Logo} alt="Logo szkoły" />s
       </div>
 
       <h2 className="mt-5 text-[#071E4A] text-[25px] leading-[30px] text-center font-bold xl:text-[45px] xl:leading-[54px] xl:mt-10">
-        Społeczna Szkoła Podstawowa - OMEGA w Katowicach
+        Społeczna Szkoła Podstawowa OMEGA w Katowicach
       </h2>
 
       <div
