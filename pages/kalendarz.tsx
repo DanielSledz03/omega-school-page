@@ -44,15 +44,16 @@ const Kalendarz = () => {
         <CalendarSingleEvent
           header="Dni wolne od zajęć"
           dates={[
+            '31 październik 2022',
             '1 listopada 2022',
             '11 listopada 2022',
             '25, 26 grudnia 2022',
             '1 stycznia 2023',
             '6 stycznia 2023',
             '9, 10 kwietnia 2023',
-            '1 maja 2023',
-            '3 maja 2023',
-            '8 czerwca 2023',
+            '1, 2, 3 maja 2023',
+            '26 maja 2023',
+            '8, 9 czerwca 2023',
           ]}
         />
       </div>
