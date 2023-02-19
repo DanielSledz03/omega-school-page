@@ -76,7 +76,7 @@ const TeachingStaff = () => {
           </div>
 
           <div className={styles['managment-container']}>
-            <p className={styles['director-name']}>Aleksandra Woska-Balina</p>
+            <p className={styles['director-name']}>Aleksandra Wolska-Balina</p>
             <p className={styles['director-position']}>Wiceprezes</p>
           </div>
           <div className={styles['managment-container']}>
