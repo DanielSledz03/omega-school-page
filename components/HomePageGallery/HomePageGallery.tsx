@@ -29,10 +29,6 @@ const HomePageGallery = () => {
         <h2 className={styles.header2}>Galeria zdjęć</h2>
       </div>
 
-      <p className={styles['gallery-paragraph']}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo urna sed mattis
-        congue. Etiam eu ultricies enim. Curabitur vel nisl purus.{' '}
-      </p>
       <SlideshowLightbox lightboxIdentifier="lightbox2" framework="next" images={images} fullScreen>
         <div className="pb-3 min-w-screen flex overflow-x-scroll mt-5 xl:overflow-x-hidden">
           {images &&
