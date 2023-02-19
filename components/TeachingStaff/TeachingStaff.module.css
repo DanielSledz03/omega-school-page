@@ -10,6 +10,10 @@
   @apply w-full bg-[#FAFAFA] rounded-[30px] px-5 py-7 mb-5 xl:w-[49%] xl:py-[60px];
 }
 
+.managment-container {
+  @apply w-full bg-[#FAFAFA] rounded-[30px] px-5 py-7 mb-5 xl:w-[32%] xl:py-[60px];
+}
+
 .director-name {
   @apply text-[#579CE2] font-bold text-[25px] text-center;
 }

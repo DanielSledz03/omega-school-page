@@ -34,7 +34,6 @@ const Kalendarz = () => {
             '16 listopada 2022',
             '14 grudnia 2022',
             '11 stycznia 2023',
-            '22 lutego 2023',
             '15 marca 2023',
             '19 kwietnia 2023',
             '17 maja 2023',

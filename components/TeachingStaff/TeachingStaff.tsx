@@ -3,7 +3,7 @@ import HeaderWithBubbles from '../HeaderWithBubbles/HeaderWithBubbles'
 import styles from './TeachingStaff.module.css'
 import { useState } from 'react'
 const teachers = [
-  { name: 'Kinga Bieszczad', position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'] },
+  { name: 'Kinga Lubelska', position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'] },
   { name: 'Patrycja Sobczyk', position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'] },
   { name: 'Karolina Kurek', position: ['wychowawca grupy 5/6 latków', 'edukacja przedszkolna'] },
   { name: 'Ewa Klimek', position: ['wychowawca klasy 1α', 'edukacja wczesnoszkolna'] },
@@ -42,7 +42,7 @@ const teachers = [
   { name: 'Grzegorz Sówka', position: ['geografia'] },
   { name: 'Magdalena Mądry-Cieśla', position: ['wiedza o społeczeństwie'] },
   { name: 'Sabina Kabus', position: ['technika'] },
-  { name: 'Dagmara Cieślak', position: ['plastyka'] },
+  { name: 'Agnieszka Lisowska-Morozowska', position: ['plastyka'] },
   { name: 'Alicja Kotyl', position: ['muzyka'] },
   {
     name: 'Katarzyna Borkowska',
@@ -65,6 +65,27 @@ const TeachingStaff = () => {
   return (
     <div className={styles.container}>
       <HeaderWithBubbles header="Poznaj naszą kadrę" />
+      <div className="md:mt-12">
+        <h5 className={styles.header}>
+          Organ Prowadzący Społeczne Towarzystwo Edukacyjne - Zarząd STE
+        </h5>
+        <div className="xl:flex xl:justify-between">
+          <div className={styles['managment-container']}>
+            <p className={styles['director-name']}>Jerzy Seremak</p>
+            <p className={styles['director-position']}>Prezes</p>
+          </div>
+
+          <div className={styles['managment-container']}>
+            <p className={styles['director-name']}>Aleksandra Woska-Balina</p>
+            <p className={styles['director-position']}>Wiceprezes</p>
+          </div>
+          <div className={styles['managment-container']}>
+            <p className={styles['director-name']}>Grzegorz Pilarczyk</p>
+            <p className={styles['director-position']}>Wiceprezes</p>
+          </div>
+        </div>
+      </div>
+
       <div className="md:mt-12">
         <h5 className={styles.header}>Dyrekcja</h5>
         <div className="xl:flex xl:justify-between">
