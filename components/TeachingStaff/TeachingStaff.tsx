@@ -65,7 +65,7 @@ const TeachingStaff = () => {
   return (
     <div className={styles.container}>
       <HeaderWithBubbles header="Poznaj naszą kadrę" />
-      <div className="md:mt-12">
+      <div className="md:mt-12 xl:mt-[70px]">
         <h5 className={styles.header}>
           Organ Prowadzący Społeczne Towarzystwo Edukacyjne - Zarząd STE
         </h5>
