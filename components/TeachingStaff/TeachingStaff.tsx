@@ -42,7 +42,7 @@ const teachers = [
   { name: 'Grzegorz Sówka', position: ['geografia'] },
   { name: 'Magdalena Mądry-Cieśla', position: ['wiedza o społeczeństwie'] },
   { name: 'Sabina Kabus', position: ['technika'] },
-  { name: 'Agnieszka Lisowska-Morozowska', position: ['plastyka'] },
+  { name: 'Agnieszka Lisowska-Mrozowska', position: ['plastyka'] },
   { name: 'Alicja Kotyl', position: ['muzyka'] },
   {
     name: 'Katarzyna Borkowska',
