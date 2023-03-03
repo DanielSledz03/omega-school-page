@@ -20,7 +20,7 @@ const Navbar = ({ className }: { className?: any }) => {
   }
 
   return (
-    <nav className={`${className} ${styles.navbar}`}>
+    <nav className={`${className} ${styles.navbar}`} role="navigation" aria-label="Main">
       <div onClick={() => router.push('/')} className="w-[70px] xl:w-[100px] hover:cursor-pointer">
         <Image src={Logo} alt="STE" />
       </div>

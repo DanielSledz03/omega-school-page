@@ -5,7 +5,7 @@ import styles from './PageHeader.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface IProps {
   title: string
@@ -33,6 +33,8 @@ export const PageHeader = ({
   checkKindergarten = false,
 }: IProps) => {
   const { width } = useWindowDimensions()
+  const [loaded, setLoaded] = useState(false)
+
   return (
     <div className={` ${styles.container} `}>
       <div className="w-full h-full absolute z-[-1]">
@@ -44,6 +46,7 @@ export const PageHeader = ({
             loading="eager"
             quality={100}
             priority
+            onLoadingComplete={() => setLoaded(true)}
           />
         )}
       </div>

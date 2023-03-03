@@ -21,6 +21,8 @@ export default function Layout({ children }: ILayout) {
           content="Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach"
           key="desc"
         />
+        <meta property="og:type" content="website" />
+
         <meta property="og:title" content={'Społeczna Szkoła Podstawowa OMEGA'} key={'og-title'} />
         <meta
           property="og:description"

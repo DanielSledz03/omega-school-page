@@ -21,6 +21,7 @@ const GalleryBox = ({ header, thumbnail, onClick }: IProps) => {
           height={300}
           alt="ImageFrom"
           className="object-cover w-full h-full"
+          priority
         />
       </div>
 

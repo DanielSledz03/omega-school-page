@@ -39,7 +39,7 @@ export const ArticlePreviewBox = ({
         />
       </div>
       <div className={styles['content-box']}>
-        <h5 className={styles.title}>{title}</h5>
+        <p className={styles.title}>{title}</p>
         <ReactMarkdown
           className={styles.content}
           components={{
