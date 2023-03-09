@@ -4,14 +4,12 @@ import BgDesktop from '../public/assets/headers/BgGalleryDesktop.jpg'
 import BgMobile from '../public/assets/headers/bgGalleryMobile.jpg'
 import HeaderWithBubbles from '../components/HeaderWithBubbles/HeaderWithBubbles'
 import GalleryBox from '../components/GalleryBox/GalleryBox'
-import { GalleryData } from '../data/galleryData'
 import BackButton from '../public/assets/gallery/backButton.png'
 import Image from 'next/image'
 import { SlideshowLightbox } from 'lightbox.js-react'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import { createClient } from 'contentful'
 import Modal from '../components/Modal/Modal'
-import useOutsideClick from '../hooks/useOutsideClick'
 
 const Galeria = ({ gallery }: any) => {
   const [selectedItem, setSelectedItem] = useState<any>(null)

@@ -373,6 +373,18 @@ const RecruitmentForm = () => {
           Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
           osobowych dostępną pod adresem{' '}
           <Link
+            href="/Przetwarzanie-Danych.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${
+              touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
+            } `}
+          >
+            www.omegaszkola.pl/przetwarzanie-danych
+          </Link>
+          , {width! < 568 && <br />}
+          oraz z{' '}
+          <Link
             href="/Regulamin.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -380,8 +392,7 @@ const RecruitmentForm = () => {
               touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
             } `}
           >
-            www.omegaszkola.pl/{width! < 568 && <br />}
-            regulamin
+            regulaminem rekrutacji.
           </Link>
         </Checkbox>
 
@@ -395,6 +406,21 @@ const RecruitmentForm = () => {
           Edukacyjne z siedzibą w Katowicach ul. Gliwicka 276, w celach postępowania rekrutacyjnego
           do Społecznej Szkoły Podstawowej OMEGA
         </Checkbox>
+      </div>
+      <div className={`py-4 md:py-6   ${styles['agreements-section-container']}`}>
+        <div>
+          <p className=" text-center text-[#4F4F4F] text-[14px] block md:text-start md:text-[18px] xl:text-[14px] xl:block xl:w-full ">
+            Terminarz rekrutacji jest dostępny pod adresem{' '}
+            <Link
+              href="/Terminarz.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-[14px] text-[#579CE2] md:text-[20px] xl:text-[14px] `}
+            >
+              www.omegaszkola.pl/terminarz
+            </Link>
+          </p>
+        </div>
       </div>
       <div className={styles['button-container']}>
         <SendButton />
