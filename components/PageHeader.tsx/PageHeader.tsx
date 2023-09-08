@@ -40,6 +40,7 @@ export const PageHeader = ({
       <div className="w-full h-full absolute z-[-1]">
         {width && (
           <Image
+            data-cypress="headerImage"
             src={width >= 1280 ? bgXlUrl : bgUrl}
             alt="head iamge"
             className="w-full object-cover h-full"
@@ -63,6 +64,7 @@ export const PageHeader = ({
         </div>
         <p className={styles['paragraph']}>{paragraph}</p>
         <Button
+          dataCypress="headerButton"
           label={buttonTitle}
           onClick={onClick}
           className={styles['button']}

@@ -9,6 +9,7 @@
     "lint": "next lint",
     "lint-fix": "eslint . --fix",
     "lint-check": "eslint .",
+    "build-and-run": "next build && next start",
     "cypress": "cypress open"
   },
   "dependencies": {

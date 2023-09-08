@@ -10,6 +10,7 @@ interface IButton {
   textColor?: string;
   className?: string;
   arrowSrc?: any;
+  dataCypress?: string;
 }
 
 const Button = ({
@@ -19,9 +20,11 @@ const Button = ({
   textColor,
   className,
   arrowSrc = Arrow,
+  dataCypress,
 }: IButton) => {
   return (
     <button
+      data-cypress={dataCypress}
       onClick={onClick}
       className={`${className ? className : ''} ${
         buttonColor ? buttonColor : 'bg-white'

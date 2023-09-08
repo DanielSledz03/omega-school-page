@@ -25,7 +25,7 @@ export const ArticlePreviewBox = ({
   const createdAtString = new Date(createdAt);
 
   return (
-    <div className={styles['container']}>
+    <div data-cypress={'article-box'} className={styles['container']}>
       <div className={styles['image-container']}>
         <Image
           quality={100}
