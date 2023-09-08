@@ -2,9 +2,9 @@ name: Automatic Pull request
 
 # run this workflow only on new feature branches, not when they're merged to main
 on:
-  push:
+  create:
     branches-ignore:
-      - 'master'
+      - 'main'
       - 'production'
       - 'staging'
 
