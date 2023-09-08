@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const Modal = ({ show, onClose, children, title }) => {
+const Modal = ({ show, children }) => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
