@@ -1,24 +1,13 @@
-name: Create Pull Request
-
+name: Pull Request on Branch Push
 on:
-  create:
+  push:
     branches-ignore:
-      - 'master'
-      - 'develop'
-
+      - main
+      - develop
 jobs:
-  create_pr:
+  auto-pull-request:
+    name: PullRequestAction
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          branch: ${{ github.ref }}
-          title: Automated PR from ${{ github.ref }}
-          body: |
-            This Pull Request was automatically created when a new branch was pushed.
-            Please review and merge as needed.
+      - name: pull-request-action
+        uses: vsoch/pull-request-action@master
