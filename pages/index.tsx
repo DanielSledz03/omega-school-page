@@ -40,7 +40,7 @@ export default function Home({ posts }: { posts: any }) {
       <PageHeader
         bgUrl={BgMobile}
         bgXlUrl={BgDesktop}
-        title="Kreuj z nam"
+        title="Kreuj z nami"
         titleSpan="swoją przyszłość"
         paragraph="Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach"
         buttonTitle="Rekrutacja do szkoły"
