@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('home render', () => {
   it('passes', () => {
     cy.viewport(1920, 1200);
     cy.visit('/');
