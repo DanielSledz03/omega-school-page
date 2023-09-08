@@ -1,32 +1,37 @@
-import Image from 'next/image'
-import CloseIcon from '../../public/assets/news/closeIcon.svg'
-import RightArrow from '../../public/assets/news/rightArrow.svg'
-import LeftArrow from '../../public/assets/news/leftArrow.svg'
-import styles from './ImagePreview.module.css'
+import Image from 'next/image';
+import styles from './ImagePreview.module.css';
+import CloseIcon from '../../public/assets/news/closeIcon.svg';
+import LeftArrow from '../../public/assets/news/leftArrow.svg';
+import RightArrow from '../../public/assets/news/rightArrow.svg';
 
 interface IProps {
-  clickedImageID: number
-  post: any
-  setisModalVisible: any
-  setClickedImageID: any
+  clickedImageID: number;
+  post: any;
+  setisModalVisible: any;
+  setClickedImageID: any;
 }
 
-const ImagePreview = ({ clickedImageID, post, setisModalVisible, setClickedImageID }: IProps) => {
+const ImagePreview = ({
+  clickedImageID,
+  post,
+  setisModalVisible,
+  setClickedImageID,
+}: IProps) => {
   const handleNextImage = () => {
     if (clickedImageID !== post.fields.gallery.length - 1) {
-      setClickedImageID((prev: number) => prev + 1)
+      setClickedImageID((prev: number) => prev + 1);
     } else {
-      setClickedImageID(0)
+      setClickedImageID(0);
     }
-  }
+  };
 
   const handlePreviousImage = () => {
     if (clickedImageID !== 0) {
-      setClickedImageID((prev: number) => prev - 1)
+      setClickedImageID((prev: number) => prev - 1);
     } else {
-      setClickedImageID(post.fields.gallery.length - 1)
+      setClickedImageID(post.fields.gallery.length - 1);
     }
-  }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -39,7 +44,10 @@ const ImagePreview = ({ clickedImageID, post, setisModalVisible, setClickedImage
           src={'https:' + post.fields.gallery[clickedImageID].fields.file.url}
           className={styles.image}
         />
-        <div onClick={() => setisModalVisible(false)} className={styles['close-icon-container']}>
+        <div
+          onClick={() => setisModalVisible(false)}
+          className={styles['close-icon-container']}
+        >
           <Image src={CloseIcon} alt="CloseIcon" />
         </div>
         <div className={styles['arrows-container']}>
@@ -53,7 +61,7 @@ const ImagePreview = ({ clickedImageID, post, setisModalVisible, setClickedImage
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ImagePreview
+export default ImagePreview;

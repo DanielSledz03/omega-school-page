@@ -1,13 +1,12 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { Icon } from 'leaflet'
-import markerIconPng from '../../public/assets/marker.png'
-import Link from 'next/link'
+import { Icon } from 'leaflet';
+import Link from 'next/link';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 const Map = () => {
   const ICON = new Icon({
     iconUrl: './assets/marker.png',
     iconSize: [26, 40],
-  })
+  });
   if (window) {
     return (
       <div className="w-full h-[205px] bg-black my-8 rounded-[25px] xl:w-[60%] xl:h-auto">
@@ -30,16 +29,17 @@ const Map = () => {
                 className="underline"
                 href="https://goo.gl/maps/yWYk23UtegvaAeiq6"
               >
-                Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
+                Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w
+                Katowicach
               </Link>
             </Popup>
           </Marker>
         </MapContainer>
       </div>
-    )
+    );
   }
 
-  return <div />
-}
+  return <div />;
+};
 
-export default Map
+export default Map;

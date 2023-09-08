@@ -1,21 +1,21 @@
-import { Fragment, useEffect, useState } from 'react'
-import { useFormik } from 'formik'
-import { Input } from './components/Input/Input'
-import { StudentData } from '../../types/student-data.type'
-import * as Yup from 'yup'
-import { Textarea } from './components/Textarea/Textarea'
-import RadioButtons from './components/RadioButtons/RadioButtons'
-import styles from './RecruitmentForm.module.css'
-import { GeneralData } from '../../types/general-data.type'
-import { Select } from './components/Select/Select'
-import { ParentsData } from '../../types/parents-data.type'
-import Checkbox from './components/Checkbox/Checkbox'
-import Button from '../Button/Button'
-import Image from 'next/image'
-import EllipsesLeft from '../../public/assets/EllipsesLeft.svg'
-import EllipsesRight from '../../public/assets/EllipsesRight.svg'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
-import Link from 'next/link'
+import { useFormik } from 'formik';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Fragment, useEffect, useState } from 'react';
+import * as Yup from 'yup';
+import Checkbox from './components/Checkbox/Checkbox';
+import { Input } from './components/Input/Input';
+import RadioButtons from './components/RadioButtons/RadioButtons';
+import { Select } from './components/Select/Select';
+import { Textarea } from './components/Textarea/Textarea';
+import styles from './RecruitmentForm.module.css';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import EllipsesLeft from '../../public/assets/EllipsesLeft.svg';
+import EllipsesRight from '../../public/assets/EllipsesRight.svg';
+import { GeneralData } from '../../types/general-data.type';
+import { ParentsData } from '../../types/parents-data.type';
+import { StudentData } from '../../types/student-data.type';
+import Button from '../Button/Button';
 
 const StudentInitialValues: StudentData = {
   fullName: '',
@@ -27,28 +27,28 @@ const StudentInitialValues: StudentData = {
   healthCertificate: undefined,
   medicalOpinion: undefined,
   otherRelevantInformation: '',
-}
+};
 
 const ParentsInitialValues: ParentsData = {
   parentFullName: '',
   parentAddress: '',
   email: '',
   phoneNumber: '',
-}
+};
 
 const GeneralDataInitialValues: GeneralData = {
   schoolYear: '',
   class: '',
-}
+};
 
 const RulesAndRODO = {
   rulesAccept: false,
   rodoAccept: false,
-}
+};
 
 const RecruitmentForm = () => {
-  const [mailSendStatus, setMailSendStatus] = useState('')
-  const { width } = useWindowDimensions()
+  const [mailSendStatus, setMailSendStatus] = useState('');
+  const { width } = useWindowDimensions();
   // alert(width)
 
   const {
@@ -86,7 +86,7 @@ const RecruitmentForm = () => {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      setMailSendStatus('In Progress')
+      setMailSendStatus('In Progress');
       fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -97,24 +97,24 @@ const RecruitmentForm = () => {
       })
         .then((res) => {
           if (res.status === 200) {
-            resetForm()
-            setMailSendStatus('Success')
+            resetForm();
+            setMailSendStatus('Success');
           }
         })
         .catch((err) => {
-          setMailSendStatus('Error')
-          console.error(err)
-        })
+          setMailSendStatus('Error');
+          console.error(err);
+        });
     },
-  })
+  });
 
   useEffect(() => {
     if (mailSendStatus === 'No Valid' && Object.keys(errors).length === 0) {
       if (isValid) {
-        setMailSendStatus('')
+        setMailSendStatus('');
       }
     }
-  }, [values, errors, isValid, mailSendStatus])
+  }, [values, errors, isValid, mailSendStatus]);
 
   const SendButton = () => {
     switch (mailSendStatus) {
@@ -123,16 +123,16 @@ const RecruitmentForm = () => {
           <Button
             label="Wyślij formularz rekrutacyjny"
             onClick={() => {
-              handleSubmit()
+              handleSubmit();
               if (!isValid) {
-                setMailSendStatus('No Valid')
+                setMailSendStatus('No Valid');
               }
             }}
             buttonColor="bg-[#FAC13C]"
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
-        )
+        );
 
       case 'Success':
         return (
@@ -143,7 +143,7 @@ const RecruitmentForm = () => {
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
-        )
+        );
 
       case 'In Progress':
         return (
@@ -154,7 +154,7 @@ const RecruitmentForm = () => {
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
-        )
+        );
 
       case 'No Valid':
         return (
@@ -165,7 +165,7 @@ const RecruitmentForm = () => {
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
-        )
+        );
 
       case 'Error':
         return (
@@ -176,7 +176,7 @@ const RecruitmentForm = () => {
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
-        )
+        );
 
       default:
         return (
@@ -187,9 +187,9 @@ const RecruitmentForm = () => {
             textColor="text-[#ffffff]"
             className={styles['send-button']}
           />
-        )
+        );
     }
-  }
+  };
 
   return (
     <Fragment>
@@ -254,7 +254,9 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           value={values.peselOrPassportNumber}
           handleBlur={handleBlur}
-          error={touched.peselOrPassportNumber ? errors.peselOrPassportNumber : ''}
+          error={
+            touched.peselOrPassportNumber ? errors.peselOrPassportNumber : ''
+          }
         />
         <Input
           label="Data i miejsce urodzenia*"
@@ -314,7 +316,11 @@ const RecruitmentForm = () => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           value={values.otherRelevantInformation}
-          error={touched.otherRelevantInformation ? errors.otherRelevantInformation : ''}
+          error={
+            touched.otherRelevantInformation
+              ? errors.otherRelevantInformation
+              : ''
+          }
         />
       </div>
       <div className={styles['section-container']}>
@@ -370,26 +376,30 @@ const RecruitmentForm = () => {
           error={touched.rulesAccept ? errors.rulesAccept : ''}
           setFieldValue={setFieldValue}
         >
-          Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania moich danych
-          osobowych dostępną pod adresem{' '}
+          Oświadczam, że zapoznałem/łam się z informacją dotyczącą przetwarzania
+          moich danych osobowych dostępną pod adresem{' '}
           <Link
             href="/Przetwarzanie-Danych.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={`${
-              touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
+              touched.rulesAccept && errors.rulesAccept
+                ? 'text-[red]'
+                : 'text-[#579CE2]'
             } `}
           >
             www.omegaszkola.pl/przetwarzanie-danych
           </Link>
-          , {width! < 568 && <br />}
+          , {width < 568 && <br />}
           oraz z{' '}
           <Link
             href="/Regulamin.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={`${
-              touched.rulesAccept && errors.rulesAccept ? 'text-[red]' : 'text-[#579CE2]'
+              touched.rulesAccept && errors.rulesAccept
+                ? 'text-[red]'
+                : 'text-[#579CE2]'
             } `}
           >
             regulaminem rekrutacji.
@@ -402,12 +412,15 @@ const RecruitmentForm = () => {
           setFieldValue={setFieldValue}
           error={touched.rodoAccept ? errors.rodoAccept : ''}
         >
-          Wyrażam zgodę na przetwarzanie moich danych osobowych przez Społeczne Towarzystwo
-          Edukacyjne z siedzibą w Katowicach ul. Gliwicka 276, w celach postępowania rekrutacyjnego
-          do Społecznej Szkoły Podstawowej OMEGA
+          Wyrażam zgodę na przetwarzanie moich danych osobowych przez Społeczne
+          Towarzystwo Edukacyjne z siedzibą w Katowicach ul. Gliwicka 276, w
+          celach postępowania rekrutacyjnego do Społecznej Szkoły Podstawowej
+          OMEGA
         </Checkbox>
       </div>
-      <div className={`py-4 md:py-6   ${styles['agreements-section-container']}`}>
+      <div
+        className={`py-4 md:py-6   ${styles['agreements-section-container']}`}
+      >
         <div>
           <p className=" text-center text-[#4F4F4F] text-[14px] block md:text-start md:text-[18px] xl:text-[14px] xl:block xl:w-full ">
             Terminarz rekrutacji jest dostępny pod adresem{' '}
@@ -426,7 +439,7 @@ const RecruitmentForm = () => {
         <SendButton />
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default RecruitmentForm
+export default RecruitmentForm;

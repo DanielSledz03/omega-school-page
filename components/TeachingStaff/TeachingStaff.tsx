@@ -1,35 +1,81 @@
-import Button from '../Button/Button'
-import HeaderWithBubbles from '../HeaderWithBubbles/HeaderWithBubbles'
-import styles from './TeachingStaff.module.css'
-import { useState } from 'react'
+import { useState } from 'react';
+import styles from './TeachingStaff.module.css';
+import Button from '../Button/Button';
+import HeaderWithBubbles from '../HeaderWithBubbles/HeaderWithBubbles';
 const teachers = [
-  { name: 'Kinga Lubelska', position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'] },
-  { name: 'Patrycja Sobczyk', position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'] },
-  { name: 'Karolina Kurek', position: ['wychowawca grupy 5/6 latków', 'edukacja przedszkolna'] },
-  { name: 'Ewa Klimek', position: ['wychowawca klasy 1α', 'edukacja wczesnoszkolna'] },
-  { name: 'Barbara Kozera', position: ['wychowawca klasy 1β', 'edukacja wczesnoszkolna'] },
-  { name: 'Joanna Glaesel', position: ['wychowawca klasy 2α', 'edukacja wczesnoszkolna'] },
-  { name: 'Ewa Nowrocka', position: ['wychowawca klasy 2β', 'edukacja wczesnoszkolna'] },
-  { name: 'Aneta Preiss', position: ['wychowawca klasy 3α', 'edukacja wczesnoszkolna'] },
+  {
+    name: 'Kinga Lubelska',
+    position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'],
+  },
+  {
+    name: 'Patrycja Sobczyk',
+    position: ['wychowawca grupy 3/4 latków', 'edukacja przedszkolna'],
+  },
+  {
+    name: 'Karolina Kurek',
+    position: ['wychowawca grupy 5/6 latków', 'edukacja przedszkolna'],
+  },
+  {
+    name: 'Ewa Klimek',
+    position: ['wychowawca klasy 1α', 'edukacja wczesnoszkolna'],
+  },
+  {
+    name: 'Barbara Kozera',
+    position: ['wychowawca klasy 1β', 'edukacja wczesnoszkolna'],
+  },
+  {
+    name: 'Joanna Glaesel',
+    position: ['wychowawca klasy 2α', 'edukacja wczesnoszkolna'],
+  },
+  {
+    name: 'Ewa Nowrocka',
+    position: ['wychowawca klasy 2β', 'edukacja wczesnoszkolna'],
+  },
+  {
+    name: 'Aneta Preiss',
+    position: ['wychowawca klasy 3α', 'edukacja wczesnoszkolna'],
+  },
   {
     name: 'Anna Jurczak',
     position: ['wychowawca klasy 3β', 'edukacja wczesnoszkolna', 'biblioteka'],
   },
-  { name: 'Monika Łazarska', position: ['wychowawca klasy 4α', 'przyroda', 'biologia'] },
-  { name: 'Aleksandra Duda-Kwaśniewicz', position: ['wychowawca klasy 4β', 'język angielski'] },
+  {
+    name: 'Monika Łazarska',
+    position: ['wychowawca klasy 4α', 'przyroda', 'biologia'],
+  },
+  {
+    name: 'Aleksandra Duda-Kwaśniewicz',
+    position: ['wychowawca klasy 4β', 'język angielski'],
+  },
   {
     name: 'Agata Pocenty',
     position: ['wychowawca klasy 5α', 'wychowanie fizyczne', 'WDŻ'],
   },
-  { name: 'Adriana Baron', position: ['wychowawca klasy 5β', 'informatyka', 'etyka'] },
-  { name: 'Paulina Palen', position: ['wychowawca klasy 6α', 'język polski', 'biblioteka'] },
-  { name: 'Jakub Kafel', position: ['wychowawca klasy 7α', 'chemia', 'matematyka'] },
+  {
+    name: 'Adriana Baron',
+    position: ['wychowawca klasy 5β', 'informatyka', 'etyka'],
+  },
+  {
+    name: 'Paulina Palen',
+    position: ['wychowawca klasy 6α', 'język polski', 'biblioteka'],
+  },
+  {
+    name: 'Jakub Kafel',
+    position: ['wychowawca klasy 7α', 'chemia', 'matematyka'],
+  },
   {
     name: 'Karolina Kostrzewska',
-    position: ['wychowawca klasy 7β', 'edukacja dla bezpieczeństwa', 'wychowanie fizyczne'],
+    position: [
+      'wychowawca klasy 7β',
+      'edukacja dla bezpieczeństwa',
+      'wychowanie fizyczne',
+    ],
   },
   { name: 'Dawid Makówka', position: ['wychowawca klasy 8α', 'historia'] },
-  { name: 'Katarzyna Krywult-Krajewska', position: ['wychowawca klasy 8β', 'język polski'] },
+  {
+    name: 'Katarzyna Krywult-Krajewska',
+    position: ['wychowawca klasy 8β', 'język polski'],
+  },
   { name: 'Barbara Labus', position: ['matematyka', 'fizyka'] },
   { name: 'Aleksandra Ryś', position: ['język polski'] },
   { name: 'Grzegorz Jarausz', position: ['język angielski'] },
@@ -58,10 +104,10 @@ const teachers = [
   { name: 'Joanna Dinges', position: ['doradztwo zawodowe'] },
   { name: 'Wiktoria Merda', position: ['nauczyciel rehabilitant'] },
   { name: 'Barbara Syrek', position: ['pielęgniarka szkolna'] },
-]
+];
 
 const TeachingStaff = () => {
-  const [teacherCount, setTeacherCount] = useState(15)
+  const [teacherCount, setTeacherCount] = useState(15);
   return (
     <div className={styles.container}>
       <HeaderWithBubbles header="Poznaj naszą kadrę" />
@@ -109,18 +155,30 @@ const TeachingStaff = () => {
             <div className="xl:flex xl:items-center">
               <p className={styles['teacher-position']}>
                 {teacher.position[0]}
-                {teacher.position[1] && <span className="hidden xl:inline">,</span>}
+                {teacher.position[1] && (
+                  <span className="hidden xl:inline">,</span>
+                )}
               </p>
               {teacher.position[1] && (
-                <p className={styles['teacher-position']}>{teacher.position[1]}</p>
+                <p className={styles['teacher-position']}>
+                  {teacher.position[1]}
+                </p>
               )}
-              {teacher.position[2] && <span className="hidden xl:inline">,</span>}
               {teacher.position[2] && (
-                <p className={styles['teacher-position']}>{teacher.position[2]}</p>
+                <span className="hidden xl:inline">,</span>
               )}
-              {teacher.position[3] && <span className="hidden xl:inline">,</span>}
+              {teacher.position[2] && (
+                <p className={styles['teacher-position']}>
+                  {teacher.position[2]}
+                </p>
+              )}
               {teacher.position[3] && (
-                <p className={styles['teacher-position']}>{teacher.position[3]}</p>
+                <span className="hidden xl:inline">,</span>
+              )}
+              {teacher.position[3] && (
+                <p className={styles['teacher-position']}>
+                  {teacher.position[3]}
+                </p>
               )}
             </div>
           </div>
@@ -137,7 +195,7 @@ const TeachingStaff = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TeachingStaff
+export default TeachingStaff;

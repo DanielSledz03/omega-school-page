@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import ImageFrom from '../../public/assets/image.png'
+import Image from 'next/image';
 
 interface IProps {
-  header: string
-  thumbnail: any
-  onClick: any
+  header: string;
+  thumbnail: any;
+  onClick: any;
 }
 
 const GalleryBox = ({ header, thumbnail, onClick }: IProps) => {
@@ -29,7 +28,7 @@ const GalleryBox = ({ header, thumbnail, onClick }: IProps) => {
         {header}
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default GalleryBox
+export default GalleryBox;

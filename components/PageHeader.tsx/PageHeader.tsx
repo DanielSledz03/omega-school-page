@@ -1,23 +1,23 @@
-import Navbar from '../Navbar/Navbar'
-import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg'
-import Button from '../Button/Button'
-import styles from './PageHeader.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
-import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import styles from './PageHeader.module.css';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg';
+import Button from '../Button/Button';
+import Navbar from '../Navbar/Navbar';
 
 interface IProps {
-  title: string
-  titleSpan: string
-  titleSpanColor?: string
-  paragraph: string
-  onClick: () => void
-  buttonTitle: string
-  bgUrl: any
-  bgXlUrl: any
-  textContainerStyles?: any
-  checkKindergarten?: boolean
+  title: string;
+  titleSpan: string;
+  titleSpanColor?: string;
+  paragraph: string;
+  onClick: () => void;
+  buttonTitle: string;
+  bgUrl: any;
+  bgXlUrl: any;
+  textContainerStyles?: any;
+  checkKindergarten?: boolean;
 }
 
 export const PageHeader = ({
@@ -32,8 +32,8 @@ export const PageHeader = ({
   textContainerStyles,
   checkKindergarten = false,
 }: IProps) => {
-  const { width } = useWindowDimensions()
-  const [loaded, setLoaded] = useState(false)
+  const { width } = useWindowDimensions();
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <div className={` ${styles.container} `}>
@@ -80,5 +80,5 @@ export const PageHeader = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,46 +1,46 @@
-import { createClient } from 'contentful'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import Arrow from '../../public/assets/rightArrow.svg'
-import { Fragment, useState, useEffect } from 'react'
-import Navbar from '../../components/Navbar/Navbar'
-import styles from '../../styles/HomePage.module.css'
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import ImagePreview from '../../components/ImagePreview/ImagePreview'
-import Head from 'next/head'
+import { createClient } from 'contentful';
+import Head from 'next/head';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { Fragment, useEffect, useState } from 'react';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ImagePreview from '../../components/ImagePreview/ImagePreview';
+import Navbar from '../../components/Navbar/Navbar';
+import Arrow from '../../public/assets/rightArrow.svg';
+import styles from '../../styles/HomePage.module.css';
 
 export const getStaticPaths = async () => {
   const client = createClient({
     space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
     accessToken: 'template_data',
-  })
+  });
   const res = await client.getEntries({
     content_type: 'post',
-  })
+  });
 
   const paths = res.items.map((item) => {
     return {
       params: { id: item.sys.id },
-    }
-  })
+    };
+  });
 
   return {
     paths,
     fallback: true,
-  }
-}
+  };
+};
 
 export const getStaticProps = async ({ params }: { params: any }) => {
   const client = createClient({
     space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
     accessToken: 'template_data',
-  })
+  });
   const { items } = await client.getEntries({
     content_type: 'post',
     'sys.id': params.id,
-  })
+  });
 
   if (!items.length) {
     return {
@@ -48,28 +48,28 @@ export const getStaticProps = async ({ params }: { params: any }) => {
         destination: '/',
         permanent: false,
       },
-    }
+    };
   }
 
   return {
     props: { post: items[0], createdAtString: items[0].sys.createdAt },
     revalidate: 1,
-  }
-}
+  };
+};
 
 const ArtykulyDetail = ({ post, createdAtString }: any) => {
-  const createdAt = new Date(createdAtString)
-  const [clickedImageID, setClickedImageID] = useState<any>()
-  const [isModalVisible, setisModalVisible] = useState(false)
-  const [domLoaded, setDomLoaded] = useState(false)
+  const createdAt = new Date(createdAtString);
+  const [clickedImageID, setClickedImageID] = useState<any>();
+  const [isModalVisible, setisModalVisible] = useState(false);
+  const [domLoaded, setDomLoaded] = useState(false);
 
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
-    setDomLoaded(true)
-  }, [])
+    setDomLoaded(true);
+  }, []);
 
-  if (!post) return <div />
+  if (!post) return <div />;
 
   return (
     <Fragment>
@@ -77,8 +77,16 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
 
       <Head>
         <title>{post.fields.title}</title>
-        <meta name="description" content={post.fields.shortDescription} key="desc" />
-        <meta property="og:title" content={post.fields.title} key={'og-title'} />
+        <meta
+          name="description"
+          content={post.fields.shortDescription}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={post.fields.title}
+          key={'og-title'}
+        />
         <meta
           property="og:description"
           content={post.fields.shortDescription}
@@ -139,7 +147,7 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
               <ReactMarkdown
                 components={{
                   strong: ({ node, ...props }) => {
-                    return <strong className="font-[700]" {...props} />
+                    return <strong className="font-[700]" {...props} />;
                   },
                   a: ({ node, ...props }) => {
                     return (
@@ -148,13 +156,13 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
                         className="text-[#579CE2] font-[700] m-0 p-0 underline"
                         {...props}
                       />
-                    )
+                    );
                   },
                   em: ({ node, ...props }) => {
-                    return <p className="italic inline-block" {...props} />
+                    return <p className="italic inline-block" {...props} />;
                   },
                   br: ({ node, ...props }) => {
-                    return <br {...props} />
+                    return <br {...props} />;
                   },
                 }}
               >
@@ -168,8 +176,8 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
                 key={image.fields.file.url}
                 alt="fotka"
                 onClick={() => {
-                  setClickedImageID(index)
-                  setisModalVisible(true)
+                  setClickedImageID(index);
+                  setisModalVisible(true);
                 }}
                 width={500}
                 height={400}
@@ -181,7 +189,7 @@ const ArtykulyDetail = ({ post, createdAtString }: any) => {
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ArtykulyDetail
+export default ArtykulyDetail;

@@ -1,15 +1,15 @@
-import { HTMLInputTypeAttribute } from 'react'
-import styles from '../FormComponents.module.css'
+import { HTMLInputTypeAttribute } from 'react';
+import styles from '../FormComponents.module.css';
 
 interface IProps {
-  label: string
-  name: string
-  placeholder: string
-  handleChange: any
-  handleBlur: any
-  value?: string
-  error?: string
-  type?: HTMLInputTypeAttribute
+  label: string;
+  name: string;
+  placeholder: string;
+  handleChange: any;
+  handleBlur: any;
+  value?: string;
+  error?: string;
+  type?: HTMLInputTypeAttribute;
 }
 
 export const Input = ({
@@ -24,18 +24,24 @@ export const Input = ({
 }: IProps) => {
   return (
     <div className={styles['input-container']}>
-      <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
+      <label
+        className={`${error && error.length > 0 && styles['label-error']} ${
+          styles.label
+        }`}
+      >
         {label} {error && '- pole obowiązkowe'}
       </label>
       <input
         type={type}
         name={name}
-        className={`${error && error.length > 0 && styles['input-error']} ${styles.input} `}
+        className={`${error && error.length > 0 && styles['input-error']} ${
+          styles.input
+        } `}
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
         value={value}
       />
     </div>
-  )
-}
+  );
+};

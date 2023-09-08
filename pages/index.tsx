@@ -1,21 +1,21 @@
-import { Fragment, useRef } from 'react'
-import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-import styles from '../styles/HomePage.module.css'
-import { useRouter } from 'next/router'
-import Image from 'next/image'
-import { ArticlePreviewBox } from '../components/ArticlePreviewBox/ArticlePreviewBox'
-import Button from '../components/Button/Button'
-import AboutUsMobile from '../public/assets/homepage/aboutUsMobile.svg'
-import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
-import EllipsesRight from '../public/assets/EllipsesRight.svg'
-import { createClient } from 'contentful'
-import BgDesktop from '../public/assets/headers/bgHomeDesktop.jpg'
-import BgMobile from '../public/assets/headers/bgHomeMobile.jpg'
-import Link from 'next/link'
-import HomePageGallery from '../components/HomePageGallery/HomePageGallery'
+import { createClient } from 'contentful';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Fragment } from 'react';
+import { ArticlePreviewBox } from '../components/ArticlePreviewBox/ArticlePreviewBox';
+import Button from '../components/Button/Button';
+import HomePageGallery from '../components/HomePageGallery/HomePageGallery';
+import { PageHeader } from '../components/PageHeader.tsx/PageHeader';
+import EllipsesLeft from '../public/assets/EllipsesLeft.svg';
+import EllipsesRight from '../public/assets/EllipsesRight.svg';
+import BgDesktop from '../public/assets/headers/bgHomeDesktop.jpg';
+import BgMobile from '../public/assets/headers/bgHomeMobile.jpg';
+import AboutUsMobile from '../public/assets/homepage/aboutUsMobile.svg';
+import styles from '../styles/HomePage.module.css';
 
 export default function Home({ posts }: { posts: any }) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <Fragment>
@@ -70,12 +70,12 @@ export default function Home({ posts }: { posts: any }) {
                 createdAt={post.sys.createdAt}
                 imageSrc={'https:' + post.fields.mainImage.fields.file.url}
               />
-            )
+            );
           })}
         {posts
           ?.filter((post: any) => post.fields.pinned === false)
           .map((post: any, index: number) => {
-            if (1 < index) return null
+            if (1 < index) return null;
             return (
               <ArticlePreviewBox
                 shortDescription={post.fields.shortDescription}
@@ -86,7 +86,7 @@ export default function Home({ posts }: { posts: any }) {
                 createdAt={post.sys.createdAt}
                 imageSrc={'https:' + post.fields.mainImage.fields.file.url}
               />
-            )
+            );
           })}
         <Button
           label="Zobacz wszystkie aktualności"
@@ -106,17 +106,19 @@ export default function Home({ posts }: { posts: any }) {
 
           <div className={styles['about-us-text-container']}>
             <h4 className={styles['about-us-header-text']}>
-              Społeczna Szkoła <br className="hidden xl:block" /> Podstawowa OMEGA
+              Społeczna Szkoła <br className="hidden xl:block" /> Podstawowa
+              OMEGA
               <br className="hidden xl:block" /> w Katowicach
             </h4>
             <p className={styles['about-us-paragraph']}>
-              Idealna szkoła… To nie tylko certyfikaty i wysoki poziom nauczania. Tego nie brakuje
-              większości placówek edukacyjnych. W końcu ich rolą jest udoskonalanie własnych
-              systemów zarządzania jakością pracy i stałe podnoszenie poziomu oferowanych usług. Nie
+              Idealna szkoła… To nie tylko certyfikaty i wysoki poziom
+              nauczania. Tego nie brakuje większości placówek edukacyjnych. W
+              końcu ich rolą jest udoskonalanie własnych systemów zarządzania
+              jakością pracy i stałe podnoszenie poziomu oferowanych usług. Nie
               inaczej jest z „OMEGĄ” –{' '}
               <span>
-                jesteśmy Szkoła z klasą, posiadamy certyfikat Szkoły Jakości, nasza kadra to
-                prawdziwi Nauczyciele z klasą...
+                jesteśmy Szkoła z klasą, posiadamy certyfikat Szkoły Jakości,
+                nasza kadra to prawdziwi Nauczyciele z klasą...
               </span>
             </p>
             <Button
@@ -131,7 +133,7 @@ export default function Home({ posts }: { posts: any }) {
         <HomePageGallery />
       </div>
     </Fragment>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -139,13 +141,13 @@ export async function getStaticProps() {
     space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
     accessToken: 'template_data',
-  })
+  });
 
-  const res = await client.getEntries({ content_type: 'post' })
+  const res = await client.getEntries({ content_type: 'post' });
 
   return {
     props: {
       posts: res.items,
     },
-  }
+  };
 }

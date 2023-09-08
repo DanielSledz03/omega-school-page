@@ -1,31 +1,31 @@
-import { createClient } from 'contentful'
-import Image from 'next/image'
-import { Fragment, useRef, useState } from 'react'
-import { ArticlePreviewBox } from '../components/ArticlePreviewBox/ArticlePreviewBox'
-import Button from '../components/Button/Button'
-import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-import useWindowDimensions from '../hooks/useWindowDimensions'
-import EllipsesLeft from '../public/assets/EllipsesLeft.svg'
-import EllipsesRight from '../public/assets/EllipsesRight.svg'
-import styles from '../styles/HomePage.module.css'
-import BgDesktop from '../public/assets/headers/bgNewsDesktop.jpg'
-import BgMobile from '../public/assets/headers/bgNewsMobile.jpg'
+import { createClient } from 'contentful';
+import Image from 'next/image';
+import { Fragment, useRef, useState } from 'react';
+import { ArticlePreviewBox } from '../components/ArticlePreviewBox/ArticlePreviewBox';
+import Button from '../components/Button/Button';
+import { PageHeader } from '../components/PageHeader.tsx/PageHeader';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import EllipsesLeft from '../public/assets/EllipsesLeft.svg';
+import EllipsesRight from '../public/assets/EllipsesRight.svg';
+import BgDesktop from '../public/assets/headers/bgNewsDesktop.jpg';
+import BgMobile from '../public/assets/headers/bgNewsMobile.jpg';
+import styles from '../styles/HomePage.module.css';
 
 const Aktualnosci = ({ posts }: { posts: any }) => {
-  const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5)
-  const ref = useRef<HTMLDivElement>(null)
-  const { width } = useWindowDimensions()
+  const [howManyArticlesLoaded, setHowManyArticlesLoaded] = useState(5);
+  const ref = useRef<HTMLDivElement>(null);
+  const { width } = useWindowDimensions();
 
   const executeScroll = () => {
     if (ref?.current?.offsetTop)
       window.scroll({
         top:
-          ref?.current?.offsetTop! -
+          ref?.current?.offsetTop -
           (width && width > 1280 ? 0 : width && (width < 768 ? 60 : 100))!,
         left: 0,
         behavior: 'smooth',
-      })
-  }
+      });
+  };
   return (
     <Fragment>
       <PageHeader
@@ -63,12 +63,12 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
                 createdAt={post.sys.createdAt}
                 imageSrc={'https:' + post.fields.mainImage.fields.file.url}
               />
-            )
+            );
           })}
         {posts
           ?.filter((post: any) => post.fields.pinned === false)
           .map((post: any, index: number) => {
-            if (howManyArticlesLoaded < index) return null
+            if (howManyArticlesLoaded < index) return null;
             return (
               <ArticlePreviewBox
                 shortDescription={post.fields.shortDescription}
@@ -79,7 +79,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
                 createdAt={post.sys.createdAt}
                 imageSrc={'https:' + post.fields.mainImage.fields.file.url}
               />
-            )
+            );
           })}
       </div>
       {howManyArticlesLoaded < posts.length && (
@@ -93,23 +93,23 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
         </div>
       )}
     </Fragment>
-  )
-}
+  );
+};
 
-export default Aktualnosci
+export default Aktualnosci;
 
 export async function getStaticProps() {
   const client = createClient({
     space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
     accessToken: 'template_data',
-  })
+  });
 
-  const res = await client.getEntries({ content_type: 'post' })
+  const res = await client.getEntries({ content_type: 'post' });
 
   return {
     props: {
       posts: res.items,
     },
-  }
+  };
 }

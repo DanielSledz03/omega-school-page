@@ -1,16 +1,20 @@
-import styles from '../FormComponents.module.css'
+import styles from '../FormComponents.module.css';
 
 interface IProps {
-  label: string
-  name: string
-  setFieldValue: any
-  error?: string
+  label: string;
+  name: string;
+  setFieldValue: any;
+  error?: string;
 }
 
 const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
   return (
     <div className={styles['radio-buttons-box']}>
-      <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
+      <label
+        className={`${error && error.length > 0 && styles['label-error']} ${
+          styles.label
+        }`}
+      >
         {label} {error && '- pole obowiązkowe'}
       </label>
       <div
@@ -41,7 +45,7 @@ const RadioButtons = ({ error, label, setFieldValue, name }: IProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RadioButtons
+export default RadioButtons;

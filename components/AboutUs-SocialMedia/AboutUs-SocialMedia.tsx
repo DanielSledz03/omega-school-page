@@ -1,19 +1,19 @@
-import Image from 'next/image'
-import galleryImg1 from '../../public/assets/homepage/gallery/galleryImg1.svg'
-import galleryImg2 from '../../public/assets/homepage/gallery/galleryImg2.svg'
-import galleryImg3 from '../../public/assets/homepage/gallery/galleryImg3.svg'
-import galleryImg4 from '../../public/assets/homepage/gallery/galleryImg4.svg'
-import { SlideshowLightbox } from 'lightbox.js-react'
-import EllipsesLeft from '../../public/assets/EllipsesLeft.svg'
-import EllipsesRight from '../../public/assets/EllipsesRight.svg'
-import styles from './AboutUs-SocialMedia.module.css'
-import Link from 'next/link'
+import { SlideshowLightbox } from 'lightbox.js-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './AboutUs-SocialMedia.module.css';
+import EllipsesLeft from '../../public/assets/EllipsesLeft.svg';
+import EllipsesRight from '../../public/assets/EllipsesRight.svg';
+import galleryImg1 from '../../public/assets/homepage/gallery/galleryImg1.svg';
+import galleryImg2 from '../../public/assets/homepage/gallery/galleryImg2.svg';
+import galleryImg3 from '../../public/assets/homepage/gallery/galleryImg3.svg';
+import galleryImg4 from '../../public/assets/homepage/gallery/galleryImg4.svg';
 const images = [
   { src: galleryImg1, alt: 'galleryImg1' },
   { src: galleryImg2, alt: 'galleryImg2' },
   { src: galleryImg3, alt: 'galleryImg3' },
   { src: galleryImg4, alt: 'galleryImg4' },
-]
+];
 
 const AboutUs_SocialMedia = () => {
   return (
@@ -27,7 +27,12 @@ const AboutUs_SocialMedia = () => {
         </div>
         <h2 className={styles.header2}>Życie szkoły na Social Mediach</h2>
       </div>
-      <SlideshowLightbox lightboxIdentifier="lightbox2" framework="next" images={images} fullScreen>
+      <SlideshowLightbox
+        lightboxIdentifier="lightbox2"
+        framework="next"
+        images={images}
+        fullScreen
+      >
         <div className="pb-3 min-w-screen flex overflow-x-scroll mt-5 xl:overflow-x-hidden">
           {' '}
           {images &&
@@ -51,7 +56,7 @@ const AboutUs_SocialMedia = () => {
         </div>
       </SlideshowLightbox>
     </div>
-  )
-}
+  );
+};
 
-export default AboutUs_SocialMedia
+export default AboutUs_SocialMedia;

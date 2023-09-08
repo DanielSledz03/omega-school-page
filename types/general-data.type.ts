@@ -1,4 +1,4 @@
 export interface GeneralData {
-  class: string
-  schoolYear: string
+  class: string;
+  schoolYear: string;
 }

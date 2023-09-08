@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
+import { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 
-const Modal = ({ show, onClose, children, title }) => {
-  const [isBrowser, setIsBrowser] = useState(false)
+const Modal = ({ show, children }) => {
+  const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
-    setIsBrowser(true)
-  }, [])
+    setIsBrowser(true);
+  }, []);
 
-  const modalContent = show ? children : null
+  const modalContent = show ? children : null;
 
   if (isBrowser) {
-    return ReactDOM.createPortal(modalContent, document.getElementById('modal-root')!)
+    return ReactDOM.createPortal(
+      modalContent,
+      document.getElementById('modal-root')!,
+    );
   } else {
-    return null
+    return null;
   }
-}
+};
 
-export default Modal
+export default Modal;

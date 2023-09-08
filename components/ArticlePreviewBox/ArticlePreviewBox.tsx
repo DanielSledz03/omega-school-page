@@ -1,18 +1,16 @@
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import ReactMarkdown from 'react-markdown'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
-import PostImage from '../../public/postImage.svg'
-import Button from '../Button/Button'
-import styles from './ArticlePreviewBox.module.css'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import ReactMarkdown from 'react-markdown';
+import styles from './ArticlePreviewBox.module.css';
+import Button from '../Button/Button';
 
 interface IProps {
-  id: string
-  title: string
-  content: string
-  createdAt: string
-  imageSrc: string
-  shortDescription: string
+  id: string;
+  title: string;
+  content: string;
+  createdAt: string;
+  imageSrc: string;
+  shortDescription: string;
 }
 
 export const ArticlePreviewBox = ({
@@ -23,8 +21,8 @@ export const ArticlePreviewBox = ({
   imageSrc,
   shortDescription,
 }: IProps) => {
-  const router = useRouter()
-  const createdAtString = new Date(createdAt)
+  const router = useRouter();
+  const createdAtString = new Date(createdAt);
 
   return (
     <div className={styles['container']}>
@@ -44,7 +42,7 @@ export const ArticlePreviewBox = ({
           className={styles.content}
           components={{
             strong: ({ node, ...props }) => {
-              return <strong className="font-[700]" {...props} />
+              return <strong className="font-[700]" {...props} />;
             },
             a: ({ node, ...props }) => {
               return (
@@ -53,10 +51,10 @@ export const ArticlePreviewBox = ({
                   className="text-[#579CE2] font-[700] m-0 p-0 underline"
                   {...props}
                 />
-              )
+              );
             },
             em: ({ node, ...props }) => {
-              return <p className="italic inline-block" {...props} />
+              return <p className="italic inline-block" {...props} />;
             },
           }}
         >
@@ -69,8 +67,11 @@ export const ArticlePreviewBox = ({
           textColor="text-white"
           className={styles['button-read']}
         />
-        <p className={styles['created-at']}> Dodano: {createdAtString.toLocaleDateString()}</p>
+        <p className={styles['created-at']}>
+          {' '}
+          Dodano: {createdAtString.toLocaleDateString()}
+        </p>
       </div>
     </div>
-  )
-}
+  );
+};

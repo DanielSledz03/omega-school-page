@@ -1,9 +1,9 @@
-import styles from './CalendarSingleEvent.module.css'
+import styles from './CalendarSingleEvent.module.css';
 
 interface IProps {
-  header: string
-  dates: string[]
-  single?: boolean
+  header: string;
+  dates: string[];
+  single?: boolean;
 }
 
 const CalendarSingleEvent = ({ header, dates, single = false }: IProps) => {
@@ -16,7 +16,7 @@ const CalendarSingleEvent = ({ header, dates, single = false }: IProps) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CalendarSingleEvent
+export default CalendarSingleEvent;
