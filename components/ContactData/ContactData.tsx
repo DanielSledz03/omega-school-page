@@ -1,5 +1,4 @@
-import { Fragment } from 'react'
-import styles from './ContactData.module.css'
+import styles from './ContactData.module.css';
 
 const ContactData = () => {
   return (
@@ -39,28 +38,35 @@ const ContactData = () => {
         <div className={styles['section-inner-box']}>
           <p className="font-bold">Kasa</p>
           <p>
-            poniedziałek - piątek: <span className="font-bold">08:00 – 12:00</span>
+            poniedziałek - piątek:{' '}
+            <span className="font-bold">08:00 – 12:00</span>
           </p>
         </div>
         <div className={styles['section-inner-box']}>
           <p className="font-bold">Sekretariat</p>
           <p>
-            poniedziałek - piątek: <span className="font-bold">07:30 – 15:30</span>
+            poniedziałek - piątek:{' '}
+            <span className="font-bold">07:30 – 15:30</span>
           </p>
         </div>
       </div>
 
-      <div className={`${styles['day-room-section-container']} ${styles['section-container']}`}>
+      <div
+        className={`${styles['day-room-section-container']} ${styles['section-container']}`}
+      >
         <h5 className={styles['section-header']}>Świetlica</h5>
         <div className={styles['section-inner-box']}>
           <p className="font-bold">Godziny pracy</p>
           <p>
-            poniedziałek - piątek: <span className="font-bold">07:30 – 17:30</span>
+            poniedziałek - piątek:{' '}
+            <span className="font-bold">07:30 – 17:30</span>
           </p>
         </div>
       </div>
 
-      <div className={`${styles['last-section-container']} ${styles['section-container']} `}>
+      <div
+        className={`${styles['last-section-container']} ${styles['section-container']} `}
+      >
         <h5 className={styles['section-header']}>Finanse</h5>
         <div className={styles['section-inner-box']}>
           <p className="font-bold">40-862 Katowice</p>
@@ -80,7 +86,7 @@ const ContactData = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactData
+export default ContactData;

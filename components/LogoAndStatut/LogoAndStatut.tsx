@@ -1,11 +1,11 @@
-import Image from 'next/image'
-import Logo from '../../public/assets/about/logo.jpg'
-import BookIcon from '../../public/assets/about/bookIcon.svg'
-import RightWhiteArrow from '../../public/assets/about/RightWhiteArrow.svg'
-import { useRouter } from 'next/router'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import BookIcon from '../../public/assets/about/bookIcon.svg';
+import Logo from '../../public/assets/about/logo.jpg';
+import RightWhiteArrow from '../../public/assets/about/RightWhiteArrow.svg';
 
 const LogoAndStatut = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="pt-5 flex flex-col items-center xl:pt-8">
       <div className="w-3/4 flex justify-center">
@@ -31,7 +31,7 @@ const LogoAndStatut = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LogoAndStatut
+export default LogoAndStatut;

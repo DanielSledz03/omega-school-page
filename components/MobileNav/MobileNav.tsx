@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import YoutubeIcon from '../../public/assets/YoutubeIcon.svg'
-import FacebookIcon from '../../public/assets/FacebookIcon.svg'
-import styles from './MobileNav.module.css'
-import BackButtonIcon from '../../public/assets/BackButtonIcon.svg'
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import styles from './MobileNav.module.css';
+import BackButtonIcon from '../../public/assets/BackButtonIcon.svg';
+import FacebookIcon from '../../public/assets/FacebookIcon.svg';
+import YoutubeIcon from '../../public/assets/YoutubeIcon.svg';
 
 export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
-  const [isHomeListVisible, setIsHomeListVisible] = useState(false)
+  const [isHomeListVisible, setIsHomeListVisible] = useState(false);
 
   return (
-    <div className={`${!isMenuOpen ? styles['mobile-nav-visible'] : ''} ${styles['mobile-nav']}`}>
+    <div
+      className={`${!isMenuOpen ? styles['mobile-nav-visible'] : ''} ${
+        styles['mobile-nav']
+      }`}
+    >
       <div
         className={`${
           isHomeListVisible ? 'left-0' : 'left-full'
@@ -66,7 +70,9 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
         </div>
       </div>
 
-      <div className={` w-full h-full bg-[#071E4A] flex flex-col items-center justify-around  `}>
+      <div
+        className={` w-full h-full bg-[#071E4A] flex flex-col items-center justify-around  `}
+      >
         <h3 className={styles['mobile-nav-header']}>Menu</h3>
         <ul className={styles.list}>
           <li className={styles['list-item']}>
@@ -110,18 +116,26 @@ export const MobileNav = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
               rel="noopener noreferrer"
               href="https://www.youtube.com/channel/UCQn_lSAlyQnH3CpkMIiLy-g"
             >
-              <Image src={YoutubeIcon} alt="Youtube Icon" className="mx-2 md:mx-5 md:w-[50px]" />
+              <Image
+                src={YoutubeIcon}
+                alt="Youtube Icon"
+                className="mx-2 md:mx-5 md:w-[50px]"
+              />
             </Link>
             <Link
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.facebook.com/zespolszkolomega"
             >
-              <Image src={FacebookIcon} alt="Facebook Icon" className="mx-2 md:mx-5 md:w-[50px]" />
+              <Image
+                src={FacebookIcon}
+                alt="Facebook Icon"
+                className="mx-2 md:mx-5 md:w-[50px]"
+              />
             </Link>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

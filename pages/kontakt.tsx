@@ -1,14 +1,14 @@
-import { Fragment, useMemo } from 'react'
-import dynamic from 'next/dynamic'
-import BgDesktop from '../public/assets/headers/bgContactDesktop.jpg'
-import BgMobile from '../public/assets/headers/bgContactMobile.jpg'
-import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-import ContactData from '../components/ContactData/ContactData'
-import ContactHeaderWithMap from '../components/ContactHeaderWithMap/ContactHeaderWithMap'
-import useWindowDimensions from '../hooks/useWindowDimensions'
+import dynamic from 'next/dynamic';
+import { Fragment, useMemo } from 'react';
+import ContactData from '../components/ContactData/ContactData';
+import ContactHeaderWithMap from '../components/ContactHeaderWithMap/ContactHeaderWithMap';
+import { PageHeader } from '../components/PageHeader.tsx/PageHeader';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import BgDesktop from '../public/assets/headers/bgContactDesktop.jpg';
+import BgMobile from '../public/assets/headers/bgContactMobile.jpg';
 
 const Kontakt = () => {
-  const { width } = useWindowDimensions()
+  const { width } = useWindowDimensions();
   const Map = useMemo(
     () =>
       dynamic(() => import('../components/Map/Map'), {
@@ -16,7 +16,7 @@ const Kontakt = () => {
         ssr: false,
       }),
     [],
-  )
+  );
 
   return (
     <Fragment>
@@ -50,14 +50,17 @@ const Kontakt = () => {
                 mail: <span className="font-bold">finanse@omegaszkola.pl</span>
               </p>
               <p>
-                ING Bank Śląski: <span className="font-bold">76 1050 1214 1000 0022 4195 7121</span>
+                ING Bank Śląski:{' '}
+                <span className="font-bold">
+                  76 1050 1214 1000 0022 4195 7121
+                </span>
               </p>
             </div>
           </div>
         )}
       </main>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Kontakt
+export default Kontakt;

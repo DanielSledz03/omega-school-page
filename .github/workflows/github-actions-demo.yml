@@ -41,4 +41,4 @@ jobs:
 
       - name: Lint test
         working-directory: ./
-        run: npm run lint
+        run: npm run lint-check

@@ -1,31 +1,31 @@
-import { Fragment, useState, useRef, useEffect } from 'react'
-import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-import BgDesktop from '../public/assets/headers/BgGalleryDesktop.jpg'
-import BgMobile from '../public/assets/headers/bgGalleryMobile.jpg'
-import HeaderWithBubbles from '../components/HeaderWithBubbles/HeaderWithBubbles'
-import GalleryBox from '../components/GalleryBox/GalleryBox'
-import BackButton from '../public/assets/gallery/backButton.png'
-import Image from 'next/image'
-import { SlideshowLightbox } from 'lightbox.js-react'
-import useWindowDimensions from '../hooks/useWindowDimensions'
-import { createClient } from 'contentful'
-import Modal from '../components/Modal/Modal'
+import { createClient } from 'contentful';
+import { SlideshowLightbox } from 'lightbox.js-react';
+import Image from 'next/image';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import GalleryBox from '../components/GalleryBox/GalleryBox';
+import HeaderWithBubbles from '../components/HeaderWithBubbles/HeaderWithBubbles';
+import Modal from '../components/Modal/Modal';
+import { PageHeader } from '../components/PageHeader.tsx/PageHeader';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import BackButton from '../public/assets/gallery/backButton.png';
+import BgDesktop from '../public/assets/headers/BgGalleryDesktop.jpg';
+import BgMobile from '../public/assets/headers/bgGalleryMobile.jpg';
 
 const Galeria = ({ gallery }: any) => {
-  const [selectedItem, setSelectedItem] = useState<any>(null)
-  const [galleryImages, setGalleryImages] = useState<any>([])
-  const ref = useRef<any>(null)
-  const { width } = useWindowDimensions()
+  const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [galleryImages, setGalleryImages] = useState<any>([]);
+  const ref = useRef<any>(null);
+  const { width } = useWindowDimensions();
   const executeScroll = () => {
     if (ref?.current?.offsetTop)
       window.scroll({
         top:
-          ref?.current?.offsetTop! -
+          ref.current.offsetTop -
           (width && width > 1280 ? 0 : width && (width < 768 ? 60 : 100))!,
         left: 0,
         behavior: 'smooth',
-      })
-  }
+      });
+  };
 
   useEffect(() => {
     if (selectedItem)
@@ -34,10 +34,10 @@ const Galeria = ({ gallery }: any) => {
           return {
             src: 'http:' + image.fields.file.url,
             alt: 'obrazek',
-          }
+          };
         }),
-      )
-  }, [selectedItem])
+      );
+  }, [selectedItem]);
 
   return (
     <Fragment>
@@ -60,8 +60,8 @@ const Galeria = ({ gallery }: any) => {
             {gallery.map((data, index) => (
               <GalleryBox
                 onClick={() => {
-                  setSelectedItem(data)
-                  width < 1280 && executeScroll()
+                  setSelectedItem(data);
+                  width < 1280 && executeScroll();
                 }}
                 thumbnail={'http:' + data.fields.thumbnail.fields.file.url}
                 key={index}
@@ -76,8 +76,8 @@ const Galeria = ({ gallery }: any) => {
             <div className="border-y-[1px] border-[#F0F0F0] py-3 px-1 flex justify-between items-center">
               <div
                 onClick={() => {
-                  setSelectedItem(null)
-                  setGalleryImages([])
+                  setSelectedItem(null);
+                  setGalleryImages([]);
                 }}
                 className="w-[40px] h-[40px] rounded-[10px] bg-[#FAFAFA] flex justify-center items-center p-3"
               >
@@ -103,7 +103,11 @@ const Galeria = ({ gallery }: any) => {
                         <Image
                           width={500}
                           height={300}
-                          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                          style={{
+                            objectFit: 'cover',
+                            width: '100%',
+                            height: '100%',
+                          }}
                           src={image.src}
                           alt={image.alt}
                           data-lightboxjs={'lightbox' + galleryImages.length}
@@ -117,15 +121,19 @@ const Galeria = ({ gallery }: any) => {
         )}
 
         {width >= 1280 && (
-          <Modal title="sdds" show={selectedItem} onClose={() => setSelectedItem(null)}>
+          <Modal
+            title="sdds"
+            show={selectedItem}
+            onClose={() => setSelectedItem(null)}
+          >
             {selectedItem && (
               <div className="fixed z-[999] top-0 bottom-0 left-0 right-0 bg-black/80 flex justify-center items-center">
                 <div className="w-4/5 p-8 bg-white rounded-[15px]">
                   <div className="flex justify-between items-center border-y-[1px] border-[#F0F0F0] py-2">
                     <div
                       onClick={() => {
-                        setSelectedItem(null)
-                        setGalleryImages([])
+                        setSelectedItem(null);
+                        setGalleryImages([]);
                       }}
                       className="w-[40px] h-[40px] rounded-[10px] bg-[#FAFAFA] flex justify-center items-center p-3 hover:cursor-pointer"
                     >
@@ -160,7 +168,9 @@ const Galeria = ({ gallery }: any) => {
                                   src={image.src}
                                   alt={image.alt}
                                   className="rounded-[15px]"
-                                  data-lightboxjs={'lightbox' + galleryImages.length}
+                                  data-lightboxjs={
+                                    'lightbox' + galleryImages.length
+                                  }
                                 />
                               </div>
                             ))}
@@ -175,23 +185,23 @@ const Galeria = ({ gallery }: any) => {
         )}
       </main>
     </Fragment>
-  )
-}
+  );
+};
 
 export async function getStaticProps() {
   const client = createClient({
     space: 'template_data',
     environment: 'master', // defaults to 'master' if not set
     accessToken: 'template_data',
-  })
+  });
 
-  const res = await client.getEntries({ content_type: 'gallery' })
+  const res = await client.getEntries({ content_type: 'gallery' });
 
   return {
     props: {
       gallery: res.items,
     },
-  }
+  };
 }
 
-export default Galeria
+export default Galeria;

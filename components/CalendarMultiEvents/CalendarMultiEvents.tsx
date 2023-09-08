@@ -1,10 +1,9 @@
-import CalendarEvent from '../CalendarEvent/CalendarEvent'
-import CalendarSingleEvent from '../CalendarSingleEvent/CalendarSingleEvent'
-import styles from './CalendarMultiEvents.module.css'
+import styles from './CalendarMultiEvents.module.css';
+import CalendarEvent from '../CalendarEvent/CalendarEvent';
 
 interface IProps {
-  header: string
-  dates: { date: string; label: string }[]
+  header: string;
+  dates: { date: string; label: string }[];
 }
 
 const CalendarMultiEvents = ({ header, dates }: IProps) => {
@@ -15,7 +14,7 @@ const CalendarMultiEvents = ({ header, dates }: IProps) => {
         <CalendarEvent key={index} label={date.label} date={date.date} />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CalendarMultiEvents
+export default CalendarMultiEvents;

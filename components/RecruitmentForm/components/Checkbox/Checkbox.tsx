@@ -1,12 +1,12 @@
-import { ReactNode } from 'react'
-import styles from '../FormComponents.module.css'
+import { ReactNode } from 'react';
+import styles from '../FormComponents.module.css';
 
 interface IProps {
-  children: ReactNode
-  name: string
-  error?: string
-  value: boolean
-  setFieldValue: any
+  children: ReactNode;
+  name: string;
+  error?: string;
+  value: boolean;
+  setFieldValue: any;
 }
 
 const Checkbox = ({ error, children, value, name, setFieldValue }: IProps) => {
@@ -14,18 +14,22 @@ const Checkbox = ({ error, children, value, name, setFieldValue }: IProps) => {
     <div className={styles['checkbox-container']}>
       <div
         onClick={() => setFieldValue(name, !value)}
-        className={`${error && error?.length > 0 && styles['checkbox-error']} ${styles.checkbox} `}
+        className={`${error && error?.length > 0 && styles['checkbox-error']} ${
+          styles.checkbox
+        } `}
       >
         {value && <div className={styles['checkbox-checkmark']}></div>}
       </div>
       <label
         htmlFor={name}
-        className={`${error && error?.length > 0 ? styles['label-error'] : ''} ${styles.label}`}
+        className={`${
+          error && error?.length > 0 ? styles['label-error'] : ''
+        } ${styles.label}`}
       >
         <p onClick={() => setFieldValue(name, !value)}>{children}</p>
       </label>
     </div>
-  )
-}
+  );
+};
 
-export default Checkbox
+export default Checkbox;

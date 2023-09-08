@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
-import CalendarMultiEvents from '../components/CalendarMultiEvents/CalendarMultiEvents'
-import CalendarSingleEvent from '../components/CalendarSingleEvent/CalendarSingleEvent'
-import HeaderWithBubbles from '../components/HeaderWithBubbles/HeaderWithBubbles'
-import { PageHeader } from '../components/PageHeader.tsx/PageHeader'
-import BgDesktop from '../public/assets/headers/bgCalendarDesktop.jpg'
-import BgMobile from '../public/assets/headers/bgCalendarMobilee.jpg'
+import { Fragment } from 'react';
+import CalendarMultiEvents from '../components/CalendarMultiEvents/CalendarMultiEvents';
+import CalendarSingleEvent from '../components/CalendarSingleEvent/CalendarSingleEvent';
+import HeaderWithBubbles from '../components/HeaderWithBubbles/HeaderWithBubbles';
+import { PageHeader } from '../components/PageHeader.tsx/PageHeader';
+import BgDesktop from '../public/assets/headers/bgCalendarDesktop.jpg';
+import BgMobile from '../public/assets/headers/bgCalendarMobilee.jpg';
 const Kalendarz = () => {
   return (
     <Fragment>
@@ -22,7 +22,11 @@ const Kalendarz = () => {
       <HeaderWithBubbles header="Kalendarz roku szkolnego 2022 - 2023" />
       <div className="xl:flex xl:flex-wrap xl:justify-between max-w-[1300px] xl:mx-auto">
         <div className="xl:w-full">
-          <CalendarSingleEvent single header="Dzień otwarty" dates={['4 marca 2023']} />
+          <CalendarSingleEvent
+            single
+            header="Dzień otwarty"
+            dates={['4 marca 2023']}
+          />
         </div>
 
         <CalendarSingleEvent
@@ -63,7 +67,10 @@ const Kalendarz = () => {
             { label: 'Rozpoczęcie roku szkolnego', date: '1 września 2022' },
             { label: 'Dzień edukacji narodowej', date: '14 października 2022' },
             { label: 'Klasowe spotkanie świąteczne', date: '23 grudnia 2022' },
-            { label: 'Zimowa przerwa świąteczna', date: '23 grudnia 2022 - 31 grudnia 2022' },
+            {
+              label: 'Zimowa przerwa świąteczna',
+              date: '23 grudnia 2022 - 31 grudnia 2022',
+            },
             { label: 'Zakończenie I semestru', date: '27 stycznia 2023' },
             { label: 'Rozpoczęcie II semestru', date: '30 stycznia 2023' },
             { label: 'Ferie zimowe', date: '16 stycznia - 29 stycznia 2023' },
@@ -80,7 +87,7 @@ const Kalendarz = () => {
         />
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Kalendarz
+export default Kalendarz;

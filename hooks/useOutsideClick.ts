@@ -1,17 +1,17 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 function useOutsideClick(ref: any, onClose: () => void) {
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
-        onClose()
+        onClose();
       }
     }
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [ref, onClose])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref, onClose]);
 }
 
-export default useOutsideClick
+export default useOutsideClick;

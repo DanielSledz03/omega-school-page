@@ -1,16 +1,19 @@
-import Image from 'next/image'
-import styles from './Footer.module.css'
-import Logo from '../../public/assets/logo.svg'
-import { useRouter } from 'next/router'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import styles from './Footer.module.css';
+import Logo from '../../public/assets/logo.svg';
 const Footer = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <footer
-      className={`${router.pathname === '/' ? 'xl:mb-[80px] 2xl:mb-[100px]' : ''} ${styles.footer}`}
+      className={`${
+        router.pathname === '/' ? 'xl:mb-[80px] 2xl:mb-[100px]' : ''
+      } ${styles.footer}`}
     >
       <div className={styles['footer-header-container']}>
         <h4 className={styles['footer-header-text']}>
-          Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w Katowicach
+          Społeczna Szkoła Podstawowa OMEGA im. Górnośląskich Noblistów w
+          Katowicach
         </h4>
         <div className={styles['footer-logo-container']}>
           <Image src={Logo} alt="logo" className={styles['footer-logo']} />
@@ -110,7 +113,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,16 +1,16 @@
-import Image from 'next/image'
-import styles from '../FormComponents.module.css'
-import ArrowUp from '../../../../public/assets/select/arrowUp.svg'
-import { useState, useRef, Fragment } from 'react'
-import useOutsideClick from '../../../../hooks/useOutsideClick'
+import Image from 'next/image';
+import { Fragment, useRef, useState } from 'react';
+import useOutsideClick from '../../../../hooks/useOutsideClick';
+import ArrowUp from '../../../../public/assets/select/arrowUp.svg';
+import styles from '../FormComponents.module.css';
 interface IProps {
-  label: string
-  name: string
-  placeholder: string
-  selectedValue?: string
-  valueList: string[]
-  error?: string
-  setFieldValue: (name: string, value: string) => any
+  label: string;
+  name: string;
+  placeholder: string;
+  selectedValue?: string;
+  valueList: string[];
+  error?: string;
+  setFieldValue: (name: string, value: string) => any;
 }
 
 export const Select = ({
@@ -22,19 +22,23 @@ export const Select = ({
   setFieldValue,
   name,
 }: IProps) => {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const selectBGRef = useRef(null)
+  const [isExpanded, setIsExpanded] = useState(false);
+  const selectBGRef = useRef(null);
 
   useOutsideClick(selectBGRef, () => {
-    setIsExpanded(false)
-  })
+    setIsExpanded(false);
+  });
   return (
     <Fragment>
       {isExpanded && (
         <div className="fixed top-0 left-0 right-0 bottom-[-200px] bg-[rgba(0,0,0,0.3)] z-[890]"></div>
       )}
       <div ref={selectBGRef} className={styles['select-container']}>
-        <label className={`${error && error.length > 0 && styles['label-error']} ${styles.label}`}>
+        <label
+          className={`${error && error.length > 0 && styles['label-error']} ${
+            styles.label
+          }`}
+        >
           {label} {error && '- pole obowiązkowe'}
         </label>
 
@@ -47,10 +51,16 @@ export const Select = ({
           <div className="w-full h-[50px] flex items-center justify-between p-3 hover:cursor-pointer">
             <p
               className={`${
-                !isExpanded && selectedValue === '' ? 'text-[rgb(159,166,178)]' : ''
+                !isExpanded && selectedValue === ''
+                  ? 'text-[rgb(159,166,178)]'
+                  : ''
               } text-[18px] font-[300]`}
             >
-              {isExpanded ? placeholder : selectedValue === '' ? placeholder : selectedValue}
+              {isExpanded
+                ? placeholder
+                : selectedValue === ''
+                ? placeholder
+                : selectedValue}
             </p>
             <Image
               src={ArrowUp}
@@ -63,7 +73,7 @@ export const Select = ({
               <div
                 key={item}
                 onClick={() => {
-                  setFieldValue(name, item)
+                  setFieldValue(name, item);
                 }}
                 className={`${
                   valueList.length === index + 1 ? 'rounded-b-3xl' : ''
@@ -75,5 +85,5 @@ export const Select = ({
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
