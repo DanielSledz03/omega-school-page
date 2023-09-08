@@ -121,11 +121,7 @@ const Galeria = ({ gallery }: any) => {
         )}
 
         {width >= 1280 && (
-          <Modal
-            title="sdds"
-            show={selectedItem}
-            onClose={() => setSelectedItem(null)}
-          >
+          <Modal show={selectedItem}>
             {selectedItem && (
               <div className="fixed z-[999] top-0 bottom-0 left-0 right-0 bg-black/80 flex justify-center items-center">
                 <div className="w-4/5 p-8 bg-white rounded-[15px]">
