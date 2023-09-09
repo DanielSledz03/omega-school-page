@@ -121,6 +121,7 @@ const RecruitmentForm = () => {
       case '':
         return (
           <Button
+            dataCypress="send-button"
             label="Wyślij formularz rekrutacyjny"
             onClick={() => {
               handleSubmit();

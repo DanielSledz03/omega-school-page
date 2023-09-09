@@ -32,6 +32,7 @@ export const Input = ({
         {label} {error && '- pole obowiązkowe'}
       </label>
       <input
+        data-cypress="input"
         type={type}
         name={name}
         className={`${error && error.length > 0 && styles['input-error']} ${
