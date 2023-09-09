@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import styles from './PageHeader.module.css';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg';
@@ -33,7 +32,6 @@ export const PageHeader = ({
   checkKindergarten = false,
 }: IProps) => {
   const { width } = useWindowDimensions();
-  const [loaded, setLoaded] = useState(false);
 
   return (
     <div className={` ${styles.container} `}>
@@ -47,14 +45,15 @@ export const PageHeader = ({
             loading="eager"
             quality={100}
             priority
-            onLoadingComplete={() => setLoaded(true)}
           />
         )}
       </div>
       <Navbar />
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>
-          <h1 className={styles['header1']}>{title}</h1>
+          <h1 data-cypress="header1" className={styles['header1']}>
+            {title}
+          </h1>
           <span
             style={{ color: titleSpanColor ? titleSpanColor : '#FAC13C' }}
             className={styles['header1-span']}

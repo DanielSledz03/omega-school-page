@@ -20,7 +20,7 @@ export default function Home({ posts }: { posts: any }) {
   return (
     <Fragment>
       <div
-        data-cypress="recrutation-modal"
+        data-cypress="recruitment-modal"
         className="hidden xl:flex fixed bottom-0 w-full h-[80px] bg-white z-[90] items-center justify-center 2xl:h-[100px]"
       >
         <Link
