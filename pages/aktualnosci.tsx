@@ -85,6 +85,7 @@ const Aktualnosci = ({ posts }: { posts: any }) => {
       {howManyArticlesLoaded < posts.length && (
         <div className="w-full flex justify-center my-7 px-3 pb-[50px] max-w-[1920px] xl:pb-[100px] md:px-8 xl:px-[110px] 2xl:px-[200px]">
           <Button
+            dataCypress="show-more-articles"
             label="Zobacz więcej aktualności"
             onClick={() => setHowManyArticlesLoaded((prev) => prev + 5)}
             textColor="text-white"

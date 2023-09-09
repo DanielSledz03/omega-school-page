@@ -37,7 +37,9 @@ export const ArticlePreviewBox = ({
         />
       </div>
       <div className={styles['content-box']}>
-        <p className={styles.title}>{title}</p>
+        <p data-cypress="article-title" className={styles.title}>
+          {title}
+        </p>
         <ReactMarkdown
           className={styles.content}
           components={{

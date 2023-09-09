@@ -10,7 +10,7 @@ describe('Home Page Rendering', () => {
 
   it('should make the Header button work and navigate to recruitment', () => {
     cy.get('button[data-cypress="headerButton"]').should('be.visible').click();
-    cy.url().should('include', '/recruitment'); // Upewnij się, że URL jest zgodny z oczekiwaniami
+    cy.url().should('include', '/rekrutacja'); // Upewnij się, że URL jest zgodny z oczekiwaniami
   });
 
   it('should render the Header image with proper dimensions', () => {
