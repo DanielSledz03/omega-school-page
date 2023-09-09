@@ -38,7 +38,11 @@ const HomePageGallery = () => {
         <div className="pb-3 min-w-screen flex overflow-x-scroll mt-5 xl:overflow-x-hidden">
           {images &&
             images.map((image: any, index: number) => (
-              <div key={index} className={styles['gallery-image']}>
+              <div
+                data-cypress="gallery-image"
+                key={index}
+                className={styles['gallery-image']}
+              >
                 <Image
                   className="w-full"
                   src={image.src}

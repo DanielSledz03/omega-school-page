@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import styles from './PageHeader.module.css';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import ArrowBlue from '../../public/assets/rightDarkBlueArrow.svg';
@@ -33,27 +32,28 @@ export const PageHeader = ({
   checkKindergarten = false,
 }: IProps) => {
   const { width } = useWindowDimensions();
-  const [loaded, setLoaded] = useState(false);
 
   return (
     <div className={` ${styles.container} `}>
       <div className="w-full h-full absolute z-[-1]">
         {width && (
           <Image
+            data-cypress="headerImage"
             src={width >= 1280 ? bgXlUrl : bgUrl}
             alt="head iamge"
             className="w-full object-cover h-full"
             loading="eager"
             quality={100}
             priority
-            onLoadingComplete={() => setLoaded(true)}
           />
         )}
       </div>
       <Navbar />
       <div className={`${textContainerStyles} ${styles['texts-container']}`}>
         <div>
-          <h1 className={styles['header1']}>{title}</h1>
+          <h1 data-cypress="header1" className={styles['header1']}>
+            {title}
+          </h1>
           <span
             style={{ color: titleSpanColor ? titleSpanColor : '#FAC13C' }}
             className={styles['header1-span']}
@@ -63,6 +63,7 @@ export const PageHeader = ({
         </div>
         <p className={styles['paragraph']}>{paragraph}</p>
         <Button
+          dataCypress="headerButton"
           label={buttonTitle}
           onClick={onClick}
           className={styles['button']}

@@ -1,8 +1,8 @@
-name: Linting with npm cache
+name: Run lints
 on:
   push:
     branches:
-      - '*'
+      - 'main'
   pull_request:
     branches:
       - develop
