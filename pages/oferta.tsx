@@ -109,7 +109,6 @@ const activityClubs = [
   'Gimnastyka korekcyjna, rehabilitacja ruchowa /ze wskazaniem lekarskim/',
   'CyberFun',
   'Akademia młodego grafika',
-  'Arteterapia',
   'EnglishFun',
   'Salonik polonistyczny',
   'Klub mistrzów gier planszowych',
