@@ -19,7 +19,7 @@ const Kalendarz = () => {
         buttonTitle="Sprawdź kalendarz"
         onClick={() => null}
       />
-      <HeaderWithBubbles header="Kalendarz roku szkolnego 2022 - 2023" />
+      <HeaderWithBubbles header="Kalendarz roku szkolnego 2023 - 2024" />
       <div className="xl:flex xl:flex-wrap xl:justify-between max-w-[1300px] xl:mx-auto">
         {/* <div className="xl:w-full">
           <CalendarSingleEvent

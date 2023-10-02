@@ -37,11 +37,11 @@ const teachers = [
   },
   {
     name: 'Ewa Nowrocka',
-    position: ['wychowawca klasy 3α', 'edukacja wczesnoszkolna', 'etyka'],
+    position: ['wychowawca klasy 3β', 'edukacja wczesnoszkolna', 'etyka'],
   },
   {
     name: 'Anna Jurczak',
-    position: ['wychowawca klasy 3β', 'edukacja wczesnoszkolna'],
+    position: ['wychowawca klasy 3α', 'edukacja wczesnoszkolna'],
   },
   {
     name: 'Barbara Labus',
@@ -102,6 +102,10 @@ const teachers = [
   { name: 'Anna Racinowska', position: ['religia', 'wychowawca świetlicy'] },
   { name: 'Joanna Tomecka', position: ['pedagog szkolny'] },
   { name: 'Agata Ziomek-Dorniak', position: ['psycholog szkolny'] },
+  { name: 'Marlena Jagieła', position: ['logopeda'] },
+  { name: 'Joanna Dinges', position: ['doradztwo zawodowe'] },
+  { name: 'Wiktoria Merda', position: ['nauczyciel rehabilitant'] },
+  { name: 'Barbara Syrek', position: ['pielęgniarka szkolna'] },
 ];
 
 const TeachingStaff = () => {
