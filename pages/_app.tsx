@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import 'leaflet/dist/leaflet.css';
 import 'lightbox.js-react/dist/index.css';
+import { Analytics } from '@vercel/analytics/react';
 
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
             gtag('config', 'G-5M1PZ4C2S6');`}
         </Script>
         <Component {...pageProps} />
+        <Analytics />
       </div>
     </Layout>
   );
