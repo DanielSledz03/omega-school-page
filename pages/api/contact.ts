@@ -8,10 +8,10 @@ export default async (req: any, res: any) => {
   const nodemailer = require('nodemailer');
   const transport = nodemailer.createTransport({
     port: 587,
-    host: 'smtp.office365.com',
+    host: 'smtp.gmail.com',
     auth: {
-      user: 'template_data',
-      pass: 'template_data',
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
     },
     tls: {
       ciphers: 'SSLv3',

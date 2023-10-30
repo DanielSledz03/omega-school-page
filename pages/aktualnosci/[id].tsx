@@ -11,9 +11,9 @@ import styles from '../../styles/HomePage.module.css';
 
 export const getStaticPaths = async () => {
   const client = createClient({
-    space: 'template_data',
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: 'template_data',
+    space: process.env.SANITY_SPACE,
+    environment: process.env.SANITY_ENVIRONMENT, // defaults toprocess.env.SANITY_ENVIRONMENT if not set
+    accessToken: process.env.SANITY_TOKEN,
   });
   const res = await client.getEntries({
     content_type: 'post',
@@ -33,9 +33,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: { params: any }) => {
   const client = createClient({
-    space: 'template_data',
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: 'template_data',
+    space: process.env.SANITY_SPACE,
+    environment: process.env.SANITY_ENVIRONMENT, // defaults toprocess.env.SANITY_ENVIRONMENT if not set
+    accessToken: process.env.SANITY_TOKEN,
   });
   const { items } = await client.getEntries({
     content_type: 'post',
