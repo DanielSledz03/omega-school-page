@@ -10,6 +10,12 @@ In this project, sensitive information and login details have been replaced with
 
 ---
 
+## Live Preview:
+
+You can see the finished project at [omegaszkola.pl](http://omegaszkola.pl).
+
+---
+
 ## Basic Information:
 
 - **Name**: omega-szkola
