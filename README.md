@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Omega Szkoła (Omega School)
 
-## Getting Started
+Welcome to the website project for the "Omega" primary school, created using Next.js!
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Note on Sensitive Data:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In this project, sensitive information and login details have been replaced with the text "data_template".
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Basic Information:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Name**: omega-szkola
+- **Version**: 1.1.0
+- **Description**: This is a website project for the "Omega" primary school created using Next.js.
+- **Author**: Daniel Śledź
+- **License**: MIT
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Getting Started:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start working with this project, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:DanielSledz03/omega-school-page.git
+2. Navigate to the project directory:
+   ```bash
+   cd omega-szkola
+3. Install the dependencies:
+   ```bash
+   npm install
+4. Run the project in development mode:
+   ```bash
+   npm run dev
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `npm run dev`: Starts the Next.js development server.
+- `npm run build`: Builds the application for production.
+- `npm run start`: Runs the application in production mode.
+- `npm run lint`: Runs the Next.js linter.
+- `npm run lint-fix`: Fixes linting errors.
+- `npm run lint-check`: Checks for linting errors.
+- `npm run build-and-run`: Builds the application and runs it.
+- `npm run cypress`: Opens the Cypress testing tool.
