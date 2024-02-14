@@ -20,6 +20,7 @@ import IconImg8 from '../public/assets/offer/icons/Icon8.svg';
 import IconsDestkop from '../public/assets/offer/icons/iconsDesktop.svg';
 import whatMakesUsStandOutMobile from '../public/assets/offer/whatMakesUsStandOutMobile.png';
 import styles from '../styles/Oferta.module.css';
+
 const icons = [
   {
     name: 'Rozwijamy',
