@@ -277,24 +277,24 @@ const Offer = () => {
           <h5 className="text-center text-[#FAC13C] font-bold text-[30px]">
             Opłaty
           </h5>
-          <CalendarEvent date="Wpisowe opłata jednorazowa" label="1500 zł" />
+          <CalendarEvent date="Wpisowe opłata jednorazowa" label="2000 zł" />
         </div>
 
         <div className="mt-10 pb-[50px] xl:pb-[100px]">
           <h5 className="text-center text-[#FAC13C] font-bold text-[30px]">
             Czesne
           </h5>
-          <CalendarEvent date="Opłata roczna" label="12 360 zł" />
+          <CalendarEvent date="Opłata roczna" label="14 832 zł" />
           <div className="w-full xl:flex xl:justify-between">
             <CalendarEvent
               fullWidth
               date="10 rat"
-              label="1 236 zł miesięcznie"
+              label="1 483,20 zł miesięcznie"
             />
             <CalendarEvent
               fullWidth
               date="12 rat"
-              label="1 030 zł miesięcznie"
+              label="1236 zł miesięcznie"
             />
           </div>
         </div>
