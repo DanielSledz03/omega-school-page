@@ -100,7 +100,7 @@ const Footer = () => {
       </div>
 
       <div className={styles['footer-school-name']}>
-        <p>© 2023</p>
+        <p>© 2024</p>
         <p>Społeczna Szkoła Podstawowa OMEGA</p>
       </div>
 
