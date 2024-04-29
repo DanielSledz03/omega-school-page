@@ -1,32 +1,31 @@
-# Omega Szkoła (Omega School)
+# 🚀 Omega Szkoła (Omega School)
 
-Welcome to the website project for the "Omega" primary school, created using Next.js!
+Welcome to the website project for the "Omega" primary school, created using Next.js! 🚀
 
 ---
 
-## Note on Sensitive Data:
+## 🛑 Note on Sensitive Data:
 
 In this project, sensitive information and login details have been replaced with the text "data_template".
 
 ---
 
-## Live Preview:
+## 🌐 Live Preview:
 
-You can see the finished project at [omegaszkola.pl](http://omegaszkola.pl).
+You can see the finished project at <b>[omegaszkola.pl](http://omegaszkola.pl)</b>.
 
 ---
 
-## Basic Information:
+## ℹ️ Basic Information:
 
 - **Name**: omega-szkola
 - **Version**: 1.1.0
 - **Description**: This is a website project for the "Omega" primary school created using Next.js.
 - **Author**: Daniel Śledź
-- **License**: MIT
 
 ---
 
-## Getting Started:
+## 🚀 Getting Started:
 
 To start working with this project, follow these steps:
 
@@ -45,13 +44,13 @@ To start working with this project, follow these steps:
 
 ---
 
-## Available Scripts:
+## 📜 Available Scripts:
 
-- `npm run dev`: Starts the Next.js development server.
-- `npm run build`: Builds the application for production.
-- `npm run start`: Runs the application in production mode.
-- `npm run lint`: Runs the Next.js linter.
-- `npm run lint-fix`: Fixes linting errors.
-- `npm run lint-check`: Checks for linting errors.
-- `npm run build-and-run`: Builds the application and runs it.
-- `npm run cypress`: Opens the Cypress testing tool.
+- `npm run dev`: Starts the Next.js development server. 🏗️
+- `npm run build`: Builds the application for production. 📦
+- `npm run start`: Runs the application in production mode. 🌐
+- `npm run lint`: Runs the Next.js linter. 🧹
+- `npm run lint-fix`: Fixes linting errors. ✔️
+- `npm run lint-check`: Checks for linting errors. 🔍
+- `npm run build-and-run`: Builds the application and runs it. 🏃
+- `npm run cypress`: Opens the Cypress testing tool. 🧪
